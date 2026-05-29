@@ -1,0 +1,68 @@
+<html>
+
+   <head>
+      <title>Build</title>
+      <link rel="Stylesheet" href="style.css" />
+   </head>
+
+   <body>
+       <h1>Build Scripts</h1>
+       <h2>About</h2>
+       <p>Build scripts run a variety of external programs to assemble and link your program for a particular platform. When you create a new project, one or more default build scripts are created and saved in your project folder. You can then tailor them to your personal needs, or create whole new ones if the need arises.</p>
+       <p>Build scripts are attached to your project, and need to go into the <b>Build</b> project folder for them to appear on the build menu bar. They are, at heart, simple Windows batch scripts with the <tt>.CMD</tt> extension.</p>
+       <h2>Environment variables</h2>
+       <p>When you run a build script, Latenite passes information to it in the form of environment variables. These variables exist for as long as the script is running. You can access them by surrounding the name of the variable in percent (<tt>%</tt>) signs.</p>
+       <p>The environment variables are as follows:</p>
+       <table>
+       <tr id="header"><td>Variable</td><td>Description</td><td>Example</td></tr>
+        <tr><td class="fixedwidth">SOURCE_PATH</td><td>The full path to the source file to build.</td><td class="fixedwidth">C:\Directory\File.ext</td></tr>
+        <tr><td class="fixedwidth">SOURCE_FILE</td><td>The filename of the source file to build.</td><td class="fixedwidth">File.ext</td></tr>
+        <tr><td class="fixedwidth">SOURCE_DIR</td><td>The directory of the source file to build.</td><td class="fixedwidth">C:\Directory</td></tr>
+        <tr><td class="fixedwidth">SOURCE_FILE_EXT</td><td>The extension of the source file to build.</td><td class="fixedwidth">ext</td></tr>
+        <tr><td class="fixedwidth">SOURCE_FILE_NOEXT</td><td>The filename of the source file to build without the extension.</td><td class="fixedwidth">File</td></tr>
+       <tr><td class="fixedwidth">BUILD_PATH</td><td>The full path to the build script.</td><td class="fixedwidth">C:\Directory\SuperPC.cmd</td></tr>
+        <tr><td class="fixedwidth">BUILD_FILE</td><td>The filename of the build script.</td><td class="fixedwidth">SuperPC.cmd</td></tr>
+        <tr><td class="fixedwidth">BUILD_DIR</td><td>The directory of the build script.</td><td class="fixedwidth">C:\Directory</td></tr>
+        <tr><td class="fixedwidth">BUILD_FILE_EXT</td><td>The extension of the build script.</td><td class="fixedwidth">cmd</td></tr>
+        <tr><td class="fixedwidth">BUILD_FILE_NOEXT</td><td>The filename of the build script without the extension.</td><td class="fixedwidth">SuperPC</td></tr>
+        <tr><td class="fixedwidth">COMPILE_DIR</td><td>The default directory in which Latenite stores the assemblers/linkers.</td><td class="fixedwidth">C:\Latenite\Compile</td></tr>
+        <tr><td class="fixedwidth">ERROR_LOG</td><td>Expected location of the error log when the build process is complete.</td><td class="fixedwidth">C:\Latenite\Compile\Errors.xml</td></tr>
+       <tr><td class="fixedwidth">PROJECT_PATH</td><td>The full path to the project.</td><td class="fixedwidth">C:\Directory\Super.lnp</td></tr>
+       <tr><td class="fixedwidth">PROJECT_FILE</td><td>The filename of the project.</td><td class="fixedwidth">Super.lnp</td></tr>
+       <tr><td class="fixedwidth">PROJECT_DIR</td><td>The directory of the project.</td><td class="fixedwidth">C:\Directory</td></tr>
+       <tr><td class="fixedwidth">PROJECT_NAME</td><td>The name of the project.</td><td class="fixedwidth">Super Doom 2</td></tr>
+       <tr><td class="fixedwidth">PROJECT_BINARY</td><td>The short name of the project.</td><td class="fixedwidth">SPRDOOM2</td></tr>
+       </table>
+       <p>For example, one common task would be to add the Latenite compile directory to the system's <tt>PATH</tt> variable so that you can call the various assemblers/linkers packaged with Latenite without having to swap directories a lot. The build script would have to contain a line like this:</p>
+       <div class="code">SET PATH=%PATH%;"%COMPILE_DIR%"</div>
+       <p>Knowledge of how to create Windows/DOS batch scripts is a must!</p>
+       <h2>The Bundled Tools</h2>
+       <p>Latenite is pretty useless on its own - it's just a Z80 editor. The default projects and build scripts all require that there are a set of assemblers and linkers available to them. Please note that WLA-DX and TASM were <b>not</b> written by Ben Ryves. All the other tools are.</p>
+       <h3>WLA-DX (wla-z80.exe and wlalink.exe)</h3>
+       <p>These are (a small!) part of Ville Helin's excellent WLA-DX assemblers, suitable for the Z80. You can get more information and download the latest version (source) from <a href="http://www.iki.fi/~vhelin/wla.html" target="_blank">the WLA-DX homepage.</a></p>
+       <h3>TASM Assembler (TASM.exe and TASM80.tab)</h3>
+       <p>This is a shareware copy of Thomas N. Anderson's (Squak Valley Software) TASM, the most commonly used assembler for TI's Z80 series of calculator. As it is shareware, if you intend on using it beyond an evaluation period please consider registering it through <a href="http://www.halcyon.com/squakvly/" target="_blank">the homepage.</a></p>
+       <h3>TASM Error Converter (TASMERR.exe)</h3>
+       <p>This Latenite-specific tool converts TASM's output to an XML error log. By piping the output of <tt>TASM</tt> to the input of <tt>TASMERR</tt> you can then easily redirect the output straight to the log file like this:</p>
+       <div class="code">TASM <i>&lt;args&gt;</i> | TASMERR &gt; "%ERROR_LOG%" </div>
+       <p>(Where <tt>args</tt> refers to TASM's command-line arguments). Passing the optional command-line switch <tt>/o</tt> only outputs the errors and messages, not the XML header (potentially useful if you need to join multiple error logs togther, such as one from the assembler and one from the linker).</p>
+       <h3>8XP Linker (8XPLink.exe)</h3>
+       <p>This is a simple (but quite powerful) 8XP/83P linker. It wraps a number of COM binaries into a single 8XP/83P file. The command-line syntax is this:</p>
+       <div class="code">8XPLINK (<i>Binary file</i>[,<i>Variable name</i>[,<i>Variable type=6</i>]]) <i>&lt;Output file&gt;</i> [/x [/o]] [/3]</div>
+       <p>You can specify any number of binaries to link. Each binary you wish to link needs to be added in (parentheses). For example:</p>
+      <table>
+       <tr id="header"><td>Command-line</td><td>Description</td></tr>
+        <tr><td class="fixedwidth">8XPLINK (IN.BIN) OUT.8XP</td><td>Link IN.BIN to OUT.8XP as IN.</td>
+        <tr><td class="fixedwidth">8XPLINK (IN1.BIN) (IN2.BIN) OUT.8XG</td><td>Link IN1.BIN and IN2.BIN to OUT.8XG as IN1 and IN2.</td>
+        <tr><td class="fixedwidth">8XPLINK (IN1.BIN,PROG1) (IN2.BIN,PROG2) OUT.8XG</td><td>Link IN1.BIN and IN2.BIN to OUT.8XG as PROG1 and PROG2.</td>
+        <tr><td class="fixedwidth">8XPLINK (IN1.BIN,PROG1,5) (IN2.BIN) OUT.8XG</td><td>Link IN1.BIN and IN2.BIN to OUT.8XG as PROG1 (unlocked program) and IN2.</td>
+       </table>
+       <p>This could be useful to, for example, link your program and an AppVar together.</p>
+       <p>Setting the switch <tt>/x</tt> makes the linker output an XML error log (using <tt>/o</tt> makes 8XP Linker only output the errors and messages, not the XML header). Setting the switch <tt>/3</tt> outputs a TI-83 variable rather than a TI-83 Plus variable.</p>
+       <h3>XML Error Log Tool (ErrLog.exe)</h3>
+       <p>This very basic program is designed to help creating XML error logs. Syntax is very basic:</p>
+       <div class="code">ERRLOG START|END</div>
+       <p>Passing in <tt>START</tt> echoes the start of an XML error log to the console. <tt>END</tt> echoes the end. It could be used like this:</p>
+       <div class="code">ERRLOG START &gt; "%ERROR_LOG%"<br />8XPLINK (IN1.BIN) OUT.8XG /x /o &gt;&gt; "%ERROR_LOG%"<br />ERRLOG END &gt;&gt; "%ERROR_LOG%"</div>
+   </body>
+</html>

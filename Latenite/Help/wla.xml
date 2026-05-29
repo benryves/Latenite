@@ -1,0 +1,331 @@
+<helpfile name="WLA-DX">
+    <item highlight=".8BIT" colour="directive" name="8BIT" syntax=".8BIT" description="There are a few mnemonics that look identical, but take different sized arguments. Here's a list of such 6502 mnemonics:&lt;br /&gt;&lt;tt&gt;ADC, AND, ASL, BIT, CMP, CPX, CPY, DEC, EOR, INC, LDA, LDX, LDY, ORA, ROL, SBC, STA, STX and STY.&lt;/tt&gt;&lt;br /&gt;For example:&lt;pre&gt;LSR 11       ; $46 $0B
+LSR $A000    ; $4E $00 $A0&lt;/pre&gt;.8BIT is here to help WLA to decide to choose which one of the opcodes it
+selects. When you give .8BIT (default) no 8bit address/value is expanded
+to 16bits.&lt;br /&gt;By default WLA uses the smallest possible size. This is true also when WLA
+finds a computation it can't solve right away. WLA assumes the result will
+be inside the smallest possible bounds, which depends on the type of the
+mnemonic.&lt;br /&gt;You can also use the fixed argument size versions of such mnemonics by
+giving the size with the operand (i.e., operand hinting). Here are few
+examples:&lt;pre&gt;LSR 11.B   ; $46 $0B
+LSR 11.W   ; $46 $0B $00&lt;/pre&gt;In WLA-65816 .ACCU/.INDEX/SEP/REP override .8BIT/.16BIT/.24BIT when considering
+the immediate values, so be careful. Still, operand hints override all of
+these, so use them to be sure." />
+    <item highlight=".16BIT" colour="directive" name="16BIT" syntax=".16BIT" description="Analogous to &lt;a href=lnh_8BIT&gt;.8BIT&lt;/a&gt;. .16BIT forces all addresses and immediate values to be expanded into 16bit range, when possible, that is.&lt;pre&gt;LSR 11 ; $46 $0B&lt;/pre&gt;
+that would be the case, normally, but after .16BIT it becomes&lt;pre&gt;LSR 11 ; $4E $0B $00&lt;/pre&gt;" />
+    <item highlight=".24BIT" colour="directive" name="24BIT" syntax=".24BIT" description="Analogous to &lt;a href=lnh_8BIT&gt;.8BIT&lt;/a&gt; and &lt;a href=lnh_16BIT&gt;.16BIT&lt;/a&gt;. .24BIT forces all addresses to be expanded into 24bit range, when possible, that is.&lt;pre&gt;AND $11 ; $25 $11&lt;/pre&gt;that would be the case, normally, but after .24BIT it becomes&lt;pre&gt;AND $11 ; $2F $11 $00 $00&lt;/pre&gt;If it is not possible to expand the address into .24BIT range, then WLA tries to expand it into 16bit range." />
+    <item highlight=".ACCU" colour="directive" name="ACCU" syntax=".ACCU size" description="Forces WLA to override the accumulator size given with SEP/REP. .ACCU doesn't produce any code, it only affects the way WLA interprets the immediate values (8 for 8 bit operands, 16 for 16 bit operands) for opcodes dealing with the accumulator. So after giving .ACCU 8 &lt;pre&gt;AND #6&lt;/pre&gt;will produce $29 $06, and after giving .ACCU 16&lt;pre&gt;AND #6&lt;/pre&gt;will yield $29 $00 $06." ><note description="Note that SEP/REP again will in turn reset the accumulator/index register
+size." /></item>
+    <item highlight=".INDEX" colour="directive" name="INDEX" syntax=".INDEX size" description="Forces WLA to override the index (X/Y) register size given with SEP/REP. .INDEX doesn't produce any code, it only affects the way WLA interprets the immediate values (8 for 8 bit operands, 16 for 16 bit operands) for opcodes dealing with the index registers.So after giving .INDEX 8&lt;pre&gt;CPX #10&lt;/pre&gt;will produce $E0 $A0, and after giving .INDEX 16&lt;pre&gt;CPX #10&lt;/pre&gt;will yield $E0 $00 $A0."><note description="Note that SEP/REP again will in turn reset the accumulator/index register
+size."></note></item>
+    <item highlight=".ASM" colour="directive" name="ASM" syntax=".ASM" description="Tells WLA to start assembling. Use .ASM to continue the work which has been disabled with &lt;a href=lnh_ENDASM&gt;.ENDASM&lt;/a&gt;. .ASM and .ENDASM can be used to mask away big blocks of code. This is analogous to the ANSI C -comments (/*...*/), but .ASM and .ENDASM can be nested, unlike the ANSI C -counterpart." />
+    <item highlight=".ENDASM" colour="directive" name="ENDASM" syntax=".ENDASM" description="Tells WLA to stop assembling. Use &lt;a href=lnh_ASM&gt;.ASM&lt;/a&gt; to continue the work." />
+    <item highlight=".DBRND" colour="directive" name="DBRND" syntax=".DBRND count, min, max" description="Defines bytes, just like &lt;a href=lnh_DSB&gt;.DSB&lt;/a&gt; does, only this time they are filled with (pseudo) random numbers. We use stdlib's rand() to generate the random numbers. If you want to seed the random number generator, use &lt;a href=lnh_SEED&gt;.SEED&lt;/a&gt;. The first parameter (20 in the example) defines the amount of numbers we want to generate. The next two tell the range of the random numbers, i.e. min and max."><note description="Here's how it works:&lt;pre&gt;.DBRND A, B, C
+
+for (i = 0; i &amp;lt; A; i++)
+  output_data((rand() % (C-B+1)) + B);
+&lt;/pre&gt;" /></item>
+    <item highlight=".DWRND" colour="directive" name="DWRND" syntax=".DWRND count, min, max" description="Analogous to &lt;a href=lnh_DBRND&gt;.DBRND&lt;/a&gt; (but defines words)." />
+    <item highlight=".DBCOS" colour="directive" name="DBCOS" syntax=".DBCOS start_angle, additional_angles, step, scale, offset" description="Defines bytes just like &lt;a href=lnh_DSB&gt;.DSB&lt;/a&gt; does, only this time they are filled with
+cosine data. .DBCOS takes five arguments.&lt;br /&gt;
+The first argument is the starting angle. Angle value ranges from 0 to
+359.999..., but you can supply WLA with values that are out of the range -
+WLA fixes them ok. The value can be integer or float.&lt;br /&gt;
+The second one descibes the amount of additional angles. The example
+will define 11 angles.&lt;br /&gt;
+The third one is the adder value which is added to the angle value when
+next angle is calculated. The value can be integer or float.&lt;br /&gt;
+The fourth and fifth ones can be seen from the pseudo code below, which
+also describes how .DBCOS works. The values can be integer or float.&lt;br /&gt;
+Remember that cos (and sin) here returns values ranging from -1 to 1.">
+        <note description="&lt;pre&gt;.DBCOS A, B, C, D, E
+
+for (B++; B > 0; B--) {
+  output_data((D * cos(A)) + E)
+  A = keep_in_range(A + C)
+}&lt;/pre&gt;" />
+    </item>
+    <item highlight=".DBSIN" colour="directive" name="DBSIN" syntax=".DBSIN start_angle, additional_angles, step, scale, offset" description="Analogous to &lt;a href=lnh_DBCOS&gt;.DBCOS&lt;/a&gt;, but does sin() instead of cos()." />
+    <item highlight=".DWCOS" colour="directive" name="DWCOS" syntax=".DWCOS start_angle, additional_angles, step, scale, offset" description="Analogous to &lt;a href=lnh_DBCOS&gt;.DBCOS&lt;/a&gt; (but defines words)." />
+    <item highlight=".DWSIN" colour="directive" name="DWSIN" syntax=".DWSIN start_angle, additional_angles, step, scale, offset" description="Analogous to &lt;a href=lnh_DBCOS&gt;.DBSIN&lt;/a&gt; (but defines words)." />
+    <item highlight=".NAME" colour="directive" name="NAME" syntax=".NAME &amp;quot;NAME OF THE ROM&amp;quot;" description="If .NAME is used with WLA-GB then the 16 bytes ranging from $0134 to $0143 are filled with the provided string. WLA-65816 fills the 21 bytes from $FFC0 to $FFD4 in HiROM- and from $7FC0 to $7FD4 in LoROM-mode with the name string (SNES ROM title).&lt;br /&gt;If the string is shorter than 16/21 bytes the remaining space is filled with $00." />
+    <item highlight=".ROMBANKS" colour="directive" name="ROMBANKS" syntax=".ROMBANKS number_of_banks" description="Indicates the size of the ROM in rombanks. This value is converted to a standard GB ROM size indicator value found at $148 in a GB ROM, and there this one is put into.&lt;br /&gt;This is a compulsory directive unless &lt;a href=lnh_ROMBANKMAP&gt;.ROMBANKMAP&lt;/a&gt; is defined.&lt;br /&gt;You can redefine .ROMBANKS as many times as you wish as long as the old and the new ROM bank maps match as much as possible. This way you can enlarge the size of the project on the fly." />
+    <item highlight=".RAMSIZE" colour="directive" name="RAMSIZE" syntax=".RAMSIZE size_of_ram" description="Indicates the size of the RAM. This is a standard GB RAM size indicator value found at $149 in a GB ROM, and there this one is put to also." />
+    <item highlight=".EMPTYFILL" colour="directive" name="EMPTYFILL" syntax=".EMPTYFILL value" description="This byte is used in filling the unused areas of the ROM file. EMPTYFILL defaults to $00." />
+    <item highlight=".CARTRIDGETYPE" colour="directive" name="CARTRIDGETYPE" syntax=".CARTRIDGETYPE type" description="Indicates the type of the cartridge (mapper and so on). This is a standard GB cartridge type indicator value found at $147 in a GB ROM, and there this one is put to also." />
+    <item highlight=".LICENSEECODEOLD" colour="directive" name="LICENSEECODEOLD" syntax=".LICENSEECODEOLD value" description="This is a standard old licensee code found at $14B in a GB ROM, and there this one is put to also. .LICENSEECODEOLD cannot be defined with &lt;a href=lnh_LICENSEECODENEW&gt;.LICENSEECODENEW&lt;/a&gt;." />
+    <item highlight=".LICENSEECODENEW" colour="directive" name="LICENSEECODENEW" syntax=".LICENSEECODENEW &amp;quot;1A&amp;quot;" description="This is a standard new licensee code found at $144 and $145 in a GB ROM, and there this one is put to also. .LICENSEECODENEW cannot be defined with &lt;a href=lnh_LICENSEECODEOLD&gt;.LICENSEECODEOLD&lt;/a&gt;. $33 is inserted into $14B, as well." />
+    <item highlight=".COMPUTEGBCHECKSUM" colour="directive" name="COMPUTEGBCHECKSUM" syntax=".COMPUTEGBCHECKSUM" description="When this directive is used WLA computes the ROM checksum found at $14E and $14F in a GB ROM. Note that this directive can only be used with wla-gb.&lt;br /&gt;Note that you can also write .COMPUTECHECKSUM (the old name for this directive), but it's not recommended." />
+    <item highlight=".COMPUTESMSCHECKSUM" colour="directive" name="COMPUTESMSCHECKSUM" syntax=".COMPUTESMSCHECKSUM" description="When this directive is used WLA computes the ROM checksum found at $7FFA and $7FFB in a SMS/GG ROM. Note that this directive can only be used with wla-z80. Also note that the ROM size must be at least 32KB. Data beyond 256KB limit is not taken into account when calculating the SMS checksum, which should be the right way to do it." />
+    <item highlight=".COMPUTESNESCHECKSUM" colour="directive" name="COMPUTESNESCHECKSUM" syntax=".COMPUTESNESCHECKSUM" description="When this directive is used WLA computes the SNES ROM checksum and inverse checksum found at $7FDC-$7FDF (LoROM) or $FFDC-$FFDF (HiROM). Note that this directive can only be used with wla-65816. Also note that the ROM size must be at least 32KB for LoROM images and 64KB for HiROM images.">
+        <note description="&lt;a href=lnh_LOROM&gt;.LOROM&lt;/a&gt; or &lt;a href=lnh_HIROM&gt;.HIROM&lt;/a&gt; must be issued before .COMPUTESNESCHECKSUM." />
+    </item>
+    <item highlight=".SMSTAG" colour="directive" name="SMSTAG" syntax=".SMSTAG" description=".SMSTAG forces WLA to write an ordinary SMS/GG ROM tag to the ROM file. Currently only the string &lt;tt&gt;TMR SEGA&lt;/tt&gt; and ROM checksum are written (meaning that .SMSTAG also defines &lt;a href=lnh_COMPUTESMSCHECKSUM&gt;.COMPUTESMSCHECKSUM&lt;/a&gt;)." />
+    <item highlight=".SDSCTAG" colour="directive" name="SDSCTAG" syntax=".SDSCTAG version, &amp;quot;title&amp;quot;, &amp;quot;description&amp;quot;, &amp;quot;author&amp;quot;" description=".SDSCTAG adds SDSC tag to your SMS/GG ROM file. The ROM size must be at least
+32KB just like with &lt;a href=lnh_COMPUTESMSCHECKSUM&gt;.COMPUTESMSCHECKSUM&lt;/a&gt; and &lt;a href=lnh_SMSTAG&gt;.SMSTAG&lt;/a&gt;, as the data goes into $7FE0-$7FEF of the ROM. For more information about this header take a look at &lt;a href='http://www.smspower.org/dev/sdsc/' target='_blank'&gt;http://www.smspower.org/dev/sdsc/&lt;/a&gt;.&lt;br /&gt;Note that program name, release notes and program author can also be pointers
+to strings instead of being only strings (which WLA terminates with zero, and
+places them into suitable locations inside the ROM file). So&lt;pre&gt;.SDSCTAG 0.8, PRGNAME, PRGNOTES, PRGAUTHOR
+...
+PRGNAME:  .DB &amp;quot;DUNGEON MAN&amp;quot;, 0
+PRGNOTES: .DB &amp;quot;A wild and totally crazy dungeon exploration game&amp;quot;, 0
+PRGAUTHOR:.DB &amp;quot;Ville Helin&amp;quot;, 0&lt;/pre&gt;works also. All strings supplied explicitly to .SDSCTAG are placed somewhere
+in .BANK 0 SLOT 0. Version number can also be given as an integer, but then the minor
+version number defaults to zero.&lt;br /&gt;.SDSCTAG also defines &lt;a href=lnh_SMSTAG&gt;.SMSTAG&lt;/a&gt; (as it's part of the SDSC ROM tag specification).
+">
+        <example code=".SDSCTAG 1.0, &amp;quot;DUNGEON MAN&amp;quot;, &amp;quot;A wild dungeon exploration game&amp;quot;, &amp;quot;Ville Helin&amp;quot;" />
+    </item>
+    <item highlight=".COMPUTEGBCOMPLEMENTCHECK" colour="directive" name="COMPUTEGBCOMPLEMENTCHECK" syntax=".COMPUTEGBCOMPLEMENTCHECK" description="When this directive is used WLA computes the ROM complement check found at $14D in a GB ROM.">
+        <note description="Note that you can still use &lt;a href=lnh_COMPUTECOMPLEMENTCHECK&gt;.COMPUTECOMPLEMENTCHECK&lt;/a&gt; (the old name for this directive), but it's not recommended." />
+    </item>
+    <item highlight=".INCDIR" colour="directive" name="INCDIR" syntax=".INCDIR &amp;quot;path_to_directory&amp;quot;" description="Changes the current include root directory. Use this to specify main directory for the following &lt;a href=lnh_INCLUDE&gt;.INCLUDE&lt;/a&gt; and &lt;a href=lnh_INCBIN&gt;.INCBIN&lt;/a&gt; directives. If you want to change to the current working directory (WLA also defaults to this), use &lt;pre&gt;.INCDIR &amp;quot;&amp;quot;&lt;/pre&gt;" />
+    <item highlight=".INCLUDE" colour="directive" name="INCLUDE" syntax=".INCLUDE &amp;quot;filename&amp;quot;" description="Includes the specified file to the source file. If the file's not found in the &lt;a href=lnh_INCDIR&gt;.INCDIR&lt;/a&gt; directory, WLA tries to find it in the current working directory." />
+    <item highlight=".INCBIN" colour="directive" name="INCBIN" syntax=".INCBIN &amp;quot;filename&amp;quot; [options]" description="Includes the specified data file into the source file. .INCBIN caches
+all files into memory, so you can .INCBIN any data file millions of
+times, but it is loaded from hard drive only once.
+&lt;br /&gt;
+You can optionally use SWAP after the file name, e.g.,
+&lt;pre&gt;.INCBIN &amp;quot;kitten.bin&amp;quot; SWAP&lt;/pre&gt;
+.INCBIN data is divided into blocks of two bytes, and inside every block
+the bytes are exchanged (like &amp;quot;SWAP r&amp;quot; does to nibbles). This requires that
+the size of the file is even.
+&lt;br /&gt;You can also force WLA to skip n bytes from the beginning of the file
+by writing for example:
+&lt;pre&gt;.INCBIN &amp;quot;kitten.bin&amp;quot; SKIP 4&lt;/pre&gt;
+Four bytes are skipped from the beginning of kitten.bin and the rest
+is incbinned.
+&lt;br /&gt;
+It is also possible to incbin only n bytes from a file:
+&lt;pre&gt;.INCBIN &amp;quot;kitten.bin&amp;quot; READ 10&lt;/pre&gt;
+Will read ten bytes from the beginning of kitten.bin.
+&lt;br /&gt;
+You can also force WLA to create a definition holding the size
+of the file:
+&lt;pre&gt;.INCBIN &amp;quot;kitten.bin&amp;quot; FSIZE size_of_kitten&lt;/pre&gt;
+And you can combine all these four commands:
+&lt;pre&gt;.INCBIN &amp;quot;kitten.bin&amp;quot; SKIP 10 READ 8 SWAP FSIZE size_of_kitten&lt;/pre&gt;
+This example shows how to incbin eight bytes (swapped) after skipping
+10 bytes from the beginning of file &amp;quot;kitten.bin&amp;quot;, and how to get the
+size of the file into a definition label &amp;quot;size_of_kitten&amp;quot;. Note that the
+order of the extra commands is important.&lt;br /&gt;
+&lt;br /&gt;If the file's not found in the &lt;a href=lnh_INCDIR&gt;.INCDIR&lt;/a&gt; directory, WLA tries to find it in the current working directory."/>
+    <item highlight=".INPUT" colour="directive" name="INPUT" syntax=".INPUT variable" description=".INPUT is much like any Basic-language input: .INPUT asks the user for a value or string. After .INPUT is the variable name used to store the data. .INPUT works like &lt;a href=lnh_REDEFINE&gt;.REDEFINE&lt;/a&gt;, but the user gets to type in the data.">
+        <example code=".PRINTT &amp;quot;The name of the ROM? &amp;quot;&lt;br /&gt;
+.INPUT NAME&lt;br /&gt;
+.NAME NAME&lt;br /&gt;
+&lt;br /&gt;
+...&lt;br /&gt;
+&lt;br /&gt;
+.PRINTT &amp;quot;Give the .DB amount.\n&amp;quot;&lt;br /&gt;
+.INPUT S&lt;br /&gt;
+.PRINTT &amp;quot;Give .DB data one at a time.\n&amp;quot;&lt;br /&gt;
+.REPEAT S&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;.INPUT B&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;.DB B&lt;br /&gt;
+.ENDR&lt;br /&gt;
+&lt;br /&gt;
+..." />
+    </item>
+    <item highlight=".BACKGROUND" colour="directive" name="BACKGROUND" syntax=".BACKGROUND &amp;quot;filename&amp;quot;" description="This chooses an existing ROM image (parallax.gb in this case) as a background data for the project. You can overwrite the data with OVERWRITE sections only, unless you first clear memory blocks with &lt;a href=lnh_UNBACKGROUND&gt;.UNBACKGROUND&lt;/a&gt; after which there's room for other sections as well.&lt;br /&gt;With .BACKGROUND defined you can leave away .ROMSIZE,.ROMTYPE and .RAMTYPE. .BACKGROUND can be used only when compiling an object file.&lt;br /&gt;.BACKGROUND is useful if you wish to patch an existing ROM image with new code or data." />
+    <item highlight=".UNBACKGROUND" colour="directive" name="UNBACKGROUND" syntax=".UNBACKGROUND start_address end_address" description="After issuing .BACKGROUND you might want to free some parts of the backgrounded ROM image for e.g., FREE sections. With .UNBACKGROUND you can define such regions.">
+        <note description="The range is from start_address to end_address &lt;i&gt;inclusive.&lt;/i&gt;" />
+    </item>
+    <item highlight=".FAIL" colour="directive" name="FAIL" syntax=".FAIL" description="Terminates the compiling process." />
+    <item highlight=".FCLOSE" colour="directive" name="FCLOSE" syntax=".FCLOSE file_handle" description="Closes the filehandle file_handle." />
+    <item highlight=".FOPEN" colour="directive" name="FOPEN" syntax=".FOPEN &amp;quot;filename&amp;quot; file_handle" description="Opens the file 'filename' for reading and associates the filehandle with name file_handle." />
+    <item highlight=".FREAD" colour="directive" name="FREAD" syntax=".FREAD file_handle variable" description="Reads one byte from the file_handle and creates a definition to hold it. The variable is an ordinary definition label, so you can .UNDEFINE it.">
+        <example description=".fopen &amp;quot;data.bin&amp;quot; fp&lt;br /&gt;
+.fsize fp t&lt;br /&gt;
+.repeat t&lt;br /&gt;
+.fread fp d&lt;br /&gt;
+.db d+26&lt;br /&gt;
+.endr&lt;br /&gt;
+.undefine t, d" />
+    </item>
+    <item highlight=".FSIZE" colour="directive" name="FSIZE" syntax=".FSIZE file_handle variable" description="Creates a definition which holds the size of the file associated with the filehandle file_handle. The variable is an ordinary
+definition label, so you can .UNDEFINE it." />
+    <item highlight=".MACRO" colour="directive" name="MACRO" syntax=".MACRO name" description="Begins a macro called &lt;i&gt;name&lt;/i&gt;.
+&lt;br /&gt;
+You can use '\@' inside a macro to e.g., separate a label from the other
+macro &lt;i&gt;name&lt;/i&gt; occurrences. '\@' is replaced with an integer number
+indicating the amount of times the macro has been called previously so
+it is unique to every macro call. '\@' can also be used inside strings
+inside a macro or just as a plain value. Look at the following examples
+for more information.
+&lt;br /&gt;
+Also, if you want to use macro arguments in e.g., calculation, you can
+type '\X' where X is the number of the argument. Another way to refer
+to the arguments is to use their names given in the definition of the
+macro (see the examples for this).
+&lt;br /&gt;
+Remember to use .ENDM to finish the macro definition. Note that you
+cannot use .INCLUDE inside a macro. Note that WLA's macros are in fact
+more like procedures than real macros, because WLA doesn't substitute
+macro calls with macro data. Instead WLA jumps to the macro when it
+encounters a macro call at compile time.
+&lt;br /&gt;
+You can call macros from inside a macro. Note that the preprocessor
+does not expand the macros. WLA traverses through the code according to
+the macro calls, so macros really define a very simple programming
+language.
+&lt;br /&gt;
+Here are some examples:&lt;pre&gt;.MACRO NOPMONSTER
+       .REPT 32         ; evil...
+       NOP
+       .ENDR
+.ENDM
+
+.MACRO LOAD_ABCD
+       LD A, \1
+       LD B, \2
+       LD C, \3
+       LD D, \4
+       NOPMONSTER
+       LD HL, 1&amp;lt;&amp;lt;\1
+.INCBIN \5
+.ENDM
+
+.MACRO QUEEN
+
+QUEEN\@:
+	LD   A, \1
+	LD   B, \1
+	CALL QUEEN\@
+
+        .DB  &amp;quot;\@&amp;quot;, 0     ; will translate into a zero terminated string
+                         ; holding the amount of macro QUEEN calls.
+        .DB  &amp;quot;\\@&amp;quot;, 0    ; will translate into a string containing
+                         ; \@.
+        .DB  \@          ; will translate into a number indicating
+                         ; the amount of macro QUEEN calls.
+
+.ENDM
+
+.MACRO LOAD_ABCD_2 ARGS ONE, TWO, THREE, FOUR, FIVE
+       LD A, ONE
+       LD B, TWO
+       LD C, THREE
+       LD D, FOUR
+       NOPMONSTER
+       LD HL, 1&amp;lt;&amp;lt;ONE
+.INCBIN FIVE
+.ENDM&lt;/pre&gt;And here's how they can be used:&lt;pre&gt;NOPMONSTER
+LOAD_ABCD $10, $20, $30, XYZ, &amp;quot;merman.bin&amp;quot;
+QUEEN 123
+LOAD_ABCD_2 $10, $20, $30, XYZ, &amp;quot;merman.bin&amp;quot;&lt;/pre&gt;Note that you must separate the arguments with commas.&lt;br /&gt;
+If you want to give names to the macro's arguments you can do that
+by listing them in order after supplying ARGS after the macro's name.
+&lt;br /&gt;
+Every time a macro is called a definition NARGS is created. It shows
+only inside the macro and holds the amount of arguments the macro
+was called with. So don't have your own definition called NARGS.&lt;br /&gt;
+Here's an example:&lt;pre&gt;.MACRO LUPIN
+  .IF NARGS != 1
+    .FAIL
+  .ENDIF
+
+  .PRINTT &amp;quot;Totsan! Ogenki ka?\n&amp;quot;
+.ENDM&lt;/pre&gt;" />
+    <item highlight=".ENDM" colour="directive" name="ENDM" syntax=".ENDM" description="Ends the macro. This is not a compulsory directive, but when .MACRO is used this one is required to terminate it." />
+    <item highlight=".FASTROM" colour="directive" name="FASTROM" syntax=".FASTROM" description="Sets the ROM memory speed bit in $FFD5 (.HIROM) or $7FD5 (.LOROM) to indicate that the SNES ROM chips are 120ns chips." />
+    <item highlight=".SLOWROM" colour="directive" name="SLOWROM" syntax=".SLOWROM" description="Clears the ROM memory speed bit in $FFD5 (.HIROM) or $7FD5 (.LOROM) to indicate that the SNES ROM chips are 200ns chips." />
+    <item highlight=".SMC" colour="directive" name="SMC" syntax=".SMC" description="Forces WLALINK to compute a proper SMC header for the ROM file.&lt;br /&gt;SMC header is a chunk of 512 bytes. WLALINK touches only its first three bytes, and sets the rest to zeroes. Here's what will be inside the first three bytes:
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;low byte of 8KB page count.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;high byte of 8KB page count.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;bit 7 - 0&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 6 - 0&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 5 - 0~lorom, 1~hirom&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 4 - 0~lorom, 1~hirom&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 3+2 - sram size - 00~256Kb, 01~64Kb, 10~16Kb, 11~0Kb&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 1 - 0&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;bit 0 - 0&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;" />
+    <item highlight=".HIROM" colour="directive" name="HIROM" syntax=".HIROM" description="With this directive you can define the SNES ROM mode to be HiROM. Issuing .HIROM will override the user's ROM bank map when WLALINK computes 24bit addresses and bank references. If no .HIROM or .LOROM are given then WLALINK obeys the banking defined in .ROMBANKMAP. .HIROM also sets the ROM mode bit in $FFD5." />
+    <item highlight=".LOROM" colour="directive" name="LOROM" syntax=".LOROM" description="With this directive you can define the SNES ROM mode to be LoROM. Issuing .LOROM will override the user's ROM bank map when WLALINK computes 24bit addresses and bank references. If no .HIROM or .LOROM are given then WLALINK obeys the banking defined in .ROMBANKMAP. WLA defaults to .LOROM." />
+    <item highlight=".BASE" colour="directive" name="BASE" syntax=".BASE value" description="Defines the base value for the 65816 CPU bank number (used only in 24bit addresses). Here are few examples of how to use .BASE (both examples assume
+the label resides in the first ROM bank):&lt;pre&gt;.BASE $00
+  JSL label    ; if label address is $1234, this will assemble into
+               ; JSL $001234
+.BASE $80
+  JSL label    ; again, label is $1234, but this time the result will be
+               ; JSL $801234&lt;/pre&gt;.BASE defaults to $00.
+&lt;br /&gt;
+Use .LOROM or .HIROM to define the ROM mode. Note that the address
+of the label will also contribute to the 65816 CPU bank number (CPU
+bank number == .BASE + CPU ROM bank of the label)." />
+    <item highlight=".BANK" colour="directive" name="BANK" syntax=".BANK bank_number [SLOT slot_number]" description="Defines the ROM bank and the slot it is inserted into in the memory." />
+    <item highlight=".SLOT" colour="directive" name="SLOT" syntax=".SLOT slot_number" description="Changes the currently active memory slot. This directive is meant to be used with SUPERFREE sections, where only the slot number is constant when placing the sections." />
+    <item highlight=".ROMBANKSIZE" colour="directive" name="ROMBANKSIZE" syntax=".ROMBANKSIZE size" description="Defines the ROM bank size.">
+        <note description="This is a compulsory directive unless &lt;a href=lnh_ROMBANKMAP&gt;.ROMBANKMAP&lt;/a&gt; is defined." />
+    </item>
+    <item highlight=".ORG" colour="directive" name="ORG" syntax=".ORG address" description="Defines the starting address. The value supplied here is relative to the ROM bank given with &lt;a href=lnh_BANK&gt;.BANK&lt;/a&gt;." />
+    <item highlight=".ORGA" colour="directive" name="ORGA" syntax=".ORGA address" description="Defines the starting address. The value supplied here is absolute and used directly in address computations. WLA computes the right position in ROM file. By using .ORGA you can instantly see from the source file where the following code is located in the 16bit memory.
+Here's an example:&lt;pre&gt;.MEMORYMAP
+SLOTSIZE $4000
+DEFAULTSLOT 0
+SLOT 0 $0000
+SLOT 1 $4000
+.ENDME
+
+.ROMBANKMAP
+BANKSTOTAL 2
+BANKSIZE $4000
+BANKS 2
+.ENDRO
+
+.BANK 0 SLOT 1
+.ORGA $4000
+
+MAIN:	JP	MAIN&lt;/pre&gt;Here MAIN is at $0000 in the ROM file, but the address for MAIN is $4000." />
+    <item highlight=".DS" colour="directive" name="DS" syntax=".DS count, value" description=".DS is an alias for &lt;a href=lnh_DSB&gt;.DSB&lt;/a&gt;" />
+    <item highlight=".DSB" colour="directive" name="DSB" syntax=".DSB count, value" description="Defines 'count' bytes of 'value'." />
+    
+    
+    <item highlight=".DSB" colour="directive" name="DSTRUCT" syntax=".DSTRUCT name [INSTANCEOF] structure [DATA] data" description="Defines an instance of struct &lt;i&gt;structure&lt;/i&gt;, called &lt;i&gt;name&lt;/i&gt;, and fills it with the given &lt;i&gt;data&lt;/i&gt;. Before calling &lt;tt&gt;.DSTRUCT&lt;/tt&gt; we must have defined the structure using &lt;tt&gt;&lt;a href=lnh_struct&gt;STRUCT&lt;/a&gt;&lt;/tt&gt;">
+        <example code="&lt;pre&gt;.STRUCT water
+name   ds 8
+age    db
+weight dw
+.ENDST
+
+.DSTRUCT waterdrop INSTANCEOF water DATA &amp;quot;tingle&amp;quot;, 40, 120&lt;/pre&gt;" />
+        <note description="The keywords INSTANCEOF and DATA are optional, so &lt;tt&gt;.DSTRUCT waterdrop, water, &amp;quot;tingle&amp;quot;, 40, 120&lt;/tt&gt; also works." />
+        <note description="WLA fills the missing bytes with the data defined with &lt;tt&gt;&lt;a href=lnh_emptyfill&gt;.EMPTYFILL&lt;/a&gt;&lt;/tt&gt;, or $00 if no .EMPTYFILL has been issued." />
+    </item>
+    <item highlight=".DSW" colour="directive" name="DSW" syntax=".DSW count, value" description="Defines &lt;i&gt;count&lt;/i&gt; words (two bytes) of &lt;i&gt;value&lt;/i&gt;." />
+    <item highlight=".DB" colour="directive" name="DB" syntax=".DB value [,value] [,value] [,...]" description="Defines bytes.">
+        <example code=".DB 100, $30, %1000, &amp;quot;HELLO WORLD!&amp;quot;" />
+    </item>
+    <item highlight=".BYT" colour="directive" name="BYT" syntax=".BYT value" decription="This is an alias for &lt;a href=lng_db&gt;.DB&lt;/a&gt;" />
+    <item highlight=".ASC" colour="directive" name="ASC" syntax=".ASC value" decription="This is an alias for &lt;a href=lng_db&gt;.DB&lt;/a&gt;" />
+    <item highlight=".DW" colour="directive" name="DW" syntax=".DW value [,value] [,value] [,...]" description="Defines words (two bytes each).">
+        <example code=".DW 16000, 10, 255" />
+        <note description=".DW takes only numbers and characters as input, not strings." />
+    </item>
+    <item highlight=".WORD" colour="directive" name="WORD" syntax=".WORD value" decription="This is an alias for &lt;a href=lng_dw&gt;.DW&lt;/a&gt;" />
+    <item highlight=".DEFINE" colour="directive" name="DEFINE" syntax=".DEFINE name [=] value" description=" Assigns a number or a string to a definition label. &lt;br /&gt;By default all defines are local to the file where they are presented. If you want to make the definition visible to all the files in the project, use &lt;a href=lng_export&gt;.EXPORT&lt;/a&gt;.">
+        <example code=".DEFINE X 1000&lt;bt /&gt;.DEFINE FILE &amp;quot;level01.bin&amp;quot;&lt;bt /&gt;.DEFINE TXT1 &amp;quot;hello and welcome&amp;quot;, 1, &amp;quot;to a new world...&amp;quot;, 0&lt;bt /&gt;.DEFINE BYTES 1, 2, 3, 4, 5&lt;bt /&gt;.DEFINE COMPUTATION X+1" />
+        <note description="All definitions with multiple values are marked as data strings, and &lt;a href=lng_db&gt;.DB&lt;/a&gt; is about the only place where you can later on use them." />
+    </item>
+    <item highlight=".DEF" colour="directive" name="DEF" syntax=".DEF name [=] value" description="This is an alias for &lt;a href=lng_define&gt;.DEFINE&lt;/a&gt;" />
+    <item highlight=".EQU" colour="directive" name="EQU" syntax=".EQU name [=] value" description="This is an alias for &lt;a href=lng_define&gt;.DEFINE&lt;/a&gt;" />
+    <item highlight=".REDEFINE" colour="directive" name="REDEFINE" syntax=".REDEFINE name [=] value" description="Assigns a new value or a string to an old definition. If the definition doesn't exist, .REDEFINE performs &lt;a href=lng_define&gt;.DEFINE&lt;/a&gt;'s work.">
+        <note description="When used with .REPT REDEFINE helps creating tables:
+&lt;pre&gt;.DEFINE CNT 0
+
+.REPT 256
+.DB CNT
+.REDEFINE CNT CNT+1
+.ENDR&lt;/pre&gt;" />
+    </item>
+    <item highlight=".REDEF" colour="directive" name="REDEF" syntax=".REDEF name [=] value" description="This is an alias for &lt;a href=lng_redefine&gt;.REDEFINE&lt;/a&gt;" />
+    <item highlight=".IF" colour="directive" name="IF" syntax=".IF variable operator value" description="If the condition is fulfilled the following piece of code is acknowledged until &lt;a href=lnh_endif&gt;.ENDIF&lt;/a&gt;/&lt;a href=lnh_else&gt;.ELSE&lt;/a&gt; occurs in the text, otherwise it is skipped. Operands must be immediate values or strings.">
+        <note description="The following operators are supported:&lt;br /&gt; &amp;lt;  - less than&lt;br /&gt;&amp;lt;= - less or equal to&lt;br /&gt;&amp;gt;  - greater than&lt;br /&gt;&amp;gt;= - greater or equal to&lt;br /&gt;== - equals to&lt;br /&gt;!= - not equal to" />
+        <note description="All IF directives can be nested." />
+    </item>
+    <item highlight=".IFDEF" colour="directive" name="IFDEF" syntax=".IFDEF variable" description="If &lt;variable&gt; is defined, then the following piece of code is acknowledged
+until &lt;a href=lnh_endif&gt;.ENDIF&lt;/a&gt;/&lt;a href=lnh_else&gt;.ELSE&lt;/a&gt; occurs in the text, otherwise it is skipped." />
+    <item highlight=".IFEXISTS" colour="directive" name="IFEXISTS" syntax=".IFEXISTS &amp;quot;filename&amp;quot;" description="If &lt;i&gt;filename&lt;/i&gt; can be found, then the following piece of code is acknowledged until &lt;a href=lnh_endif&gt;.ENDIF&lt;/a&gt;/&lt;a href=lnh_else&gt;.ELSE&lt;/a&gt; occurs in the text, otherwise it is skipped.">
+        <example code=".IFEXISTS &amp;quot;safe.inc&amp;quot;&lt;br /&gt;.INCLUDE &amp;quot;safe.inc&amp;quot;&lt;br /&gt;.ENDIF&lt;br /&gt;" />
+    </item>
+</helpfile>

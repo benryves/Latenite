@@ -1,0 +1,47 @@
+<helpfile name="Grayscale Programming Package"> 
+    <group name="General Functions"> 
+        <item highlight="gsEnable" colour="routine" name="gsEnable" description="Enables the grayscale. call this routine in somewhere in the front of the part of your program where you want to use grayscale graphics. If you want to use grayscale grahpics in your whole program, then call this routine at the beginning, like in the template program."> 
+        </item> 
+        <item highlight="gsDisable" colour="routine" name="gsDisable" description="This routine disables the grayscale interrupt. Use this when you want to stop drawing grayscale grahpics in the next part of our program. You must call this routine before you quit the program and   return to the shell, because a lot of rom calls used by ti-os and need their own interrupt."> 
+            
+            
+        </item> 
+        
+        
+    </group> 
+
+    <group name="Graphics functions"> 
+        <item highlight="gsClearBuffer" colour="routine" name="gsClearBuffer" description="This routine clears, dispite the name, the two indirect buffers   gbuf1 and gbuf2. Like in normal programs, this change can not on the screen until the buffers are copied using gsCopyBuffer, unless NODOUBLEBUFFER is selected."> 
+        </item> 
+        <item highlight="gsCopyBuffer" colour="routine" name="gsCopyBuffer" description="This copies the buffers to the screen. Actually, it copies the inactive buffers, gbuf1 and gbuf2, to the active buffers."> 
+        </item> 
+        <item highlight="gsSetFreq" colour="routine" name="gsSetFreq" description="This routine lets the user choose an interrupt frequency. The frequency can be 0, 2, 4 and 6. It depends on the calc what frequency is best, so you can better let the user choose it. Frequency six is the fastest, but gives less quality on my ti83+ calc, while it gives good quality on my ti83 blue-screen calc."> 
+        </item> 
+        <item highlight="gsGetk" colour="routine" name="gsGetk" description="This basically does the same as bcall(_getk) and bcall(_getcsc). I developed this because you cant use these romcalls while grayscale enabled. I highly recommend to use this routine because its much faster too. But the difference between gsGetk and _Getk is, that if you hold a key on _GetK it will wait a second before going in turbo-mode :P With gsGetk this is different (test it yourself)." /> 
+        <item highlight="gsPutSprite" colour="routine" name="gsPutSprite" description="This puts a grayscale sprite, similar to ionPutSprite. It has exactly the same input as the ion putSprite routine. But the sprite data (where ix points to) 2x the size of the sprite (b)."> 
+         <input name="Height of sprite" register="b" /> 
+         <input name="Y" register="l" /> 
+         <input name="X" register="a" /> 
+         <input name="Sprite pointer" register="ix" /> 
+        </item> 
+<item highlight="gsLargeSprite" colour="routine" name="gsLargeSprite" description="This puts a grayscale large sprite. This has the same input and basically the same effect as the ion LargeSprite routine, but grayscale of course."> 
+         <input name="Height of sprite" register="b" /> 
+         <input name="Y" register="l" /> 
+         <input name="X" register="a" /> 
+         <input name="Width" register="c" /> 
+         <input name="Sprite pointer" register="ix" /> 
+        </item> 
+        <item highlight="gsAlignedSprite" colour="routine" name="gsAlignedSprite" description="This puts an aligned 8x8 sprite."> 
+          
+         <input name="Y" register="l" /> 
+         <input name="X" register="a" /> 
+         <input name="Sprite pointer" register="ix" /> 
+        </item> 
+        <item highlight="gsAlignedMaskedSprite" colour="routine" name="gsAlignedMaskedSprite" description="This puts an aligned masked sprite. The masked part must be dark gray. This routine is used to draw Link at the Zelda demo. It should have been used to draw all the objects in the game, like the monsters,items, projectiles etc."> 
+         <input name="spriteNumber + 64*(HORIZONTALFLIP) +128*(VERTICALFLIP) where the FLIPS are booleans of 0 or 1." register="a" /> 
+         <input name="Y" register="l" /> 
+         <input name="X" register="h" /> 
+         <input name="Sprite table start pointer" register="de" /> 
+        </item> 
+    </group> 
+</helpfile>

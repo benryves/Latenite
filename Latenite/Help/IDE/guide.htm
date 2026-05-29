@@ -1,0 +1,74 @@
+<html>
+
+   <head>
+      <title>Getting Started Guide</title>
+      <link rel="Stylesheet" href="style.css" />
+   </head>
+
+   <body>
+       <h1>Getting Started Guide</h1>
+        <p>This is a simple tutorial to show you how to create and compile a project from within Latenite, and should introduce you to the basic features.</p>
+        <h2>Creating a Project</h2>
+        <p>We'll write a simple TI-83 and TI-83 Plus program using the provided default project. Start up Latenite, and you should be prompted to either open or create a project. We want to create a project. Select the "TI-83 and TI-83 Plus" project from the window, then type 'Guide Project' into the text box marked 'Name'. Click 'Create New Project' to complete the creation of your project.</p>
+        <p>The editor will open. On the right hand side you can see all the files that have been automatically created for your project in a tree view. Double-clicking on one will open it in the editor. If you have an editor associated with a file that you'd rather use (for example, opening a Bitmap image in Latenite just displays junk) you can right-click the file and select 'Edit in External Editor'.</p>
+        <h2>Building your Project</h2>
+        <p>One of the folders is marked 'Build'. This is a special folder - the .cmd files that you put in there are run by the editor when you click an option in the 'Build' menu. Try it - click 'Build' and then click on one of the listed platforms. The editor should switch to the Output pane at the bottom and display a status report when it has finished - except that in our case it quickly switches to the 'Error List' pane when it has finished as there are two items that need inspection.</p>
+        <p>Switch back to the Output pane, and you should see an output log that looks similar to this:</p>
+        <pre class="code">------ Building: Source File: Guide Project.asm, Script: TI-83 Plus.cmd ------
+Assembling Guide Project.asm
+Linking...
+
+------ Build Process Complete ------
+TASM Z80 Assembler.       Version 3.2 September, 2001.
+Copyright (C) 2001 Squak Valley Software
+tasm: pass 1 complete.
+tasm: pass 2 complete.
+tasm: Number of errors = 0
+Linked 1 file successfully!
+========== Build: 0 errors, 2 warnings ==========</pre>
+    <p>We have two warnings - these are not errors, so are not terribly worrying. In our case, the problem is that the TI calculator doesn't support variable names longer than 8 characters and it doesn't handle lowercase letters in variables very well. Our project name, 'Guide Project', fails on both counts.</p>
+    <p>Latenite allows you to specify a special binary name along with the usual project name to get around these limitations. You can still call your project whatever you want, but the compiled TI binaries will have sensible variable names inside them. (Note that this only applies to TI binaries - other platforms could have different limitations and therefore different reasons to use a binary name. Some build scripts will just ignore the binary name altogether).</p>
+    <p>Select 'Properties' from the Project menu. In here are three fields - the project name (which can also be changed by renaming the root folder in the project tree), the binary name (which we need to change) and the build file. The build file is the specific assembly source file that we pass to the compiler. In our case, we want to assemble 'Guide Project.asm', which is selected by default.</p>
+    <p>Type <tt>GUIDEPRJ</tt> into the binary name field, then click OK. You can now rebuild the project - to rebuild from the last selected platform, press F5 or click the 'Build' icon on the main toolbar. This time there will be no warnings.</p>
+    <h2>Tools</h2>
+    <p>Now that you have successfully assembled the project, you'll want to run it. There are no standard ways to do this, but at the very least you can open up the folder in Windows Explorer to see the binary you have just created. You can do this using one of the default tool scripts the editor comes with - click 'Open Root Folder' on the tools menu to open up the project's root folder. ('Open Containing Folder' would open the current source file's containing folder - so if you clicked it whilst viewing the file <tt>/routines/my_routines.asm</tt> the window opened would be <tt>/routines</tt> and not the project root). To learn more about tools, look at the <a href="tools.htm">tools help page.</a></p>
+    <h2>Let's Write Something Useful</h2>
+    <p>To test some of the features of Latenite, we need to have something to test them with. Modify the file <tt>Guide Project.asm</tt> so that it now reads:</p>
+    <pre class="code">#include "target.tgt"
+#include "headers.inc"
+
+; ==========================================
+; Description (ignored if not Ion/MirageOS)
+; ==========================================
+#ifndef TI83P
+.db "Guide Project",0
+#endif
+
+; ==========================================
+; Program entry point
+; ==========================================
+init_all:
+    bcall(_clrLCDfull)
+    bcall(_homeUp)
+    ld hl,test_string
+    bcall(_putS)
+
+wait_key:
+    bcall(_getCSC)
+    or a
+    jr z,wait_key
+
+    ret
+
+test_string:
+    .db "Hello!",0
+
+.END
+END</pre>
+    <p>Build it and run it from an emulator or on hardware (make sure you build it to the correct platform!) It should display <tt>Hello!</tt> at the top of the display. Press any key to exit.</p>
+    <h2>Error Reporting and Help</h2>
+    <p>Let's assume you don't know much about assembly, and you decide that because you don't know what <tt>#include</tt> means you comment it out. Try it - comment out the two <tt>#include</tt> statements at the top of your project, then try to recompile. You should get back 4 errors - each specifying 'unrecognized instruction'. Clicking an error in the error list jumps to the source file (opening it if it's not already open) and highlights the problem line. Nothing is wrong with any of those lines... Well, you could always try and work out what <tt>#include</tt> means, I guess - but rather open the TASM manual, move the cursor to <tt>#include</tt> (just make sure that it's inside it) and select 'Look up' from the context menu (bring it up with a right-click). You could also do this by pressing F1. The help pane opens on the right hand side, displaying a page on how to use <tt>#include</tt>. </p><p>Don't forget to uncomment the lines again!</p>
+    <h2>Further Help</h2>
+    <p>Hopefully the editor is pretty simple to use; but in case you need to get further help take a look at the other help topics from the menu on the left.</p>
+     </body>
+</html>

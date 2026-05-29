@@ -1,0 +1,68 @@
+p, h1, h2, h3, td, li {
+    font-family: tahoma, verdana, arial;
+}
+
+a {
+    color: #000099;
+}
+a:hover {
+    background: #DDDDDD;
+}
+p, td, li {
+    font-size: 10pt;
+}
+
+.fixedwidth, .code {
+    font-size: 10pt;
+    font-family: courier new;
+}
+
+tr {
+    vertical-align: top;
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+table, .code {
+    background-color: #EEEEEE;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+}
+
+td, .code {
+    padding: 2px;
+    padding-right: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999999;
+}
+
+#header {
+    background-color: #CCCCCC;
+
+}
+#header td {
+    font-weight: bold;
+    border-bottom-color: black;
+}
+.code {
+}
+
+#contents a {
+    color: black;
+}

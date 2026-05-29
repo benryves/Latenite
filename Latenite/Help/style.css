@@ -1,0 +1,100 @@
+p, body, div {
+    font-family: verdana;
+    font-size: 11px;
+    margin-bottom: 5px;
+ }
+
+div {
+    padding: 2px;
+}
+
+body {
+    margin: 0px;
+}
+
+
+.name {
+    font-weight: bold;
+    font-size: 12px;
+    background: #D4DFFF;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #C8CDDE;
+}
+
+.region {
+    margin: 0px;
+    color: #003399;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.syntax, .comments, .note, .example {
+    background: #F7F7FF;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D5D5D3;
+}
+
+
+.io {
+    background: #F7F7FF;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D5D5D3;
+    width: 100%;
+    margin-bottom: 5px;
+    border-width: 0px;
+}
+
+.io tr td {
+    font-size: 11px;
+    vertical-align: top;
+    padding: 2px;
+    margin: 0px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #D5D5D3;
+}
+
+table {
+    margin: 0px;
+    padding: 0px;
+    font-size: 11px;
+    border-collapse: collapse;
+}
+
+td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #D5D5D3;
+    padding: 1px;
+}
+
+.seealso {
+    margin-left: 10px;
+}
+
+tt, pre, .code, .syntax {
+    font-family: consolas, lucida console, courier new;
+}
+pre {
+    margin: 0px;
+    padding: 0px;
+}
+.code {
+    margin: 4px;
+    padding: 0px;
+    color: navy;
+}
+
+.examplenotes {
+    margin: 0px;
+}
+a {
+    color: #0000CC;
+}
+a:hover {
+    color: blue;
+}

@@ -1,0 +1,11 @@
+<theme name="Assembly Studio 8x">
+  <colour name="z80">Black</colour>
+  <colour name="comment">Green</colour>
+  <colour name="string">Purple</colour>
+  <colour name="routine">Black</colour>
+  <colour name="directive">Gray</colour>
+  <colour name="label">Blue</colour>
+  <colour name="register">Black</colour>
+  <colour name="foreground">Black</colour>
+  <colour name="background">White</colour>
+</theme>

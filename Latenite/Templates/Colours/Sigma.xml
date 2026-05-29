@@ -1,0 +1,11 @@
+<theme name="Sigma">
+  <colour name="z80">148, 148, 246</colour>
+  <colour name="comment">148, 185, 108</colour>
+  <colour name="string">182, 122, 70</colour>
+  <colour name="routine">164, 164, 246</colour>
+  <colour name="directive">173, 194, 63</colour>
+  <colour name="label">White</colour>
+  <colour name="register">230, 115, 0</colour>
+  <colour name="foreground">208, 210, 197</colour>
+  <colour name="background">Black</colour>
+</theme>

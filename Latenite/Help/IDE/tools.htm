@@ -1,0 +1,18 @@
+<html>
+
+   <head>
+      <title>Build</title>
+      <link rel="Stylesheet" href="style.css" />
+   </head>
+
+   <body>
+       <h1>Tools</h1>
+       <h2>About</h2>
+       <p>The tools menu is a simple way to add a bunch of useful shortcuts to Latenite. Environment variables are sent in a similar way to build scripts - so you can create tool scripts that, for example, open the current source file in Notepad.</p>
+       <h2>What's allowed in the Tools folder?</h2>
+       <p>To add or edit a tool, take a look in the <b><a target="blank" href="../../Tools/">Tools</a></b> folder. The following sorts of files are allowed:</p>
+       <ul><li><b>EXE/COM/CMD/BAT files</b> - these are executed with some environment variables set. The variables are the same as the ones used for <a href="build.htm">build scripts</a> with the exception of <tt>ERROR_LOG</tt> and any variables starting with <tt>BUILD_*</tt>.</li>
+       <li><b>Any other files</b> - these are run as if they were double-clicked on in Explorer.</li></ul>
+       <p>One useful thing to note; placing an exclamation mark (!) as the first character of the tool's filename will allow it to open a command prompt window.</p>
+   </body>
+</html>

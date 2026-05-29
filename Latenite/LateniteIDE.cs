@@ -678,7 +678,7 @@ namespace Latenite {
         private void lateniteIDEHelpToolStripMenuItem_Click(object sender, EventArgs e) {
             Process P = new Process();
             P.StartInfo.UseShellExecute = true;
-            P.StartInfo.FileName = Path.Combine(Application.StartupPath, @"\Help\IDE\index.htm");
+            P.StartInfo.FileName = Path.Combine(Application.StartupPath, @"Help\IDE\index.htm");
             try {
                 P.Start();
             } catch (Exception ex) {

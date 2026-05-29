@@ -1,0 +1,17 @@
+<helpfile name="TI-83 Plus">
+    <group name="Common Macros">
+        <item highlight="bcall" colour="z80" name="bcall" description="This macro allows you to run a function offered by the TIOS. Rather than calling it directly (which would rely on the code being exactly the same size and each function at identical locations on the ROM for every version of the OS) a handler at 28h is called which allows the OS to work out which address to call for you.">
+            <note description="A bcall() macro suitable for use in TASM:&lt;pre&gt;#define bcall(label) RST 28h \ .dw label&lt;/pre&gt;" />
+            <note description="It is strongly recommended that you always use a bcall() macro, even if building for a regular TI-83 (in which case create a macro that just maps it to a standard &lt;tt&gt;call&lt;/tt&gt;). This is to aid the porting of your program to the other platform." />
+        </item>
+        <item highlight="bjump" colour="z80" name="bjump" description="Similar to &lt;a href=lnh_bcall&gt;bcall&lt;/a&gt; except that it works as if you were jumping to the function rather than calling it.">
+            <note description="A bjump() macro suitable for use in TASM:&lt;pre&gt;#define bjump(label) call 50h \ .dw label&lt;/pre&gt;" />
+        </item>
+        <item highlight="errhandon" colour="z80" name="errhandon" description="Allows you to install an error handler which will spring into action when the TIOS routines generate an error code rather than displaying the default ERR screen.">
+            <note description="An errhandon() macro suitable for use in TASM:&lt;pre&gt;#define errhandon(label) ld hl,label \ call 59h&lt;/pre&gt;" />
+        </item>
+        <item highlight="errhandoff" colour="z80" name="errhandoff" description="Allows you to remove a previously installed error handler.">
+            <note description="An errhandoff() macro suitable for use in TASM:&lt;pre&gt;#define errhandoff() call 5Ch&lt;/pre&gt;" />
+        </item>
+    </group>
+</helpfile>

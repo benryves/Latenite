@@ -1,0 +1,11 @@
+<theme name="Post-It Note">
+  <colour name="z80">Blue</colour>
+  <colour name="comment">Gray</colour>
+  <colour name="string">64, 0, 128</colour>
+  <colour name="routine">Green</colour>
+  <colour name="directive">Red</colour>
+  <colour name="label">Black</colour>
+  <colour name="register">Blue</colour>
+  <colour name="foreground">Blue</colour>
+  <colour name="background">254, 252, 188</colour>
+</theme>

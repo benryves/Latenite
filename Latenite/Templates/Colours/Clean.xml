@@ -1,0 +1,11 @@
+<theme name="Clean">
+  <colour name="z80">Red</colour>
+  <colour name="comment">Gray</colour>
+  <colour name="string">0, 128, 64</colour>
+  <colour name="routine">0, 128, 255</colour>
+  <colour name="directive">41, 191, 15</colour>
+  <colour name="label">0, 128, 255</colour>
+  <colour name="register">Blue</colour>
+  <colour name="foreground">Black</colour>
+  <colour name="background">White</colour>
+</theme>

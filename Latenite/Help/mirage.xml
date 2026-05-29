@@ -1,0 +1,394 @@
+<helpfile name="MirageOS">
+    <group name="General (and Ion) Functions">
+        <item highlight="iversion" colour="routine" name="iversion" description="Return Ion version information.">
+            <output name="Ion version" register="hl" />
+            <output name="Ion compatibility number" register="a" />
+        </item>
+        <item highlight="irandom" colour="routine" name="irandom" description="Generate a random number.">
+            <input name="Upper bound" register="b" />
+            <output name="Answer" register="a" comments="(0&amp;lt;=a&amp;lt;b)" />
+        </item>
+        <item highlight="idetect" colour="routine" name="idetect" description="Detect a program.">
+            <input name="Pointer to start looking in VAT" register="hl" comments="Use the value in progPtr to start from the first program in the VAT." />
+            <input name="Pointer to zero-terminated string for first line of data to match." register="ix" />
+            <output name="Pointer to next VAT entry." register="de" />
+            <output name="Pointer to data" register="hl" comments="[83+] If the variable is held in Flash ROM, this pointer points to a temporary version held in RAM (Ion handles the unarchiving for you)." />
+            <output name="Success" register="z" comments="If no more variables were found, Z=1." />
+        </item>
+        <item highlight="idecomp" colour="routine" name="idecomp" description="Decompress data.">
+            <input name="Pointer to compressed data" register="hl" />
+            <input name="Pointer to place to decompress data to" register="de" />
+            <input name="Length of compressed data" register="b" />
+            <input name="Compression factor" register="c" comments="Can be either 1, 3 or 15" />
+            <output name="Pointer to next byte of compressed data" register="hl" />
+        </item>
+     <item name="directin" highlight="directin" colour="routine" description="Direct input routine.">
+        <input name="Key group" register="a" />
+        <output name="Key was pressed" register="z" />
+        <output name="Keycode" register="a" />
+    </item>
+
+    <item name="sendbytetios" highlight="sendbytetios" colour="routine" description="Sends a byte out the link port in TIOS protcol.">
+        <input name="Byte to send" register="a" />
+        <output name="Error in transfer" register="nz" />
+    </item>
+
+    <item name="getbytetios" highlight="getbytetios" colour="routine" description="Receives a byte from the link port in TIOS protocol.">
+        <output name="Error in transfer" register="nz" />
+        <output name="Byte received" register="a" />
+    </item>
+
+    <item name="version" highlight="version" colour="routine" description="Returns the MirageOS version">
+        <output name="Major version" register="h" />
+        <output name="Minor version" register="l" />
+        <output name="Library compatibility number" register="a" />
+    </item>
+<item name="delayb" highlight="delayb" colour="routine" description="Delays using a halt loop.">
+        <input name="Delay length" register="b" />
+    </item>
+    <item name="quittoshell" highlight="quittoshell" colour="routine" description="Returns to MirageOS immediately, stack level does not matter (it is adjusted for you)." />
+    <item name="setupint" highlight="setupint" colour="routine" description="Sets up the Mirage interrupt.">
+        <input name="Interrupts to enable, with bits as follows:&lt;table width=98%&gt;
+        &lt;tr&gt;  &lt;td&gt; 0  &lt;/td&gt; &lt;td&gt; Timer  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 1  &lt;/td&gt; &lt;td&gt; GetKey &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 2  &lt;/td&gt; &lt;td&gt; APD  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 3  &lt;/td&gt; &lt;td&gt; Tasker  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 4  &lt;/td&gt; &lt;td&gt; KeyDelay  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 5  &lt;/td&gt; &lt;td&gt; Custom Interrupt &lt;/td&gt;  &lt;/tr&gt;
+        &lt;/table&gt;" register="a" />
+    </item>
+    </group>
+
+    <group name="Graphics (and Ion) functions">
+        <item highlight="isprite" colour="routine" name="isprite" description="Draw a sprite (8 pixels wide, XOR) to the graph buffer.">
+            <input name="Height of sprite (pixels)" register="b" />
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="l" />
+            <input name="Pointer to sprite data" register="ix" />
+        </item>
+        <item highlight="ilsprite" colour="routine" name="ilsprite" description="Draw a large sprite (any height, multiple of 8 pixels width, XOR) to the graph buffer.">
+            <input name="Height of sprite (pixels)" register="b" />
+            <input name="Width of sprite (bytes)" register="c" comments="One byte is 8 pixels, so for a 16 pixel wide sprite use a width of 2." />
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="l" />
+            <input name="Pointer to sprite data" register="ix" />
+        </item>
+
+        <item highlight="largespritehl" colour="routine" name="largespritehl" description="Draw a large sprite (any height, multiple of 8 pixels width, XOR) to the graph buffer.">
+            <input name="Height of sprite (pixels)" register="b" />
+            <input name="Width of sprite (bytes)" register="c" comments="One byte is 8 pixels, so for a 16 pixel wide sprite use a width of 2." />
+            <input name="X coordinate" register="h" />
+            <input name="Y coordinate" register="l" />
+            <input name="Pointer to sprite data" register="ix" />
+        </item>
+
+
+        <item highlight="igetpix" colour="routine" name="igetpix" description="Get pixel information.">
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="e" />
+            <output name="Pixel bitmask" register="a" />
+            <output name="Pointer to address of pixel on graph buffer" register="hl" />
+        </item>
+        <item highlight="ifastcopy" colour="routine" name="ifastcopy" description="Copy the graph buffer to the LCD quickly." />
+
+    <item name="fastcopys" highlight="fastcopys" colour="routine" description="Runs &lt;a href=lnh_ifastcopy&gt;fastcopy&lt;/a&gt;, but preserves all registers." />
+ <item name="putsprite8" highlight="putsprite8" colour="routine" description="Calls &lt;a href=lnh_iputsprite&gt;iputsprite&lt;/a&gt;, but sets the height to 8." />
+
+    <item name="fastcopyb" highlight="fastcopyb" colour="routine" description="Copies a 768-byte buffer to the display quickly.">
+        <input name="Pointer to buffer" register="hl" />
+    </item>
+    <item name="fastrectangle" highlight="fastrectangle" colour="routine" description="Draws a rectangle, quickly." />
+    <item name="scrolld7" highlight="scrolld7" colour="routine" description="Scrolls graph buffer down by 7 lines." />
+    </group>
+
+<group name="Mathematics">
+    <item name="multhe" highlight="multhe" colour="routine" description="Multiplies h*e quickly.">
+        <input name="First operand" register="h" />
+        <input name="Second operand" register="e" />
+        <output name="Result (h*e)" register="hl" />
+    </item>
+
+    <item name="multhl" highlight="multhl" colour="routine" description="Multiplies h*l quickly.">
+        <input name="First operand" register="h" />
+        <input name="Second operand" register="l" />
+        <output name="Result (h*l)" register="hl" />
+    </item>
+
+    <item name="multdehl" highlight="multdehl" colour="routine" description="Multiplies de and hl.">
+        <input name="First operand" register="de" />
+        <input name="Second operand" register="hl" />
+        <output name="Result (de*hl)" register="dehl" />
+    </item>
+    <item name="cphlbc" highlight="cphlbc" colour="routine" description="Compares hl and bc." />
+     <item name="cphlde" highlight="cphlde" colour="routine" description="Compares hl and de." />
+   <item name="rand127" highlight="rand127" colour="routine" description="Generate a random number between 0 and 127.">
+        <output name="Result" register="a" />
+    </item>
+</group>
+
+<group name="Variables">
+    <item name="delprog" highlight="delprog" colour="routine" description="Deletes a program.">
+        <input name="Pointer to VAT entry" register="hl" />
+    </item>
+
+    <item name="sendprog" highlight="sendprog" colour="routine" description="Sends a program over the link port to a waiting
+
+calculator.">
+        <input name="Pointer to VAT entry" register="hl" />
+        <output name="Error in transfer" register="nz" />
+    </item>
+
+    <item name="arcprog" highlight="arcprog" colour="routine" description="Toggles archive status of a variable.">
+        <input name="Pointer to VAT entry" register="hl" />
+    </item>
+
+
+    <item name="vatswap" highlight="vatswap" colour="routine" description="Swaps two VAT entries.">
+        <input name="Pointer to VAT entry 1" register="hl" />
+        <input name="Pointer to VAT entry 2" register="de" />
+    </item>
+
+    <item name="renameprog" highlight="renameprog" colour="routine" description="Renames a program.">
+        <input name="Pointer to VAT entry" register="hl" />
+        <input name="New name" register="op1+1" />
+        <output name="Program could not be renamed" register="z" />
+    </item>
+    <item name="getnext" highlight="getnext" colour="routine" description="Find the next program/list VAT entry.">
+        <input name="Pointer to current entry" register="hl" />
+        <output name="No more entries found" register="z" />
+        <output name="Pointer to next entry" register="hl" />
+    </item>
+    <item name="getprev" highlight="getprev" colour="routine" description="Find the previous program/list VAT entry.">
+        <input name="Pointer to current entry" register="hl" />
+        <output name="No more entries found" register="z" />
+        <output name="Pointer to previous entry" register="hl" />
+    </item>
+</group>
+<group name="Data and Memory">
+    <item name="getchecksum" highlight="getchecksum" colour="routine" description="Calculate the 16-bit checksum over a group
+
+of bytes.">
+        <input name="Pointer to data to checksum" register="hl" />
+        <input name="Number of bytes to checksum" register="bc" />
+        <output name="Checksum" register="hl" />
+    </item>
+
+    <item name="freearc" highlight="freearc" colour="routine" description="Returns a string of the amount of free archive
+
+memory.">
+        <output name="Null-terminated string of amount of free archive memory" register="op3" />
+    </item>
+
+    <item name="swapram" highlight="swapram" colour="routine" description="Swaps two segments of RAM quickly through the
+
+stack.">
+        <input name="Pointer to RAM block 1" register="hl" />
+        <input name="Pointer to RAM block 2" register="de" />
+        <input name="Amount of RAM to swap" register="bc" />
+    </item>
+    <item name="disprle" highlight="disprle" colour="routine" description="Decompresses 768 bytes of RLE compressed data,
+
+using $91 as the run flag.">
+        <input name="Pointer to compressed data" register="hl" />
+        <input name="Pointer to place to decompress data to" register="de" />
+    </item>
+
+    <item name="disprlel" highlight="disprlel" colour="routine" description="Decompresses RLE compressed data, using $91 as
+
+the run flag.">
+        <input name="Pointer to compressed data" register="hl" />
+        <input name="Pointer to place to decompress data to" register="de" />
+        <input name="Size of decompressed data" register="bc" />
+    </item>
+
+</group>
+<group name="Text and Strings">
+   <item name="compstrs" highlight="compstrs" colour="routine" description="Compare two null-terminated strings.">
+        <input name="Pointer to first string" register="hl" />
+        <input name="Pointer to second string" register="de" />
+        <output name="Strings are the same" register="z" />
+    </item>
+
+    <item name="compstrsn" highlight="compstrsn" colour="routine" description="Compare two strings.">
+        <input name="Pointer to first string" register="hl" />
+        <input name="Pointer to second string" register="de" />
+        <input name="Length of strings" register="b" />
+        <output name="Strings are the same" register="z" />
+    </item>
+
+    <item name="nextstr" highlight="nextstr" colour="routine" description="Find the next string.">
+        <input name="Pointer to string" register="hl" />
+        <output name="Pointer to byte after string's null terminator" register="hl" />
+    </item>
+
+    <item name="gettext" highlight="gettext" colour="routine" description="Inputs text in small font.">
+        <input name="Pointer to place to store string" register="hl" />
+        <input name="Maximum string length" register="b" />
+    </item>
+
+
+    <item name="gettextv" highlight="gettextv" colour="routine" description="Inputs text in small font, with options.">
+        <input name="Pointer to place to store string" register="hl" />
+        <input name="Maximum string length" register="b" />
+        <input name="Option byte, where the following bits set mean:&lt;table width=98%&gt;
+        &lt;tr&gt;  &lt;td&gt; 0  &lt;/td&gt; &lt;td&gt; Do not display cursor  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 1  &lt;/td&gt; &lt;td&gt; Do not display on screen/graph buffer  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 2  &lt;/td&gt; &lt;td&gt; Do not allow numbers  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 3  &lt;/td&gt; &lt;td&gt; Do not allow backspace/clear  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;/table&gt;" />
+    </item>
+
+    <item name="disp3spaces" highlight="disp3spaces" colour="routine" description="Displays 3 spaces in small font." />
+
+    <item name="vputa" highlight="vputa" colour="routine" description="Displays character in register a to both screen and
+
+graph buffer.">
+        <input name="Character to display" register="a" />
+    </item>
+       <item name="vputsc" highlight="vputsc" colour="routine" description="Displays a string on the display and writes it to
+
+the graph buffer using the TIOS _vputs routine.">
+        <input name="Pointer to string" register="hl" />
+        <input name="X coordinate" register="(penCol)" />
+        <input name="Y coordinate" register="(penRow)" />
+    </item>
+        <item name="vnewline" highlight="vnewline" colour="routine" description="Increments (penRow) by 7, sets (penCol) to 0,
+
+and calls &lt;a href=lnh_scrolld7&gt;scrolld7&lt;/a&gt; if necessary." />
+    <item name="centertext" highlight="centertext" colour="routine" description="Centres text (horizontally) on the screen and
+
+displays it.">
+        <input name="Y coordinate" register="a" />
+        <input name="Pointer to string" register="hl" />
+    </item>
+
+   <item name="setvputs" highlight="setvputs" colour="routine" description="Sets graph cursor location and displays text.">
+        <input name="Cursor location" register="de" />
+        <input name="Pointer to string" register="hl" />
+    </item>
+
+</group>
+<group name="Pixels">
+   <item name="pixelonc" highlight="pixelonc" colour="routine" description="Clips and turns on pixel (a,e) on graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+     <item name="pixeloffc" highlight="pixeloffc" colour="routine" description="Clips and turns off pixel (a,e) on graph
+
+buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+        <item name="pointxorc" highlight="pointxorc" colour="routine" description="Clips and XORs (inverts) pixel (a,e) on
+
+graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+    <item name="pixelonhl" highlight="pixelonhl" colour="routine" description="Turns on pixel (h,l) on graph buffer.">
+        <input name="X coordinate" register="h" />
+        <input name="Y coordinate" register="l" />
+    </item>
+
+
+    <item name="pixeloff" highlight="pixeloff" colour="routine" description="Turns off pixel (a,e) on graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+    <item name="pixelxor" highlight="pixelxor" colour="routine" description="XORs (inverts) pixel (a,e) on graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+    <item name="pixeltest" highlight="pixeltest" colour="routine" description="Tests state of pixel (a,e) on graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+        <output name="State of pixel (on or off)" register="z" />
+    </item>
+
+    <item name="pixeloffhl" highlight="pixeloffhl" colour="routine" description="Turns off pixel (h,l) on graph buffer.">
+        <input name="X coordinate" register="h" />
+        <input name="Y coordinate" register="l" />
+    </item>
+
+    <item name="pixelxorhl" highlight="pixelxorhl" colour="routine" description="XORs (inverts) pixel (h,l) on graph buffer.">
+        <input name="X coordinate" register="h" />
+        <input name="Y coordinate" register="l" />
+    </item>
+
+    <item name="pixeltesthl" highlight="pixeltesthl" colour="routine" description="Tests state of pixel (h,l) on graph
+
+buffer.">
+        <input name="X coordinate" register="h" />
+        <input name="Y coordinate" register="l" />
+        <output name="State of pixel (on or off)" register="z" />
+    </item>
+    <item name="setpixel" highlight="setpixel" colour="routine" description="Sets a pixel on the graph buffer.">
+        <input name="X coordinate" register="a" />
+        <input name="Y coordinate" register="e" />
+    </item>
+
+</group>
+<group name="Lines">
+      <item name="fastline" highlight="fastline" colour="routine" description="Draws a line to the graph buffer quickly.">
+        <input name="X&lt;sub&gt;1&lt;/sub&gt; coordinate" register="h" />
+        <input name="Y&lt;sub&gt;1&lt;/sub&gt; coordinate" register="l" />
+        <input name="X&lt;sub&gt;2&lt;/sub&gt; coordinate" register="d" />
+        <input name="Y&lt;sub&gt;2&lt;/sub&gt; coordinate" register="e" />
+        <input name="Line style" register="a" />
+        <note description="The line style can be one of the following:&lt;table width=98%&gt;
+        &lt;tr&gt;  &lt;td&gt; 0  &lt;/td&gt; &lt;td&gt; White  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 1  &lt;/td&gt; &lt;td&gt; Black  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 2  &lt;/td&gt; &lt;td&gt; XOR  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;tr&gt;  &lt;td&gt; 3  &lt;/td&gt; &lt;td&gt; Patterned  &lt;/td&gt;  &lt;/tr&gt;
+        &lt;/table&gt;For a patterned line, the one-byte pattern is stored in &lt;tt&gt;(mlinebitmap)&lt;/tt&gt;" />
+    </item>
+
+   <item name="fastlineb" highlight="fastlineb" colour="routine" description="Draws a black line to the graph buffer
+
+quickly.">
+        <input name="X&lt;sub&gt;1&lt;/sub&gt; coordinate" register="h" />
+        <input name="Y&lt;sub&gt;1&lt;/sub&gt; coordinate" register="l" />
+        <input name="X&lt;sub&gt;2&lt;/sub&gt; coordinate" register="d" />
+        <input name="Y&lt;sub&gt;2&lt;/sub&gt; coordinate" register="e" />
+    </item>
+
+
+   <item name="fastlinew" highlight="fastlinew" colour="routine" description="Draws a white line to the graph buffer
+
+quickly.">
+        <input name="X&lt;sub&gt;1&lt;/sub&gt; coordinate" register="h" />
+        <input name="Y&lt;sub&gt;1&lt;/sub&gt; coordinate" register="l" />
+        <input name="X&lt;sub&gt;2&lt;/sub&gt; coordinate" register="d" />
+        <input name="Y&lt;sub&gt;2&lt;/sub&gt; coordinate" register="e" />
+    </item>
+
+    <item name="fastlinex" highlight="fastlinex" colour="routine" description="XORs (inverts) a line to the graph buffer
+
+quickly.">
+        <input name="X&lt;sub&gt;1&lt;/sub&gt; coordinate" register="h" />
+        <input name="Y&lt;sub&gt;1&lt;/sub&gt; coordinate" register="l" />
+        <input name="X&lt;sub&gt;2&lt;/sub&gt; coordinate" register="d" />
+        <input name="Y&lt;sub&gt;2&lt;/sub&gt; coordinate" register="e" />
+    </item>
+
+       <item name="fastlined" highlight="fastlined" colour="routine" description="Draws a dotted line to the graph buffer
+
+quickly.">
+        <input name="X&lt;sub&gt;1&lt;/sub&gt; coordinate" register="h" />
+        <input name="Y&lt;sub&gt;1&lt;/sub&gt; coordinate" register="l" />
+        <input name="X&lt;sub&gt;2&lt;/sub&gt; coordinate" register="d" />
+        <input name="Y&lt;sub&gt;2&lt;/sub&gt; coordinate" register="e" />
+    </item>
+
+
+
+
+</group>
+
+</helpfile>
+

@@ -1,0 +1,11 @@
+<theme name="Monkey Beer">
+  <colour name="z80">Red</colour>
+  <colour name="comment">Fuchsia</colour>
+  <colour name="string">255, 0, 128</colour>
+  <colour name="routine">128, 0, 255</colour>
+  <colour name="directive">DarkOrchid</colour>
+  <colour name="label">255, 70, 209</colour>
+  <colour name="register">202, 0, 202</colour>
+  <colour name="foreground">255, 128, 128</colour>
+  <colour name="background">255, 221, 221</colour>
+</theme>

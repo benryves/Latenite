@@ -1,0 +1,11 @@
+<theme name="Oldschool">
+  <colour name="z80">White</colour>
+  <colour name="comment">0, 221, 0</colour>
+  <colour name="string">255, 204, 0</colour>
+  <colour name="routine">128, 255, 217</colour>
+  <colour name="directive">128, 255, 255</colour>
+  <colour name="label">187, 255, 247</colour>
+  <colour name="register">166, 166, 255</colour>
+  <colour name="foreground">Gainsboro</colour>
+  <colour name="background">Navy</colour>
+</theme>

@@ -1,0 +1,11 @@
+<theme name="Gesticulation">
+  <colour name="z80">Blue</colour>
+  <colour name="comment">255, 128, 0</colour>
+  <colour name="string">0, 128, 64</colour>
+  <colour name="routine">0, 128, 255</colour>
+  <colour name="directive">Red</colour>
+  <colour name="label">0, 160, 160</colour>
+  <colour name="register">Red</colour>
+  <colour name="foreground">Black</colour>
+  <colour name="background">White</colour>
+</theme>

@@ -1,0 +1,11 @@
+<theme name="Dark Autumn">
+  <colour name="z80">255, 128, 0</colour>
+  <colour name="comment">Silver</colour>
+  <colour name="string">255, 23, 23</colour>
+  <colour name="routine">RoyalBlue</colour>
+  <colour name="directive">128, 255, 128</colour>
+  <colour name="label">43, 213, 208</colour>
+  <colour name="register">43, 145, 175</colour>
+  <colour name="foreground">White</colour>
+  <colour name="background">Black</colour>
+</theme>

@@ -1,0 +1,15 @@
+<html>
+
+   <head>
+      <title>Project Templates</title>
+      <link rel="Stylesheet" href="style.css" />
+   </head>
+
+   <body>
+       <h1>Project Templates</h1>
+       <p>It is quite easy to add a new project template. It's probably easiest to copy an existing one and edit it rather than starting from scratch.</p>
+       <p>Each project folder needs three things inside it;<ol><li><tt>Description.txt</tt> - a simple text file containing a brief description of the template (this appears under the template name on the new project dialog).</li><li><tt>Icon.png</tt> - a 48x48 PNG image icon for your template.</li><li><tt>Files</tt> subfolder - this contains all of the project files.</li></ol><p>
+       <p>When the files are copied from the <tt>Files</tt> subfolder, any instance of the string <tt>$PROJECT_NAME$</tt> is replaced with the project name. For this reason, you <b>must</b> have a file called <tt>$PROJECT_NAME$.lnp</tt> in your template folder! It's not just the filenames that are adjusted - it's also the content of the files themselves.</p>
+       <p>The .lnp file is  simple XML document that can be edited in any text editor.</p>
+   </body>
+</html>

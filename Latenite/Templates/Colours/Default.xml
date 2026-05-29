@@ -1,0 +1,11 @@
+<theme name="Default Theme">
+    <colour name="z80">255, 128, 0</colour>
+    <colour name="comment">DarkGreen</colour>
+    <colour name="string">Maroon</colour>
+    <colour name="routine">RoyalBlue</colour>
+    <colour name="directive">DarkOrchid</colour>
+    <colour name="label">Red</colour>
+    <colour name="register">43, 145, 175</colour>
+    <colour name="foreground">Black</colour>
+    <colour name="background">White</colour>
+</theme>

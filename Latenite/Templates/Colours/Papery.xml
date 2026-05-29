@@ -1,0 +1,11 @@
+<theme name="Papery">
+  <colour name="z80">Blue</colour>
+  <colour name="comment">0, 149, 0</colour>
+  <colour name="string">Teal</colour>
+  <colour name="routine">Black</colour>
+  <colour name="directive">94, 80, 118</colour>
+  <colour name="label">128, 0, 64</colour>
+  <colour name="register">0, 0, 160</colour>
+  <colour name="foreground">0, 44, 159</colour>
+  <colour name="background">252, 244, 228</colour>
+</theme>

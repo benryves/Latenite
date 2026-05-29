@@ -1,0 +1,11 @@
+<theme name="API"> 
+  <colour name="z80">Navy</colour> 
+  <colour name="comment">Green</colour> 
+  <colour name="string">Gray</colour> 
+  <colour name="routine">Orange</colour> 
+  <colour name="directive">Purple</colour> 
+  <colour name="label">166, 0, 0</colour> 
+  <colour name="register">Blue</colour> 
+  <colour name="foreground">Black</colour> 
+  <colour name="background">White</colour> 
+</theme>

@@ -1,0 +1,50 @@
+<helpfile name="Ion">
+    <group name="General Functions">
+        <item highlight="ionVersion" colour="routine" name="ionVersion" description="Return Ion version information.">
+            <output name="Ion version" register="hl" />
+            <output name="Ion compatibility number" register="a" />
+        </item>
+        <item highlight="ionRandom" colour="routine" name="ionRandom" description="Generate a random number.">
+            <input name="Upper bound" register="b" />
+            <output name="Answer" register="a" comments="(0&amp;lt;=a&amp;lt;b)" />
+        </item>
+        <item highlight="ionDetect" colour="routine" name="ionDetect" description="Detect a program.">
+            <input name="Pointer to start looking in VAT" register="hl" comments="Use the value in progPtr to start from the first program in the VAT." />
+            <input name="Pointer to zero-terminated string for first line of data to match." register="ix" />
+            <output name="Pointer to next VAT entry." register="de" />
+            <output name="Pointer to data" register="hl" comments="[83+] If the variable is held in Flash ROM, this pointer points to a temporary version held in RAM (Ion handles the unarchiving for you)." />
+            <output name="Success" register="z" comments="If no more variables were found, Z=1." />
+        </item>
+        <item highlight="ionDecompress" colour="routine" name="ionDecompress" description="Decompress data.">
+            <input name="Pointer to compressed data" register="hl" />
+            <input name="Pointer to place to decompress data to" register="de" />
+            <input name="Length of compressed data" register="b" />
+            <input name="Compression factor" register="c" comments="Can be either 1, 3 or 15" />
+            <output name="Pointer to next byte of compressed data" register="hl" />
+        </item>
+    </group>
+
+    <group name="Graphics functions">
+        <item highlight="ionPutSprite" colour="routine" name="ionPutSprite" description="Draw a sprite (8 pixels wide, XOR) to the graph buffer.">
+            <input name="Height of sprite (pixels)" register="b" />
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="l" />
+            <input name="Pointer to sprite data" register="ix" />
+        </item>
+        <item highlight="ionLargeSprite" colour="routine" name="ionLargeSprite" description="Draw a large sprite (any height, multiple of 8 pixels width, XOR) to the graph buffer.">
+            <input name="Height of sprite (pixels)" register="b" />
+            <input name="Width of sprite (bytes)" register="c" comments="One byte is 8 pixels, so for a 16 pixel wide sprite use a width of 2." />
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="l" />
+            <input name="Pointer to sprite data" register="ix" />
+        </item>
+        <item highlight="ionGetPixel" colour="routine" name="ionGetPixel" description="Get pixel information.">
+            <input name="X coordinate" register="a" />
+            <input name="Y coordinate" register="e" />
+            <output name="Pixel bitmask" register="a" />
+            <output name="Pointer to address of pixel on graph buffer" register="hl" />
+            <example name="Set pixel at (10,32)" code="ld a,10&lt;br /&gt;ld e,32&lt;br /&gt;call ionGetPixel&lt;br /&gt;or (hl)&lt;br /&gt;ld (hl),a" />
+        </item>
+        <item highlight="ionFastCopy" colour="routine" name="ionFastCopy" description="Copy the graph buffer to the LCD quickly." />
+    </group>
+</helpfile>
