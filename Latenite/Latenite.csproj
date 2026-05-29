@@ -259,58 +259,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\document.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folderopen.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\new_document_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open_document_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\copy_to_folder_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\copy_clipboard_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\paste_clipboard_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete_x_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_all_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\redo_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GoToNext.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrowright_green_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\splash.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\properties_doc_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_options_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_open_16_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\move_to_folder_16_h.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Brass\Brass\bin\Brass.exe">
@@ -364,7 +313,7 @@
     <None Include="Resources\disk_multiple.png" />
     <None Include="Resources\magnifier.png" />
     <None Include="Resources\folder.png" />
-    <None Include="Resources\Help.png" />
+    <None Include="Resources\help.png" />
     <None Include="Resources\page_white_copy.png" />
     <None Include="Resources\paste_plain.png" />
     <None Include="Resources\book.png" />
@@ -383,6 +332,11 @@
     <None Include="Resources\color_swatch.png" />
     <None Include="Resources\textfield.png" />
     <None Include="Resources\textfield_rename.png" />
+    <None Include="Resources\Icons\Intellisense\label.png" />
+    <None Include="Resources\Icons\Intellisense\routine.png" />
+    <None Include="Resources\Icons\Intellisense\table.png" />
+    <None Include="Resources\Icons\Intellisense\lightning.png" />
+    <None Include="Resources\Icons\Intellisense\directive.png" />
     <Content Include="Templates\Colours\API.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -461,16 +415,7 @@
     <None Include="app.config" />
     <Content Include="DebugSystem.txt" />
     <Content Include="project.ico" />
-    <None Include="Resources\Help.bmp" />
-    <None Include="Resources\help.ico" />
-    <None Include="Resources\BuilderDialog_movedown.bmp" />
-    <None Include="Resources\BuilderDialog_moveup.bmp" />
     <None Include="Resources\about.jpg" />
-    <None Include="Resources\folder_closed_16_h.png" />
-    <None Include="Resources\build.png" />
-    <None Include="Resources\debug.png" />
-    <None Include="Resources\DefaultFile.png" />
-    <None Include="Resources\favorites_16_h.png" />
     <Content Include="Help\brass.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -504,10 +449,6 @@
     <Content Include="Help\z80.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\include.ico" />
-    <None Include="Resources\watch.png" />
-    <None Include="Resources\LockedFiles.png" />
-    <None Include="Resources\include.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

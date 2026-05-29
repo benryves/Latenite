@@ -199,9 +199,9 @@ namespace Latenite {
             }
             IntellisenseIcons.ColorDepth = ColorDepth.Depth32Bit;
             IntellisenseIcons.Images.Add(Properties.Resources.routine);
-            IntellisenseIcons.Images.Add(Properties.Resources.z80);
+            IntellisenseIcons.Images.Add(Properties.Resources.lightning);
             IntellisenseIcons.Images.Add(Properties.Resources.directive);
-            IntellisenseIcons.Images.Add(Properties.Resources.register);
+            IntellisenseIcons.Images.Add(Properties.Resources.table);
             IntellisenseIcons.Images.Add(Properties.Resources.label);
 
             if (MainIDE.ProjectFile != null && MainIDE.ProjectFile.DocumentElement == null) {

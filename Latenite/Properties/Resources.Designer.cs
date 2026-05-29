@@ -303,6 +303,16 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lightning {
+            get {
+                object obj = ResourceManager.GetObject("lightning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnifier {
             get {
                 object obj = ResourceManager.GetObject("magnifier", resourceCulture);
@@ -363,16 +373,6 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap register {
-            get {
-                object obj = ResourceManager.GetObject("register", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap routine {
             get {
                 object obj = ResourceManager.GetObject("routine", resourceCulture);
@@ -396,6 +396,16 @@ namespace Latenite.Properties {
         internal static System.Drawing.Bitmap stop_cross {
             get {
                 object obj = ResourceManager.GetObject("stop_cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap table {
+            get {
+                object obj = ResourceManager.GetObject("table", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,16 +446,6 @@ namespace Latenite.Properties {
         internal static System.Drawing.Bitmap wrench {
             get {
                 object obj = ResourceManager.GetObject("wrench", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap z80 {
-            get {
-                object obj = ResourceManager.GetObject("z80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
