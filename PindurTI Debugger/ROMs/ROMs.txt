@@ -1,0 +1,7 @@
+To be able to debug programs, you must provide ROM images for the calculators you wish to emulate.
+
+For the TI-82, this should be named ti82.rom (TI-82.rom for the legacy debugger).
+For the TI-83, this should be named ti83.rom (TI-83.rom for the legacy debugger).
+For the TI-83 Plus, this should be named ti8x.rom (TI-83 Plus.rom for the legacy debugger).
+
+You must prepare the ROMs beforehand (clean them up) by erasing any applications or programs on them.
