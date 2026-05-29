@@ -1,3 +1,5 @@
+# ![Latenite](Latenite/Resources/splash.jpg)
+
 Latenite is a simple IDE geared towards Z80 development originally developed between 2005-2006.
 
 It is based around the old [Brass assembler](https://github.com/benryves/Brass), so is far from perfect, but it still works after a fashion.
