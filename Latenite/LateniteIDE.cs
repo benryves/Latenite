@@ -445,7 +445,7 @@ namespace Latenite {
             OldTabPageA = OldTabPageB;
             OldTabPageB = SourceFiles.SelectedTab;
             RightClickedTabPage = SourceFiles.SelectedTab;
-            ((SourceFile)SourceFiles.SelectedTab).TextEditor_SelectionChanged(this, null);
+			(SourceFiles.SelectedTab as SourceFile)?.TextEditor_SelectionChanged(this, null);
 
         }
 
