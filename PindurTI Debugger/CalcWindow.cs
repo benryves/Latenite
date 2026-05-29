@@ -28,7 +28,26 @@ namespace PindurTI {
 
         public CalcWindow(Emulator Pindur, string RomFile) {
 
-            this.Pindur = Pindur;
+			while (!File.Exists(RomFile)) {
+				MessageBox.Show(this, "ROM file '" + RomFile + "' could not be found.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				using (var romDialog = new OpenFileDialog()) {
+					romDialog.Filter = "ROM file (*" + Path.GetExtension(RomFile) + ")|*" + Path.GetExtension(RomFile);
+					romDialog.FileName = Path.GetFileName(RomFile);
+					romDialog.InitialDirectory = Path.GetDirectoryName(RomFile);
+					if (romDialog.ShowDialog(this) == DialogResult.OK) {
+						try {
+							File.Copy(romDialog.FileName, RomFile);
+						} catch (Exception ex) {
+							MessageBox.Show("Could not copy ROM file: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+					} else {
+						this.Close();
+						return;
+					}
+				}
+			}
+
+			this.Pindur = Pindur;
             try {
                 this.Calc = new Calculator(this.Pindur, RomFile, false);
                 this.Calc.Breakpoints.BreakOnBreakpoints = false;
