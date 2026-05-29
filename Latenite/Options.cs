@@ -330,7 +330,11 @@ namespace Latenite {
             } catch { }
         }
 
- 
-
-    }
+		private void Options_Shown(object sender, EventArgs e) {
+			this.TabIcons.Images.Clear();
+			this.TabIcons.Images.Add("color_swatch", Properties.Resources.color_swatch);
+			this.TabIcons.Images.Add("cog", Properties.Resources.cog);
+			this.Invalidate(true);
+		}
+	}
 }

@@ -47,7 +47,7 @@ namespace Latenite {
 		}
 
 
-        public Bitmap IconBitmap = new Bitmap(Latenite.Properties.Resources.include);
+        public Bitmap IconBitmap = new Bitmap(Latenite.Properties.Resources.page_white_code);
 
 		public IconExtract(string Filename) {
             if (Path.GetExtension(Filename) == "") return;

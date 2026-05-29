@@ -73,9 +73,29 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrowright_green_16_h {
+        internal static System.Drawing.Bitmap application_go {
             get {
-                object obj = ResourceManager.GetObject("arrowright_green_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("application_go", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_redo {
+            get {
+                object obj = ResourceManager.GetObject("arrow_redo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_undo {
+            get {
+                object obj = ResourceManager.GetObject("arrow_undo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap build {
+        internal static System.Drawing.Bitmap book {
             get {
-                object obj = ResourceManager.GetObject("build", resourceCulture);
+                object obj = ResourceManager.GetObject("book", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +123,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BuilderDialog_movedown {
+        internal static System.Drawing.Bitmap book_open {
             get {
-                object obj = ResourceManager.GetObject("BuilderDialog_movedown", resourceCulture);
+                object obj = ResourceManager.GetObject("book_open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +133,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BuilderDialog_moveup {
+        internal static System.Drawing.Bitmap brick {
             get {
-                object obj = ResourceManager.GetObject("BuilderDialog_moveup", resourceCulture);
+                object obj = ResourceManager.GetObject("brick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +143,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap copy_clipboard_16_h {
+        internal static System.Drawing.Bitmap bullet_go {
             get {
-                object obj = ResourceManager.GetObject("copy_clipboard_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("bullet_go", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +153,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap copy_to_folder_16_h {
+        internal static System.Drawing.Bitmap bullet_lock {
             get {
-                object obj = ResourceManager.GetObject("copy_to_folder_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("bullet_lock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +163,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cut_clipboard_16_h {
+        internal static System.Drawing.Bitmap cog {
             get {
-                object obj = ResourceManager.GetObject("cut_clipboard_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("cog", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +173,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap debug {
+        internal static System.Drawing.Bitmap color_swatch {
             get {
-                object obj = ResourceManager.GetObject("debug", resourceCulture);
+                object obj = ResourceManager.GetObject("color_swatch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +183,19 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_x_16_h {
+        internal static System.Drawing.Bitmap cross {
             get {
-                object obj = ResourceManager.GetObject("delete_x_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cut {
+            get {
+                object obj = ResourceManager.GetObject("cut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +213,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap favorites_16_h {
+        internal static System.Drawing.Bitmap disk {
             get {
-                object obj = ResourceManager.GetObject("favorites_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("disk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +223,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_closed_16_h {
+        internal static System.Drawing.Bitmap disk_multiple {
             get {
-                object obj = ResourceManager.GetObject("folder_closed_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("disk_multiple", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_open_16_h {
+        internal static System.Drawing.Bitmap error {
             get {
-                object obj = ResourceManager.GetObject("folder_open_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("error", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +243,39 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_options_16_h {
+        internal static System.Drawing.Bitmap eye {
             get {
-                object obj = ResourceManager.GetObject("folder_options_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_add {
+            get {
+                object obj = ResourceManager.GetObject("folder_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_go {
+            get {
+                object obj = ResourceManager.GetObject("folder_go", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,16 +293,6 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap include {
-            get {
-                object obj = ResourceManager.GetObject("include", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap label {
             get {
                 object obj = ResourceManager.GetObject("label", resourceCulture);
@@ -253,9 +303,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LockedFiles {
+        internal static System.Drawing.Bitmap magnifier {
             get {
-                object obj = ResourceManager.GetObject("LockedFiles", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +313,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap move_to_folder_16_h {
+        internal static System.Drawing.Bitmap page_white {
             get {
-                object obj = ResourceManager.GetObject("move_to_folder_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("page_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +323,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap new_document_16_h {
+        internal static System.Drawing.Bitmap page_white_code {
             get {
-                object obj = ResourceManager.GetObject("new_document_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("page_white_code", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +333,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap open_document_16_h {
+        internal static System.Drawing.Bitmap page_white_copy {
             get {
-                object obj = ResourceManager.GetObject("open_document_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("page_white_copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +343,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap paste_clipboard_16_h {
+        internal static System.Drawing.Bitmap paste_plain {
             get {
-                object obj = ResourceManager.GetObject("paste_clipboard_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("paste_plain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -307,46 +357,6 @@ namespace Latenite.Properties {
             get {
                 object obj = ResourceManager.GetObject("project", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap properties_doc_16_h {
-            get {
-                object obj = ResourceManager.GetObject("properties_doc_16_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap redo_16_h {
-            get {
-                object obj = ResourceManager.GetObject("redo_16_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap REFBAR {
-            get {
-                object obj = ResourceManager.GetObject("REFBAR", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap REFBAR1 {
-            get {
-                object obj = ResourceManager.GetObject("REFBAR1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -373,36 +383,6 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap save_16_h {
-            get {
-                object obj = ResourceManager.GetObject("save_16_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap save_all_16_h {
-            get {
-                object obj = ResourceManager.GetObject("save_all_16_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_16_h {
-            get {
-                object obj = ResourceManager.GetObject("search_16_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
@@ -413,9 +393,9 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap undo_16_h {
+        internal static System.Drawing.Bitmap stop_cross {
             get {
-                object obj = ResourceManager.GetObject("undo_16_h", resourceCulture);
+                object obj = ResourceManager.GetObject("stop_cross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +403,39 @@ namespace Latenite.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap watch {
+        internal static System.Drawing.Bitmap task_arrow {
             get {
-                object obj = ResourceManager.GetObject("watch", resourceCulture);
+                object obj = ResourceManager.GetObject("task_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textfield {
+            get {
+                object obj = ResourceManager.GetObject("textfield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textfield_rename {
+            get {
+                object obj = ResourceManager.GetObject("textfield_rename", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wrench {
+            get {
+                object obj = ResourceManager.GetObject("wrench", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

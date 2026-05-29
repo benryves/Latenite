@@ -353,6 +353,36 @@
     <Content Include="Help\IDE\tools.htm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\stop_cross.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\page_white.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\task_arrow.png" />
+    <None Include="Resources\arrow_redo.png" />
+    <None Include="Resources\arrow_undo.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\disk_multiple.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\page_white_copy.png" />
+    <None Include="Resources\paste_plain.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\book_open.png" />
+    <None Include="Resources\wrench.png" />
+    <None Include="Resources\bullet_lock.png" />
+    <None Include="Resources\cog.png" />
+    <None Include="Resources\folder_add.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\application_go.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\brick.png" />
+    <None Include="Resources\bullet_go.png" />
+    <None Include="Resources\folder_go.png" />
+    <None Include="Resources\page_white_code.png" />
+    <None Include="Resources\color_swatch.png" />
+    <None Include="Resources\textfield.png" />
+    <None Include="Resources\textfield_rename.png" />
     <Content Include="Templates\Colours\API.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

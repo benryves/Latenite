@@ -126,8 +126,6 @@ namespace Latenite {
 
 		private void LateniteIDE_Load(object sender, EventArgs e) {
 
-
-
             // Recall size:
             try {
                 WindowState = Properties.Settings.Default.IDE_WindowState;
@@ -1272,5 +1270,22 @@ namespace Latenite {
             ErrorSplitContainer_SplitterMoved(null, null);
         }
 
+		private void LateniteIDE_Shown(object sender, EventArgs e) {
+
+			LockedIcon.Images.Clear();
+			LockedIcon.Images.Add("bullet_lock", Properties.Resources.bullet_lock);
+
+			MiscIcons.Images.Clear();
+			MiscIcons.Images.Add("folder", Properties.Resources.folder);
+			MiscIcons.Images.Add("watch", Properties.Resources.eye);
+			MiscIcons.Images.Add("error", Properties.Resources.error);
+			MiscIcons.Images.Add("stop_cross", Properties.Resources.stop_cross);
+			MiscIcons.Images.Add("book_open", Properties.Resources.book_open);
+			MiscIcons.Images.Add("application_go", Properties.Resources.application_go);
+			MiscIcons.Images.Add("magnifier", Properties.Resources.magnifier);
+
+			this.Invalidate(true);
+
+		}
 	}
 }

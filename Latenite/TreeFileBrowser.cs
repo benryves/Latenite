@@ -178,9 +178,9 @@ namespace Latenite {
             ExtensionImageLink.Add("");
 
             ImageList.Images.Clear();
-            ImageList.Images.Add(Latenite.Properties.Resources.include);
-            ImageList.Images.Add(Latenite.Properties.Resources.folder_closed_16_h);
-            ImageList.Images.Add(Latenite.Properties.Resources.folder_open_16_h);
+            ImageList.Images.Add(Latenite.Properties.Resources.page_white_code);
+            ImageList.Images.Add(Latenite.Properties.Resources.folder);
+            ImageList.Images.Add(Latenite.Properties.Resources.folder);
 
             RefreshFolders();
             

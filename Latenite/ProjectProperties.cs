@@ -191,5 +191,13 @@ namespace Latenite {
 			this.Close();
 
 		}
+
+		private void ProjectProperties_Shown(object sender, EventArgs e) {
+			this.TabIcons.Images.Clear();
+			this.TabIcons.Images.Add("textfield_rename", Properties.Resources.textfield_rename);
+			this.TabIcons.Images.Add("brick", Properties.Resources.brick);
+			this.TabIcons.Images.Add("help", Properties.Resources.help);
+			this.Invalidate(true);
+		}
 	}
 }

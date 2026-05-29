@@ -132,6 +132,31 @@ namespace Latenite {
 			this.HelpSplitContainer = new System.Windows.Forms.SplitContainer();
 			this.ErrorSplitContainer = new System.Windows.Forms.SplitContainer();
 			this.SourceFiles = new System.Windows.Forms.TabControl();
+			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
+			this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonSaveAll = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButtonCut = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonCopy = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonPaste = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
+			this.DebugAndBuild = new System.Windows.Forms.ToolStrip();
+			this.toolStripStartDebug = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButtonBuild = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripLabel();
+			this.BuildTarget = new System.Windows.Forms.ToolStripComboBox();
+			this.HelpBrowser = new System.Windows.Forms.WebBrowser();
+			this.IdeStatusBar = new System.Windows.Forms.StatusStrip();
+			this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.BuildProgress = new System.Windows.Forms.ToolStripProgressBar();
+			this.StatusLineNumber = new System.Windows.Forms.ToolStripStatusLabel();
+			this.StatusColNumber = new System.Windows.Forms.ToolStripStatusLabel();
 			this.OutputBox = new System.Windows.Forms.TabControl();
 			this.ErrorList = new Latenite.CleanTabPage();
 			this.ErrorListBox = new Latenite.SortableListView();
@@ -160,31 +185,6 @@ namespace Latenite {
 			this.label4 = new System.Windows.Forms.Label();
 			this.HelpFilesCombo = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.DebugAndBuild = new System.Windows.Forms.ToolStrip();
-			this.toolStripStartDebug = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButtonBuild = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripLabel();
-			this.BuildTarget = new System.Windows.Forms.ToolStripComboBox();
-			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
-			this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonSaveAll = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButtonCut = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonCopy = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonPaste = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
-			this.HelpBrowser = new System.Windows.Forms.WebBrowser();
-			this.IdeStatusBar = new System.Windows.Forms.StatusStrip();
-			this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.BuildProgress = new System.Windows.Forms.ToolStripProgressBar();
-			this.StatusLineNumber = new System.Windows.Forms.ToolStripStatusLabel();
-			this.StatusColNumber = new System.Windows.Forms.ToolStripStatusLabel();
 			this.TabContext.SuspendLayout();
 			this.ProjectContext.SuspendLayout();
 			this.MainIDEMenu.SuspendLayout();
@@ -199,6 +199,9 @@ namespace Latenite {
 			this.ErrorSplitContainer.Panel1.SuspendLayout();
 			this.ErrorSplitContainer.Panel2.SuspendLayout();
 			this.ErrorSplitContainer.SuspendLayout();
+			this.MainToolStrip.SuspendLayout();
+			this.DebugAndBuild.SuspendLayout();
+			this.IdeStatusBar.SuspendLayout();
 			this.OutputBox.SuspendLayout();
 			this.ErrorList.SuspendLayout();
 			this.OutputTab.SuspendLayout();
@@ -208,9 +211,6 @@ namespace Latenite {
 			this.ProjectAndHelpTabs.SuspendLayout();
 			this.HelpTab.SuspendLayout();
 			this.panel1.SuspendLayout();
-			this.DebugAndBuild.SuspendLayout();
-			this.MainToolStrip.SuspendLayout();
-			this.IdeStatusBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// TabContext
@@ -230,7 +230,7 @@ namespace Latenite {
 			// 
 			// TabCtxSave
 			// 
-			this.TabCtxSave.Image = global::Latenite.Properties.Resources.save_16_h;
+			this.TabCtxSave.Image = global::Latenite.Properties.Resources.disk;
 			this.TabCtxSave.Name = "TabCtxSave";
 			this.TabCtxSave.Size = new System.Drawing.Size(217, 22);
 			this.TabCtxSave.Text = "&Save";
@@ -276,7 +276,7 @@ namespace Latenite {
 			// 
 			// TabCtxOpen
 			// 
-			this.TabCtxOpen.Image = global::Latenite.Properties.Resources.folder_closed_16_h;
+			this.TabCtxOpen.Image = global::Latenite.Properties.Resources.folder_go;
 			this.TabCtxOpen.Name = "TabCtxOpen";
 			this.TabCtxOpen.Size = new System.Drawing.Size(217, 22);
 			this.TabCtxOpen.Text = "Open Containing Folder";
@@ -286,13 +286,13 @@ namespace Latenite {
 			// 
 			this.MiscIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("MiscIcons.ImageStream")));
 			this.MiscIcons.TransparentColor = System.Drawing.Color.Transparent;
-			this.MiscIcons.Images.SetKeyName(0, "folder_closed_16_h.png");
-			this.MiscIcons.Images.SetKeyName(1, "watch.png");
-			this.MiscIcons.Images.SetKeyName(2, "Warning.png");
-			this.MiscIcons.Images.SetKeyName(3, "stop_16_h.png");
-			this.MiscIcons.Images.SetKeyName(4, "favorites_16_h.png");
-			this.MiscIcons.Images.SetKeyName(5, "output.png");
-			this.MiscIcons.Images.SetKeyName(6, "search_16_h.png");
+			this.MiscIcons.Images.SetKeyName(0, "folder.png");
+			this.MiscIcons.Images.SetKeyName(1, "eye.png");
+			this.MiscIcons.Images.SetKeyName(2, "error.png");
+			this.MiscIcons.Images.SetKeyName(3, "stop_cross.png");
+			this.MiscIcons.Images.SetKeyName(4, "book_open.png");
+			this.MiscIcons.Images.SetKeyName(5, "application_go.png");
+			this.MiscIcons.Images.SetKeyName(6, "magnifier.png");
 			// 
 			// ProjectContext
 			// 
@@ -313,7 +313,7 @@ namespace Latenite {
 			// 
 			// openInLateniteToolStripMenuItem
 			// 
-			this.openInLateniteToolStripMenuItem.Image = global::Latenite.Properties.Resources.open_document_16_h;
+			this.openInLateniteToolStripMenuItem.Image = global::Latenite.Properties.Resources.folder;
 			this.openInLateniteToolStripMenuItem.Name = "openInLateniteToolStripMenuItem";
 			this.openInLateniteToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
 			this.openInLateniteToolStripMenuItem.Text = "&Open";
@@ -333,7 +333,7 @@ namespace Latenite {
 			// 
 			// newFolderToolStripMenuItem
 			// 
-			this.newFolderToolStripMenuItem.Image = global::Latenite.Properties.Resources.folder_open_16_h;
+			this.newFolderToolStripMenuItem.Image = global::Latenite.Properties.Resources.folder_add;
 			this.newFolderToolStripMenuItem.Name = "newFolderToolStripMenuItem";
 			this.newFolderToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
 			this.newFolderToolStripMenuItem.Text = "New Folder...";
@@ -346,7 +346,7 @@ namespace Latenite {
 			// 
 			// deleteToolStripMenuItem2
 			// 
-			this.deleteToolStripMenuItem2.Image = global::Latenite.Properties.Resources.delete_x_16_h;
+			this.deleteToolStripMenuItem2.Image = global::Latenite.Properties.Resources.cross;
 			this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
 			this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(217, 22);
 			this.deleteToolStripMenuItem2.Text = "&Delete";
@@ -414,7 +414,7 @@ namespace Latenite {
 			// 
 			// newToolStripMenuItem
 			// 
-			this.newToolStripMenuItem.Image = global::Latenite.Properties.Resources.new_document_16_h;
+			this.newToolStripMenuItem.Image = global::Latenite.Properties.Resources.page_white;
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
 			this.newToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
@@ -423,7 +423,7 @@ namespace Latenite {
 			// 
 			// openToolStripMenuItem
 			// 
-			this.openToolStripMenuItem.Image = global::Latenite.Properties.Resources.open_document_16_h;
+			this.openToolStripMenuItem.Image = global::Latenite.Properties.Resources.folder;
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this.openToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
@@ -445,7 +445,7 @@ namespace Latenite {
 			// 
 			// saveToolStripMenuItem
 			// 
-			this.saveToolStripMenuItem.Image = global::Latenite.Properties.Resources.save_16_h;
+			this.saveToolStripMenuItem.Image = global::Latenite.Properties.Resources.disk;
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
 			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
 			this.saveToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
@@ -462,7 +462,7 @@ namespace Latenite {
 			// 
 			// saveAllToolStripMenuItem
 			// 
-			this.saveAllToolStripMenuItem.Image = global::Latenite.Properties.Resources.save_all_16_h;
+			this.saveAllToolStripMenuItem.Image = global::Latenite.Properties.Resources.disk_multiple;
 			this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
 			this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
@@ -477,7 +477,7 @@ namespace Latenite {
 			// 
 			// propertiesToolStripMenuItem
 			// 
-			this.propertiesToolStripMenuItem.Image = global::Latenite.Properties.Resources.folder_options_16_h;
+			this.propertiesToolStripMenuItem.Image = global::Latenite.Properties.Resources.wrench;
 			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
 			this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
 			this.propertiesToolStripMenuItem.Text = "Project &Properties...";
@@ -517,7 +517,7 @@ namespace Latenite {
 			// 
 			// undoToolStripMenuItem
 			// 
-			this.undoToolStripMenuItem.Image = global::Latenite.Properties.Resources.undo_16_h;
+			this.undoToolStripMenuItem.Image = global::Latenite.Properties.Resources.arrow_undo;
 			this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
 			this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
 			this.undoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -526,7 +526,7 @@ namespace Latenite {
 			// 
 			// redoToolStripMenuItem
 			// 
-			this.redoToolStripMenuItem.Image = global::Latenite.Properties.Resources.redo_16_h;
+			this.redoToolStripMenuItem.Image = global::Latenite.Properties.Resources.arrow_redo;
 			this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
 			this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
 			this.redoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -540,7 +540,7 @@ namespace Latenite {
 			// 
 			// cutToolStripMenuItem
 			// 
-			this.cutToolStripMenuItem.Image = global::Latenite.Properties.Resources.cut_clipboard_16_h;
+			this.cutToolStripMenuItem.Image = global::Latenite.Properties.Resources.cut;
 			this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
 			this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
 			this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -549,7 +549,7 @@ namespace Latenite {
 			// 
 			// copyToolStripMenuItem
 			// 
-			this.copyToolStripMenuItem.Image = global::Latenite.Properties.Resources.copy_clipboard_16_h;
+			this.copyToolStripMenuItem.Image = global::Latenite.Properties.Resources.page_white_copy;
 			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
 			this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
 			this.copyToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -558,7 +558,7 @@ namespace Latenite {
 			// 
 			// pasteToolStripMenuItem
 			// 
-			this.pasteToolStripMenuItem.Image = global::Latenite.Properties.Resources.paste_clipboard_16_h;
+			this.pasteToolStripMenuItem.Image = global::Latenite.Properties.Resources.paste_plain;
 			this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
 			this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
 			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -567,7 +567,7 @@ namespace Latenite {
 			// 
 			// deleteToolStripMenuItem
 			// 
-			this.deleteToolStripMenuItem.Image = global::Latenite.Properties.Resources.delete_x_16_h;
+			this.deleteToolStripMenuItem.Image = global::Latenite.Properties.Resources.cross;
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
 			this.deleteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
 			this.deleteToolStripMenuItem.Text = "&Delete";
@@ -593,7 +593,7 @@ namespace Latenite {
 			// 
 			// goToToolStripMenuItem
 			// 
-			this.goToToolStripMenuItem.Image = global::Latenite.Properties.Resources.arrowright_green_16_h;
+			this.goToToolStripMenuItem.Image = global::Latenite.Properties.Resources.task_arrow;
 			this.goToToolStripMenuItem.Name = "goToToolStripMenuItem";
 			this.goToToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
 			this.goToToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -602,7 +602,7 @@ namespace Latenite {
 			// 
 			// findToolStripMenuItem
 			// 
-			this.findToolStripMenuItem.Image = global::Latenite.Properties.Resources.search_16_h;
+			this.findToolStripMenuItem.Image = global::Latenite.Properties.Resources.magnifier;
 			this.findToolStripMenuItem.Name = "findToolStripMenuItem";
 			this.findToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
 			this.findToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -620,7 +620,7 @@ namespace Latenite {
 			// 
 			// defaultPlatformToolStripMenuItem
 			// 
-			this.defaultPlatformToolStripMenuItem.Image = global::Latenite.Properties.Resources.build;
+			this.defaultPlatformToolStripMenuItem.Image = global::Latenite.Properties.Resources.brick;
 			this.defaultPlatformToolStripMenuItem.Name = "defaultPlatformToolStripMenuItem";
 			this.defaultPlatformToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
 			this.defaultPlatformToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
@@ -648,7 +648,7 @@ namespace Latenite {
 			// 
 			// startDebuggingToolStripMenuItem
 			// 
-			this.startDebuggingToolStripMenuItem.Image = global::Latenite.Properties.Resources.debug;
+			this.startDebuggingToolStripMenuItem.Image = global::Latenite.Properties.Resources.bullet_go;
 			this.startDebuggingToolStripMenuItem.Name = "startDebuggingToolStripMenuItem";
 			this.startDebuggingToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
 			this.startDebuggingToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
@@ -682,7 +682,7 @@ namespace Latenite {
 			// 
 			// optionsToolStripMenuItem
 			// 
-			this.optionsToolStripMenuItem.Image = global::Latenite.Properties.Resources.properties_doc_16_h;
+			this.optionsToolStripMenuItem.Image = global::Latenite.Properties.Resources.cog;
 			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
 			this.optionsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
 			this.optionsToolStripMenuItem.Text = "&Options...";
@@ -748,7 +748,7 @@ namespace Latenite {
 			// 
 			// lookUpToolStripMenuItem
 			// 
-			this.lookUpToolStripMenuItem.Image = global::Latenite.Properties.Resources.favorites_16_h;
+			this.lookUpToolStripMenuItem.Image = global::Latenite.Properties.Resources.book_open;
 			this.lookUpToolStripMenuItem.Name = "lookUpToolStripMenuItem";
 			this.lookUpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
 			this.lookUpToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -762,7 +762,7 @@ namespace Latenite {
 			// 
 			// undoToolStripMenuItem1
 			// 
-			this.undoToolStripMenuItem1.Image = global::Latenite.Properties.Resources.undo_16_h;
+			this.undoToolStripMenuItem1.Image = global::Latenite.Properties.Resources.arrow_undo;
 			this.undoToolStripMenuItem1.Name = "undoToolStripMenuItem1";
 			this.undoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
 			this.undoToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -771,7 +771,7 @@ namespace Latenite {
 			// 
 			// redoToolStripMenuItem1
 			// 
-			this.redoToolStripMenuItem1.Image = global::Latenite.Properties.Resources.redo_16_h;
+			this.redoToolStripMenuItem1.Image = global::Latenite.Properties.Resources.arrow_redo;
 			this.redoToolStripMenuItem1.Name = "redoToolStripMenuItem1";
 			this.redoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
 			this.redoToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -785,7 +785,7 @@ namespace Latenite {
 			// 
 			// cutToolStripMenuItem1
 			// 
-			this.cutToolStripMenuItem1.Image = global::Latenite.Properties.Resources.cut_clipboard_16_h;
+			this.cutToolStripMenuItem1.Image = global::Latenite.Properties.Resources.cut;
 			this.cutToolStripMenuItem1.Name = "cutToolStripMenuItem1";
 			this.cutToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
 			this.cutToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -794,7 +794,7 @@ namespace Latenite {
 			// 
 			// copyToolStripMenuItem1
 			// 
-			this.copyToolStripMenuItem1.Image = global::Latenite.Properties.Resources.copy_clipboard_16_h;
+			this.copyToolStripMenuItem1.Image = global::Latenite.Properties.Resources.page_white_copy;
 			this.copyToolStripMenuItem1.Name = "copyToolStripMenuItem1";
 			this.copyToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
 			this.copyToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -803,7 +803,7 @@ namespace Latenite {
 			// 
 			// pasteToolStripMenuItem1
 			// 
-			this.pasteToolStripMenuItem1.Image = global::Latenite.Properties.Resources.paste_clipboard_16_h;
+			this.pasteToolStripMenuItem1.Image = global::Latenite.Properties.Resources.paste_plain;
 			this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
 			this.pasteToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
 			this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -812,7 +812,7 @@ namespace Latenite {
 			// 
 			// deleteToolStripMenuItem1
 			// 
-			this.deleteToolStripMenuItem1.Image = global::Latenite.Properties.Resources.delete_x_16_h;
+			this.deleteToolStripMenuItem1.Image = global::Latenite.Properties.Resources.cross;
 			this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
 			this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
 			this.deleteToolStripMenuItem1.Text = "&Delete";
@@ -851,7 +851,7 @@ namespace Latenite {
 			// 
 			this.LockedIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("LockedIcon.ImageStream")));
 			this.LockedIcon.TransparentColor = System.Drawing.Color.Transparent;
-			this.LockedIcon.Images.SetKeyName(0, "LockedFiles.png");
+			this.LockedIcon.Images.SetKeyName(0, "bullet_lock.png");
 			// 
 			// WatchTypes
 			// 
@@ -1048,8 +1048,8 @@ namespace Latenite {
 			// 
 			// IdeToolstrips.TopToolStripPanel
 			// 
-			this.IdeToolstrips.TopToolStripPanel.Controls.Add(this.DebugAndBuild);
 			this.IdeToolstrips.TopToolStripPanel.Controls.Add(this.MainToolStrip);
+			this.IdeToolstrips.TopToolStripPanel.Controls.Add(this.DebugAndBuild);
 			// 
 			// HelpSplitContainer
 			// 
@@ -1107,6 +1107,231 @@ namespace Latenite {
 			this.SourceFiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlAdded);
 			this.SourceFiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlRemoved);
 			this.SourceFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SourceFiles_MouseDown);
+			// 
+			// MainToolStrip
+			// 
+			this.MainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonNew,
+            this.toolStripButtonOpen,
+            this.toolStripButtonSave,
+            this.toolStripButtonSaveAll,
+            this.toolStripSeparator10,
+            this.toolStripButtonCut,
+            this.toolStripButtonCopy,
+            this.toolStripButtonPaste,
+            this.toolStripSeparator11,
+            this.toolStripButtonUndo,
+            this.toolStripButtonRedo});
+			this.MainToolStrip.Location = new System.Drawing.Point(3, 0);
+			this.MainToolStrip.Name = "MainToolStrip";
+			this.MainToolStrip.Size = new System.Drawing.Size(231, 25);
+			this.MainToolStrip.TabIndex = 5;
+			this.MainToolStrip.Text = "MainToolStrip";
+			// 
+			// toolStripButtonNew
+			// 
+			this.toolStripButtonNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonNew.Image = global::Latenite.Properties.Resources.page_white;
+			this.toolStripButtonNew.Name = "toolStripButtonNew";
+			this.toolStripButtonNew.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonNew.Text = "New Blank File";
+			this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_ButtonClick);
+			// 
+			// toolStripButtonOpen
+			// 
+			this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonOpen.Image = global::Latenite.Properties.Resources.folder;
+			this.toolStripButtonOpen.Name = "toolStripButtonOpen";
+			this.toolStripButtonOpen.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonOpen.Text = "Open File";
+			this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
+			// 
+			// toolStripButtonSave
+			// 
+			this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonSave.Image = global::Latenite.Properties.Resources.disk;
+			this.toolStripButtonSave.Name = "toolStripButtonSave";
+			this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonSave.Text = "Save Current File";
+			this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+			// 
+			// toolStripButtonSaveAll
+			// 
+			this.toolStripButtonSaveAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonSaveAll.Image = global::Latenite.Properties.Resources.disk_multiple;
+			this.toolStripButtonSaveAll.Name = "toolStripButtonSaveAll";
+			this.toolStripButtonSaveAll.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonSaveAll.Text = "Save All Open Files";
+			this.toolStripButtonSaveAll.Click += new System.EventHandler(this.toolStripButtonSaveAll_Click);
+			// 
+			// toolStripSeparator10
+			// 
+			this.toolStripSeparator10.Name = "toolStripSeparator10";
+			this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripButtonCut
+			// 
+			this.toolStripButtonCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonCut.Image = global::Latenite.Properties.Resources.cut;
+			this.toolStripButtonCut.Name = "toolStripButtonCut";
+			this.toolStripButtonCut.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonCut.Text = "Cut";
+			this.toolStripButtonCut.Click += new System.EventHandler(this.toolStripButtonCut_Click);
+			// 
+			// toolStripButtonCopy
+			// 
+			this.toolStripButtonCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonCopy.Image = global::Latenite.Properties.Resources.page_white_copy;
+			this.toolStripButtonCopy.Name = "toolStripButtonCopy";
+			this.toolStripButtonCopy.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonCopy.Text = "Copy";
+			this.toolStripButtonCopy.Click += new System.EventHandler(this.toolStripButtonCopy_Click);
+			// 
+			// toolStripButtonPaste
+			// 
+			this.toolStripButtonPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonPaste.Image = global::Latenite.Properties.Resources.paste_plain;
+			this.toolStripButtonPaste.Name = "toolStripButtonPaste";
+			this.toolStripButtonPaste.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonPaste.Text = "Paste";
+			this.toolStripButtonPaste.Click += new System.EventHandler(this.toolStripButtonPaste_Click);
+			// 
+			// toolStripSeparator11
+			// 
+			this.toolStripSeparator11.Name = "toolStripSeparator11";
+			this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripButtonUndo
+			// 
+			this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonUndo.Image = global::Latenite.Properties.Resources.arrow_undo;
+			this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+			this.toolStripButtonUndo.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonUndo.Text = "Undo";
+			this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
+			// 
+			// toolStripButtonRedo
+			// 
+			this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonRedo.Image = global::Latenite.Properties.Resources.arrow_redo;
+			this.toolStripButtonRedo.Name = "toolStripButtonRedo";
+			this.toolStripButtonRedo.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonRedo.Text = "Redo";
+			this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
+			// 
+			// DebugAndBuild
+			// 
+			this.DebugAndBuild.Dock = System.Windows.Forms.DockStyle.None;
+			this.DebugAndBuild.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStartDebug,
+            this.toolStripSeparator12,
+            this.toolStripButtonBuild,
+            this.toolStripSeparator16,
+            this.toolStripProgressBar1,
+            this.BuildTarget});
+			this.DebugAndBuild.Location = new System.Drawing.Point(250, 0);
+			this.DebugAndBuild.Name = "DebugAndBuild";
+			this.DebugAndBuild.Size = new System.Drawing.Size(303, 25);
+			this.DebugAndBuild.TabIndex = 7;
+			this.DebugAndBuild.Text = "Debug";
+			// 
+			// toolStripStartDebug
+			// 
+			this.toolStripStartDebug.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.bullet_go;
+			this.toolStripStartDebug.Name = "toolStripStartDebug";
+			this.toolStripStartDebug.Size = new System.Drawing.Size(23, 22);
+			this.toolStripStartDebug.Text = "Debug";
+			this.toolStripStartDebug.ToolTipText = "Start Debugging";
+			this.toolStripStartDebug.Click += new System.EventHandler(this.toolStripStartDebug_Click);
+			// 
+			// toolStripSeparator12
+			// 
+			this.toolStripSeparator12.Name = "toolStripSeparator12";
+			this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripButtonBuild
+			// 
+			this.toolStripButtonBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonBuild.Image = global::Latenite.Properties.Resources.brick;
+			this.toolStripButtonBuild.Name = "toolStripButtonBuild";
+			this.toolStripButtonBuild.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonBuild.Text = "Build (Default Platform)";
+			this.toolStripButtonBuild.ToolTipText = "Build Project";
+			this.toolStripButtonBuild.Click += new System.EventHandler(this.toolStripButtonBuild_Click);
+			// 
+			// toolStripSeparator16
+			// 
+			this.toolStripSeparator16.Name = "toolStripSeparator16";
+			this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripProgressBar1
+			// 
+			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+			this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 22);
+			// 
+			// BuildTarget
+			// 
+			this.BuildTarget.AutoToolTip = true;
+			this.BuildTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.BuildTarget.DropDownWidth = 200;
+			this.BuildTarget.Name = "BuildTarget";
+			this.BuildTarget.Size = new System.Drawing.Size(200, 25);
+			this.BuildTarget.Sorted = true;
+			this.BuildTarget.ToolTipText = "Select which build script to use to build/debug the current project with.";
+			this.BuildTarget.SelectedIndexChanged += new System.EventHandler(this.BuildTarget_SelectedIndexChanged);
+			// 
+			// HelpBrowser
+			// 
+			this.HelpBrowser.Location = new System.Drawing.Point(0, 0);
+			this.HelpBrowser.Name = "HelpBrowser";
+			this.HelpBrowser.Size = new System.Drawing.Size(250, 250);
+			this.HelpBrowser.TabIndex = 0;
+			// 
+			// IdeStatusBar
+			// 
+			this.IdeStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel,
+            this.BuildProgress,
+            this.StatusLineNumber,
+            this.StatusColNumber});
+			this.IdeStatusBar.Location = new System.Drawing.Point(0, 420);
+			this.IdeStatusBar.Name = "IdeStatusBar";
+			this.IdeStatusBar.Size = new System.Drawing.Size(926, 24);
+			this.IdeStatusBar.TabIndex = 4;
+			this.IdeStatusBar.Text = "Status Bar";
+			// 
+			// StatusLabel
+			// 
+			this.StatusLabel.AutoSize = false;
+			this.StatusLabel.Name = "StatusLabel";
+			this.StatusLabel.Size = new System.Drawing.Size(709, 19);
+			this.StatusLabel.Spring = true;
+			this.StatusLabel.Text = "Ready";
+			this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.StatusLabel.ToolTipText = "Current IDE State";
+			// 
+			// BuildProgress
+			// 
+			this.BuildProgress.MarqueeAnimationSpeed = 50;
+			this.BuildProgress.Name = "BuildProgress";
+			this.BuildProgress.Size = new System.Drawing.Size(100, 18);
+			this.BuildProgress.Step = 1;
+			this.BuildProgress.ToolTipText = "Building...";
+			this.BuildProgress.VisibleChanged += new System.EventHandler(this.BuildProgress_VisibleChanged);
+			// 
+			// StatusLineNumber
+			// 
+			this.StatusLineNumber.AutoSize = false;
+			this.StatusLineNumber.Name = "StatusLineNumber";
+			this.StatusLineNumber.Size = new System.Drawing.Size(50, 19);
+			// 
+			// StatusColNumber
+			// 
+			this.StatusColNumber.AutoSize = false;
+			this.StatusColNumber.Name = "StatusColNumber";
+			this.StatusColNumber.Size = new System.Drawing.Size(50, 19);
 			// 
 			// OutputBox
 			// 
@@ -1349,7 +1574,7 @@ namespace Latenite {
 			this.HelpTab.Location = new System.Drawing.Point(4, 23);
 			this.HelpTab.Name = "HelpTab";
 			this.HelpTab.Padding = new System.Windows.Forms.Padding(3);
-			this.HelpTab.Size = new System.Drawing.Size(237, 317);
+			this.HelpTab.Size = new System.Drawing.Size(237, 344);
 			this.HelpTab.TabIndex = 1;
 			this.HelpTab.Text = "Help";
 			this.HelpTab.UseVisualStyleBackColor = true;
@@ -1361,7 +1586,7 @@ namespace Latenite {
 			this.panel1.Location = new System.Drawing.Point(3, 71);
 			this.panel1.Name = "panel1";
 			this.panel1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-			this.panel1.Size = new System.Drawing.Size(231, 243);
+			this.panel1.Size = new System.Drawing.Size(231, 270);
 			this.panel1.TabIndex = 9;
 			// 
 			// IeBorder
@@ -1371,7 +1596,7 @@ namespace Latenite {
 			this.IeBorder.Location = new System.Drawing.Point(0, 3);
 			this.IeBorder.Name = "IeBorder";
 			this.IeBorder.Padding = new System.Windows.Forms.Padding(1);
-			this.IeBorder.Size = new System.Drawing.Size(231, 240);
+			this.IeBorder.Size = new System.Drawing.Size(231, 267);
 			this.IeBorder.TabIndex = 0;
 			// 
 			// HelpItemCombo
@@ -1420,242 +1645,6 @@ namespace Latenite {
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Filter by:";
 			// 
-			// DebugAndBuild
-			// 
-			this.DebugAndBuild.Dock = System.Windows.Forms.DockStyle.None;
-			this.DebugAndBuild.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStartDebug,
-            this.toolStripSeparator12,
-            this.toolStripButtonBuild,
-            this.toolStripSeparator16,
-            this.toolStripProgressBar1,
-            this.BuildTarget});
-			this.DebugAndBuild.Location = new System.Drawing.Point(258, 0);
-			this.DebugAndBuild.Name = "DebugAndBuild";
-			this.DebugAndBuild.Size = new System.Drawing.Size(303, 25);
-			this.DebugAndBuild.TabIndex = 7;
-			this.DebugAndBuild.Text = "Debug";
-			// 
-			// toolStripStartDebug
-			// 
-			this.toolStripStartDebug.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.debug;
-			this.toolStripStartDebug.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripStartDebug.Name = "toolStripStartDebug";
-			this.toolStripStartDebug.Size = new System.Drawing.Size(23, 22);
-			this.toolStripStartDebug.Text = "Debug";
-			this.toolStripStartDebug.ToolTipText = "Start Debugging";
-			this.toolStripStartDebug.Click += new System.EventHandler(this.toolStripStartDebug_Click);
-			// 
-			// toolStripSeparator12
-			// 
-			this.toolStripSeparator12.Name = "toolStripSeparator12";
-			this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripButtonBuild
-			// 
-			this.toolStripButtonBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonBuild.Image = global::Latenite.Properties.Resources.build;
-			this.toolStripButtonBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonBuild.Name = "toolStripButtonBuild";
-			this.toolStripButtonBuild.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonBuild.Text = "Build (Default Platform)";
-			this.toolStripButtonBuild.ToolTipText = "Build Project";
-			this.toolStripButtonBuild.Click += new System.EventHandler(this.toolStripButtonBuild_Click);
-			// 
-			// toolStripSeparator16
-			// 
-			this.toolStripSeparator16.Name = "toolStripSeparator16";
-			this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripProgressBar1
-			// 
-			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-			this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 22);
-			// 
-			// BuildTarget
-			// 
-			this.BuildTarget.AutoToolTip = true;
-			this.BuildTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.BuildTarget.DropDownWidth = 200;
-			this.BuildTarget.Name = "BuildTarget";
-			this.BuildTarget.Size = new System.Drawing.Size(200, 25);
-			this.BuildTarget.Sorted = true;
-			this.BuildTarget.ToolTipText = "Select which build script to use to build/debug the current project with.";
-			this.BuildTarget.SelectedIndexChanged += new System.EventHandler(this.BuildTarget_SelectedIndexChanged);
-			// 
-			// MainToolStrip
-			// 
-			this.MainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonNew,
-            this.toolStripButtonOpen,
-            this.toolStripButtonSave,
-            this.toolStripButtonSaveAll,
-            this.toolStripSeparator10,
-            this.toolStripButtonCut,
-            this.toolStripButtonCopy,
-            this.toolStripButtonPaste,
-            this.toolStripSeparator11,
-            this.toolStripButtonUndo,
-            this.toolStripButtonRedo});
-			this.MainToolStrip.Location = new System.Drawing.Point(4, 0);
-			this.MainToolStrip.Name = "MainToolStrip";
-			this.MainToolStrip.Size = new System.Drawing.Size(231, 25);
-			this.MainToolStrip.TabIndex = 5;
-			this.MainToolStrip.Text = "MainToolStrip";
-			// 
-			// toolStripButtonNew
-			// 
-			this.toolStripButtonNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonNew.Image = global::Latenite.Properties.Resources.new_document_16_h;
-			this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonNew.Name = "toolStripButtonNew";
-			this.toolStripButtonNew.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonNew.Text = "New Blank File";
-			this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_ButtonClick);
-			// 
-			// toolStripButtonOpen
-			// 
-			this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonOpen.Image = global::Latenite.Properties.Resources.open_document_16_h;
-			this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonOpen.Name = "toolStripButtonOpen";
-			this.toolStripButtonOpen.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonOpen.Text = "Open File";
-			this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
-			// 
-			// toolStripButtonSave
-			// 
-			this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonSave.Image = global::Latenite.Properties.Resources.save_16_h;
-			this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonSave.Name = "toolStripButtonSave";
-			this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonSave.Text = "Save Current File";
-			this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-			// 
-			// toolStripButtonSaveAll
-			// 
-			this.toolStripButtonSaveAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonSaveAll.Image = global::Latenite.Properties.Resources.save_all_16_h;
-			this.toolStripButtonSaveAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonSaveAll.Name = "toolStripButtonSaveAll";
-			this.toolStripButtonSaveAll.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonSaveAll.Text = "Save All Open Files";
-			this.toolStripButtonSaveAll.Click += new System.EventHandler(this.toolStripButtonSaveAll_Click);
-			// 
-			// toolStripSeparator10
-			// 
-			this.toolStripSeparator10.Name = "toolStripSeparator10";
-			this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripButtonCut
-			// 
-			this.toolStripButtonCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonCut.Image = global::Latenite.Properties.Resources.cut_clipboard_16_h;
-			this.toolStripButtonCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonCut.Name = "toolStripButtonCut";
-			this.toolStripButtonCut.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonCut.Text = "Cut";
-			this.toolStripButtonCut.Click += new System.EventHandler(this.toolStripButtonCut_Click);
-			// 
-			// toolStripButtonCopy
-			// 
-			this.toolStripButtonCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonCopy.Image = global::Latenite.Properties.Resources.copy_clipboard_16_h;
-			this.toolStripButtonCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonCopy.Name = "toolStripButtonCopy";
-			this.toolStripButtonCopy.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonCopy.Text = "Copy";
-			this.toolStripButtonCopy.Click += new System.EventHandler(this.toolStripButtonCopy_Click);
-			// 
-			// toolStripButtonPaste
-			// 
-			this.toolStripButtonPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonPaste.Image = global::Latenite.Properties.Resources.paste_clipboard_16_h;
-			this.toolStripButtonPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonPaste.Name = "toolStripButtonPaste";
-			this.toolStripButtonPaste.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonPaste.Text = "Paste";
-			this.toolStripButtonPaste.Click += new System.EventHandler(this.toolStripButtonPaste_Click);
-			// 
-			// toolStripSeparator11
-			// 
-			this.toolStripSeparator11.Name = "toolStripSeparator11";
-			this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripButtonUndo
-			// 
-			this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonUndo.Image = global::Latenite.Properties.Resources.undo_16_h;
-			this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonUndo.Name = "toolStripButtonUndo";
-			this.toolStripButtonUndo.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonUndo.Text = "Undo";
-			this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
-			// 
-			// toolStripButtonRedo
-			// 
-			this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonRedo.Image = global::Latenite.Properties.Resources.redo_16_h;
-			this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonRedo.Name = "toolStripButtonRedo";
-			this.toolStripButtonRedo.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonRedo.Text = "Redo";
-			this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
-			// 
-			// HelpBrowser
-			// 
-			this.HelpBrowser.Location = new System.Drawing.Point(0, 0);
-			this.HelpBrowser.Name = "HelpBrowser";
-			this.HelpBrowser.Size = new System.Drawing.Size(250, 250);
-			this.HelpBrowser.TabIndex = 0;
-			// 
-			// IdeStatusBar
-			// 
-			this.IdeStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel,
-            this.BuildProgress,
-            this.StatusLineNumber,
-            this.StatusColNumber});
-			this.IdeStatusBar.Location = new System.Drawing.Point(0, 420);
-			this.IdeStatusBar.Name = "IdeStatusBar";
-			this.IdeStatusBar.Size = new System.Drawing.Size(926, 24);
-			this.IdeStatusBar.TabIndex = 4;
-			this.IdeStatusBar.Text = "Status Bar";
-			// 
-			// StatusLabel
-			// 
-			this.StatusLabel.AutoSize = false;
-			this.StatusLabel.Name = "StatusLabel";
-			this.StatusLabel.Size = new System.Drawing.Size(709, 19);
-			this.StatusLabel.Spring = true;
-			this.StatusLabel.Text = "Ready";
-			this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.StatusLabel.ToolTipText = "Current IDE State";
-			// 
-			// BuildProgress
-			// 
-			this.BuildProgress.MarqueeAnimationSpeed = 50;
-			this.BuildProgress.Name = "BuildProgress";
-			this.BuildProgress.Size = new System.Drawing.Size(100, 18);
-			this.BuildProgress.Step = 1;
-			this.BuildProgress.ToolTipText = "Building...";
-			this.BuildProgress.VisibleChanged += new System.EventHandler(this.BuildProgress_VisibleChanged);
-			// 
-			// StatusLineNumber
-			// 
-			this.StatusLineNumber.AutoSize = false;
-			this.StatusLineNumber.Name = "StatusLineNumber";
-			this.StatusLineNumber.Size = new System.Drawing.Size(50, 19);
-			// 
-			// StatusColNumber
-			// 
-			this.StatusColNumber.AutoSize = false;
-			this.StatusColNumber.Name = "StatusColNumber";
-			this.StatusColNumber.Size = new System.Drawing.Size(50, 19);
-			// 
 			// LateniteIDE
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1674,6 +1663,7 @@ namespace Latenite {
 			this.Text = "Latenite Z80 Editor";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LateniteIDE_FormClosing);
 			this.Load += new System.EventHandler(this.LateniteIDE_Load);
+			this.Shown += new System.EventHandler(this.LateniteIDE_Shown);
 			this.ResizeEnd += new System.EventHandler(this.LateniteIDE_ResizeEnd);
 			this.TabContext.ResumeLayout(false);
 			this.ProjectContext.ResumeLayout(false);
@@ -1692,6 +1682,12 @@ namespace Latenite {
 			this.ErrorSplitContainer.Panel1.ResumeLayout(false);
 			this.ErrorSplitContainer.Panel2.ResumeLayout(false);
 			this.ErrorSplitContainer.ResumeLayout(false);
+			this.MainToolStrip.ResumeLayout(false);
+			this.MainToolStrip.PerformLayout();
+			this.DebugAndBuild.ResumeLayout(false);
+			this.DebugAndBuild.PerformLayout();
+			this.IdeStatusBar.ResumeLayout(false);
+			this.IdeStatusBar.PerformLayout();
 			this.OutputBox.ResumeLayout(false);
 			this.ErrorList.ResumeLayout(false);
 			this.OutputTab.ResumeLayout(false);
@@ -1704,12 +1700,6 @@ namespace Latenite {
 			this.HelpTab.ResumeLayout(false);
 			this.HelpTab.PerformLayout();
 			this.panel1.ResumeLayout(false);
-			this.DebugAndBuild.ResumeLayout(false);
-			this.DebugAndBuild.PerformLayout();
-			this.MainToolStrip.ResumeLayout(false);
-			this.MainToolStrip.PerformLayout();
-			this.IdeStatusBar.ResumeLayout(false);
-			this.IdeStatusBar.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
