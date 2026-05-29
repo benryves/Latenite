@@ -253,14 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="bin\Icons\include.ico" />
-    <None Include="bin\Icons\asm.ico" />
-    <None Include="bin\Icons\project.ico" />
-    <None Include="bin\Icons\Intellisense\directive.gif" />
-    <None Include="bin\Icons\Intellisense\label.gif" />
-    <None Include="bin\Icons\Intellisense\register.gif" />
-    <None Include="bin\Icons\Intellisense\routine.gif" />
-    <None Include="bin\Icons\Intellisense\z80.gif" />
     <Content Include="DebugSystem.txt" />
     <Content Include="project.ico" />
     <None Include="Resources\Help.bmp" />
