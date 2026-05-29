@@ -135,16 +135,16 @@ namespace Latenite {
 			this.OutputBox = new System.Windows.Forms.TabControl();
 			this.ErrorList = new Latenite.CleanTabPage();
 			this.ErrorListBox = new Latenite.SortableListView();
-			this.ErrorListDescription = new System.Windows.Forms.ColumnHeader();
-			this.ErrorListFile = new System.Windows.Forms.ColumnHeader();
-			this.ErrorListLine = new System.Windows.Forms.ColumnHeader();
+			this.ErrorListDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ErrorListFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ErrorListLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.OutputTab = new Latenite.CleanTabPage();
 			this.OutputTextBox = new System.Windows.Forms.TextBox();
 			this.FinderTab = new Latenite.CleanTabPage();
 			this.SearchResults = new Latenite.SortableListView();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SearchTextPanel = new System.Windows.Forms.Panel();
 			this.SearchTextBox = new System.Windows.Forms.TextBox();
 			this.SearchModePanel = new System.Windows.Forms.Panel();
@@ -160,6 +160,13 @@ namespace Latenite {
 			this.label4 = new System.Windows.Forms.Label();
 			this.HelpFilesCombo = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.DebugAndBuild = new System.Windows.Forms.ToolStrip();
+			this.toolStripStartDebug = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButtonBuild = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripLabel();
+			this.BuildTarget = new System.Windows.Forms.ToolStripComboBox();
 			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
@@ -172,13 +179,6 @@ namespace Latenite {
 			this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
-			this.DebugAndBuild = new System.Windows.Forms.ToolStrip();
-			this.toolStripStartDebug = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButtonBuild = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripLabel();
-			this.BuildTarget = new System.Windows.Forms.ToolStripComboBox();
 			this.HelpBrowser = new System.Windows.Forms.WebBrowser();
 			this.IdeStatusBar = new System.Windows.Forms.StatusStrip();
 			this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -208,8 +208,8 @@ namespace Latenite {
 			this.ProjectAndHelpTabs.SuspendLayout();
 			this.HelpTab.SuspendLayout();
 			this.panel1.SuspendLayout();
-			this.MainToolStrip.SuspendLayout();
 			this.DebugAndBuild.SuspendLayout();
+			this.MainToolStrip.SuspendLayout();
 			this.IdeStatusBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -464,8 +464,8 @@ namespace Latenite {
 			// 
 			this.saveAllToolStripMenuItem.Image = global::Latenite.Properties.Resources.save_all_16_h;
 			this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
-			this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-						| System.Windows.Forms.Keys.S)));
+			this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
 			this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
 			this.saveAllToolStripMenuItem.Text = "Save A&ll";
 			this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
@@ -623,7 +623,7 @@ namespace Latenite {
 			this.defaultPlatformToolStripMenuItem.Image = global::Latenite.Properties.Resources.build;
 			this.defaultPlatformToolStripMenuItem.Name = "defaultPlatformToolStripMenuItem";
 			this.defaultPlatformToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-			this.defaultPlatformToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+			this.defaultPlatformToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
 			this.defaultPlatformToolStripMenuItem.Text = "&Build Project";
 			this.defaultPlatformToolStripMenuItem.Click += new System.EventHandler(this.defaultPlatformToolStripMenuItem_Click);
 			// 
@@ -632,7 +632,7 @@ namespace Latenite {
 			this.TerminateBuild.Enabled = false;
 			this.TerminateBuild.Name = "TerminateBuild";
 			this.TerminateBuild.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F6)));
-			this.TerminateBuild.Size = new System.Drawing.Size(209, 22);
+			this.TerminateBuild.Size = new System.Drawing.Size(207, 22);
 			this.TerminateBuild.Text = "&Terminate Build";
 			this.TerminateBuild.Click += new System.EventHandler(this.TerminateBuild_Click);
 			// 
@@ -677,7 +677,7 @@ namespace Latenite {
             this.optionsToolStripMenuItem,
             this.toolStripSeparator18});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
 			this.toolsToolStripMenuItem.Text = "&Tools";
 			// 
 			// optionsToolStripMenuItem
@@ -722,7 +722,7 @@ namespace Latenite {
 			// 
 			this.SaveFile.DefaultExt = "z80";
 			this.SaveFile.Filter = "General Assembly Files (*.asm)|*.asm|Z80 Assembly Files (*.z80)|*.z80|Include Fil" +
-				"es (*.inc)|*.inc|Command Script Files (*.cmd)|*.cmd|All Files (*.*)|*.*";
+    "es (*.inc)|*.inc|Command Script Files (*.cmd)|*.cmd|All Files (*.*)|*.*";
 			// 
 			// OpenFile
 			// 
@@ -917,7 +917,7 @@ namespace Latenite {
             this.signedToolStripMenuItem,
             this.unsignedToolStripMenuItem});
 			this.integerToolStripMenuItem.Name = "integerToolStripMenuItem";
-			this.integerToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.integerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.integerToolStripMenuItem.Text = "&Integer";
 			// 
 			// signedToolStripMenuItem
@@ -937,18 +937,18 @@ namespace Latenite {
 			// fixedPointToolStripMenuItem
 			// 
 			this.fixedPointToolStripMenuItem.Name = "fixedPointToolStripMenuItem";
-			this.fixedPointToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.fixedPointToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.fixedPointToolStripMenuItem.Text = "Fi&xed Point...";
 			// 
 			// toolStripMenuItem9
 			// 
 			this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-			this.toolStripMenuItem9.Size = new System.Drawing.Size(138, 6);
+			this.toolStripMenuItem9.Size = new System.Drawing.Size(139, 6);
 			// 
 			// sizeToolStripMenuItem
 			// 
 			this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
-			this.sizeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.sizeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.sizeToolStripMenuItem.Text = "&Size";
 			// 
 			// stringToolStripMenuItem
@@ -963,7 +963,7 @@ namespace Latenite {
 			// nullTerminatedToolStripMenuItem
 			// 
 			this.nullTerminatedToolStripMenuItem.Name = "nullTerminatedToolStripMenuItem";
-			this.nullTerminatedToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+			this.nullTerminatedToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
 			this.nullTerminatedToolStripMenuItem.Text = "&Null-Terminated";
 			// 
 			// fixedSizeToolStripMenuItem
@@ -972,7 +972,7 @@ namespace Latenite {
             this.bitToolStripMenuItem,
             this.bitToolStripMenuItem1});
 			this.fixedSizeToolStripMenuItem.Name = "fixedSizeToolStripMenuItem";
-			this.fixedSizeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+			this.fixedSizeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
 			this.fixedSizeToolStripMenuItem.Text = "&Fixed Size";
 			// 
 			// bitToolStripMenuItem
@@ -1007,30 +1007,30 @@ namespace Latenite {
 			// decimalToolStripMenuItem
 			// 
 			this.decimalToolStripMenuItem.Name = "decimalToolStripMenuItem";
-			this.decimalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.decimalToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.decimalToolStripMenuItem.Text = "&Decimal";
 			// 
 			// binaryToolStripMenuItem
 			// 
 			this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
-			this.binaryToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.binaryToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.binaryToolStripMenuItem.Text = "&Binary";
 			// 
 			// hexadecimalToolStripMenuItem
 			// 
 			this.hexadecimalToolStripMenuItem.Name = "hexadecimalToolStripMenuItem";
-			this.hexadecimalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.hexadecimalToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.hexadecimalToolStripMenuItem.Text = "&Hexadecimal";
 			// 
 			// toolStripMenuItem7
 			// 
 			this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-			this.toolStripMenuItem7.Size = new System.Drawing.Size(139, 6);
+			this.toolStripMenuItem7.Size = new System.Drawing.Size(140, 6);
 			// 
 			// aSCIIToolStripMenuItem
 			// 
 			this.aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
-			this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.aSCIIToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.aSCIIToolStripMenuItem.Text = "&ASCII";
 			// 
 			// IdeToolstrips
@@ -1103,10 +1103,10 @@ namespace Latenite {
 			this.SourceFiles.SelectedIndex = 0;
 			this.SourceFiles.Size = new System.Drawing.Size(677, 274);
 			this.SourceFiles.TabIndex = 2;
-			this.SourceFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SourceFiles_MouseDown);
-			this.SourceFiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlRemoved);
-			this.SourceFiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlAdded);
 			this.SourceFiles.SelectedIndexChanged += new System.EventHandler(this.SourceFiles_SelectedIndexChanged);
+			this.SourceFiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlAdded);
+			this.SourceFiles.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.SourceFiles_ControlRemoved);
+			this.SourceFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SourceFiles_MouseDown);
 			// 
 			// OutputBox
 			// 
@@ -1349,7 +1349,7 @@ namespace Latenite {
 			this.HelpTab.Location = new System.Drawing.Point(4, 23);
 			this.HelpTab.Name = "HelpTab";
 			this.HelpTab.Padding = new System.Windows.Forms.Padding(3);
-			this.HelpTab.Size = new System.Drawing.Size(237, 342);
+			this.HelpTab.Size = new System.Drawing.Size(237, 317);
 			this.HelpTab.TabIndex = 1;
 			this.HelpTab.Text = "Help";
 			this.HelpTab.UseVisualStyleBackColor = true;
@@ -1361,7 +1361,7 @@ namespace Latenite {
 			this.panel1.Location = new System.Drawing.Point(3, 71);
 			this.panel1.Name = "panel1";
 			this.panel1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-			this.panel1.Size = new System.Drawing.Size(231, 268);
+			this.panel1.Size = new System.Drawing.Size(231, 243);
 			this.panel1.TabIndex = 9;
 			// 
 			// IeBorder
@@ -1371,7 +1371,7 @@ namespace Latenite {
 			this.IeBorder.Location = new System.Drawing.Point(0, 3);
 			this.IeBorder.Name = "IeBorder";
 			this.IeBorder.Padding = new System.Windows.Forms.Padding(1);
-			this.IeBorder.Size = new System.Drawing.Size(231, 265);
+			this.IeBorder.Size = new System.Drawing.Size(231, 240);
 			this.IeBorder.TabIndex = 0;
 			// 
 			// HelpItemCombo
@@ -1420,6 +1420,70 @@ namespace Latenite {
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Filter by:";
 			// 
+			// DebugAndBuild
+			// 
+			this.DebugAndBuild.Dock = System.Windows.Forms.DockStyle.None;
+			this.DebugAndBuild.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStartDebug,
+            this.toolStripSeparator12,
+            this.toolStripButtonBuild,
+            this.toolStripSeparator16,
+            this.toolStripProgressBar1,
+            this.BuildTarget});
+			this.DebugAndBuild.Location = new System.Drawing.Point(258, 0);
+			this.DebugAndBuild.Name = "DebugAndBuild";
+			this.DebugAndBuild.Size = new System.Drawing.Size(303, 25);
+			this.DebugAndBuild.TabIndex = 7;
+			this.DebugAndBuild.Text = "Debug";
+			// 
+			// toolStripStartDebug
+			// 
+			this.toolStripStartDebug.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.debug;
+			this.toolStripStartDebug.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripStartDebug.Name = "toolStripStartDebug";
+			this.toolStripStartDebug.Size = new System.Drawing.Size(23, 22);
+			this.toolStripStartDebug.Text = "Debug";
+			this.toolStripStartDebug.ToolTipText = "Start Debugging";
+			this.toolStripStartDebug.Click += new System.EventHandler(this.toolStripStartDebug_Click);
+			// 
+			// toolStripSeparator12
+			// 
+			this.toolStripSeparator12.Name = "toolStripSeparator12";
+			this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripButtonBuild
+			// 
+			this.toolStripButtonBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonBuild.Image = global::Latenite.Properties.Resources.build;
+			this.toolStripButtonBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButtonBuild.Name = "toolStripButtonBuild";
+			this.toolStripButtonBuild.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButtonBuild.Text = "Build (Default Platform)";
+			this.toolStripButtonBuild.ToolTipText = "Build Project";
+			this.toolStripButtonBuild.Click += new System.EventHandler(this.toolStripButtonBuild_Click);
+			// 
+			// toolStripSeparator16
+			// 
+			this.toolStripSeparator16.Name = "toolStripSeparator16";
+			this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripProgressBar1
+			// 
+			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+			this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 22);
+			// 
+			// BuildTarget
+			// 
+			this.BuildTarget.AutoToolTip = true;
+			this.BuildTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.BuildTarget.DropDownWidth = 200;
+			this.BuildTarget.Name = "BuildTarget";
+			this.BuildTarget.Size = new System.Drawing.Size(200, 25);
+			this.BuildTarget.Sorted = true;
+			this.BuildTarget.ToolTipText = "Select which build script to use to build/debug the current project with.";
+			this.BuildTarget.SelectedIndexChanged += new System.EventHandler(this.BuildTarget_SelectedIndexChanged);
+			// 
 			// MainToolStrip
 			// 
 			this.MainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -1435,7 +1499,7 @@ namespace Latenite {
             this.toolStripSeparator11,
             this.toolStripButtonUndo,
             this.toolStripButtonRedo});
-			this.MainToolStrip.Location = new System.Drawing.Point(3, 0);
+			this.MainToolStrip.Location = new System.Drawing.Point(4, 0);
 			this.MainToolStrip.Name = "MainToolStrip";
 			this.MainToolStrip.Size = new System.Drawing.Size(231, 25);
 			this.MainToolStrip.TabIndex = 5;
@@ -1541,70 +1605,6 @@ namespace Latenite {
 			this.toolStripButtonRedo.Text = "Redo";
 			this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
 			// 
-			// DebugAndBuild
-			// 
-			this.DebugAndBuild.Dock = System.Windows.Forms.DockStyle.None;
-			this.DebugAndBuild.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStartDebug,
-            this.toolStripSeparator12,
-            this.toolStripButtonBuild,
-            this.toolStripSeparator16,
-            this.toolStripProgressBar1,
-            this.BuildTarget});
-			this.DebugAndBuild.Location = new System.Drawing.Point(245, 0);
-			this.DebugAndBuild.Name = "DebugAndBuild";
-			this.DebugAndBuild.Size = new System.Drawing.Size(303, 25);
-			this.DebugAndBuild.TabIndex = 7;
-			this.DebugAndBuild.Text = "Debug";
-			// 
-			// toolStripStartDebug
-			// 
-			this.toolStripStartDebug.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.debug;
-			this.toolStripStartDebug.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripStartDebug.Name = "toolStripStartDebug";
-			this.toolStripStartDebug.Size = new System.Drawing.Size(23, 22);
-			this.toolStripStartDebug.Text = "Debug";
-			this.toolStripStartDebug.ToolTipText = "Start Debugging";
-			this.toolStripStartDebug.Click += new System.EventHandler(this.toolStripStartDebug_Click);
-			// 
-			// toolStripSeparator12
-			// 
-			this.toolStripSeparator12.Name = "toolStripSeparator12";
-			this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripButtonBuild
-			// 
-			this.toolStripButtonBuild.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonBuild.Image = global::Latenite.Properties.Resources.build;
-			this.toolStripButtonBuild.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonBuild.Name = "toolStripButtonBuild";
-			this.toolStripButtonBuild.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButtonBuild.Text = "Build (Default Platform)";
-			this.toolStripButtonBuild.ToolTipText = "Build Project";
-			this.toolStripButtonBuild.Click += new System.EventHandler(this.toolStripButtonBuild_Click);
-			// 
-			// toolStripSeparator16
-			// 
-			this.toolStripSeparator16.Name = "toolStripSeparator16";
-			this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripProgressBar1
-			// 
-			this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-			this.toolStripProgressBar1.Size = new System.Drawing.Size(0, 22);
-			// 
-			// BuildTarget
-			// 
-			this.BuildTarget.AutoToolTip = true;
-			this.BuildTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.BuildTarget.DropDownWidth = 200;
-			this.BuildTarget.Name = "BuildTarget";
-			this.BuildTarget.Size = new System.Drawing.Size(200, 25);
-			this.BuildTarget.Sorted = true;
-			this.BuildTarget.ToolTipText = "Select which build script to use to build/debug the current project with.";
-			this.BuildTarget.SelectedIndexChanged += new System.EventHandler(this.BuildTarget_SelectedIndexChanged);
-			// 
 			// HelpBrowser
 			// 
 			this.HelpBrowser.Location = new System.Drawing.Point(0, 0);
@@ -1673,8 +1673,8 @@ namespace Latenite {
 			this.Name = "LateniteIDE";
 			this.Text = "Latenite Z80 Editor";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LateniteIDE_FormClosing);
-			this.ResizeEnd += new System.EventHandler(this.LateniteIDE_ResizeEnd);
 			this.Load += new System.EventHandler(this.LateniteIDE_Load);
+			this.ResizeEnd += new System.EventHandler(this.LateniteIDE_ResizeEnd);
 			this.TabContext.ResumeLayout(false);
 			this.ProjectContext.ResumeLayout(false);
 			this.MainIDEMenu.ResumeLayout(false);
@@ -1704,10 +1704,10 @@ namespace Latenite {
 			this.HelpTab.ResumeLayout(false);
 			this.HelpTab.PerformLayout();
 			this.panel1.ResumeLayout(false);
-			this.MainToolStrip.ResumeLayout(false);
-			this.MainToolStrip.PerformLayout();
 			this.DebugAndBuild.ResumeLayout(false);
 			this.DebugAndBuild.PerformLayout();
+			this.MainToolStrip.ResumeLayout(false);
+			this.MainToolStrip.PerformLayout();
 			this.IdeStatusBar.ResumeLayout(false);
 			this.IdeStatusBar.PerformLayout();
 			this.ResumeLayout(false);
