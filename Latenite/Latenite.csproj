@@ -1,0 +1,282 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37D444D4-3AD3-4858-BC5D-1588F9FD71EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Latenite</RootNamespace>
+    <AssemblyName>Latenite</AssemblyName>
+    <ApplicationIcon>project.ico</ApplicationIcon>
+    <StartupObject>Latenite.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuildMenuOption.cs" />
+    <Compile Include="CleanTabPages.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColourfulEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Compiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debugger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoToLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoToLine.Designer.cs">
+      <DependentUpon>GoToLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFile.cs" />
+    <Compile Include="HelpFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IconHandler.cs" />
+    <Compile Include="LateniteIDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LateniteIDE.Designer.cs">
+      <DependentUpon>LateniteIDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleResults.Designer.cs">
+      <DependentUpon>MultipleResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDirectory.Designer.cs">
+      <DependentUpon>NewDirectory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessKiller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectProperties.Designer.cs">
+      <DependentUpon>ProjectProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projects.Designer.cs">
+      <DependentUpon>Projects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoToLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GoToLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LateniteIDE.resx">
+      <DependentUpon>LateniteIDE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleResults.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MultipleResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDirectory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectProperties.resx">
+      <DependentUpon>ProjectProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects.resx">
+      <DependentUpon>Projects.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IconExtract.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SortableListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SourceFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolbarMirrors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeFileBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Watch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folderopen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_document_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_document_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_to_folder_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_clipboard_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_clipboard_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_x_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_all_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoToNext.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowright_green_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_doc_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_options_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_open_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_to_folder_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Icons\include.ico" />
+    <None Include="bin\Icons\asm.ico" />
+    <None Include="bin\Icons\project.ico" />
+    <None Include="bin\Icons\Intellisense\directive.gif" />
+    <None Include="bin\Icons\Intellisense\label.gif" />
+    <None Include="bin\Icons\Intellisense\register.gif" />
+    <None Include="bin\Icons\Intellisense\routine.gif" />
+    <None Include="bin\Icons\Intellisense\z80.gif" />
+    <Content Include="DebugSystem.txt" />
+    <Content Include="project.ico" />
+    <None Include="Resources\Help.bmp" />
+    <None Include="Resources\help.ico" />
+    <None Include="Resources\BuilderDialog_movedown.bmp" />
+    <None Include="Resources\BuilderDialog_moveup.bmp" />
+    <None Include="Resources\about.jpg" />
+    <None Include="Resources\folder_closed_16_h.png" />
+    <None Include="Resources\build.png" />
+    <None Include="Resources\debug.png" />
+    <None Include="Resources\DefaultFile.png" />
+    <None Include="Resources\favorites_16_h.png" />
+    <Content Include="Resources\include.ico" />
+    <None Include="Resources\watch.png" />
+    <None Include="Resources\LockedFiles.png" />
+    <None Include="Resources\include.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,24 @@
+DEBUG_DEBUGGER		- PATH TO THE DEBUGGER
+DEBUG_OUTPUTFILE	- OUTPUT BINARY
+DEBUG_CONFIGFILE	- MISC DATA
+
+Possible commands sent by Latenite (only ENUMERATE must be supported)
+
+ENUMERATE	-	-	-	-	-	- Send back list of ICANs
+PLAY	-	-	-	-	-	-	- Run the debugger (it is assumed the debugger runs automatically)
+PAUSE	-	-	-	-	-	-	- Pause the debugger
+RESTART	-	-	-	-	-	-	- Restart the simulation
+QUIT	-	-	-	-	-	-	- Close the debugger application
+JUMP	-	-	-	-	-	-	- Jump to a particular line
+STEP	-	-	-	-	-	-	- Run the simulation for one "state" (what constitutes a state is up to you)
+TOOLTIP <name> <line> <file>	- Get tooltip data (respond with tooltip text)
+BREAKPOINT <on> <line> <file>	- Set the status of a breakpoint
+NOP	-	-	-	-	-	-	-	- Do nothing
+
+Commands you can send back to Latenite:
+
+SETPOSITION <line> <filename>	- Set the current execution point
+MESSAGE <message>	-	-	-	- Display a message
+GET_BREAKPOINTS	-	-	-	-	- Get a list of all current breakpoints
+ICAN <feature>	-	-	-	-	- Report a feature in the list above that you can do
+REQUEST <command>	-	-	-	- Request that Latenite send back one of the above commands
