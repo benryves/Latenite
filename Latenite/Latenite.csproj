@@ -337,6 +337,9 @@
     <None Include="Resources\Icons\Intellisense\table.png" />
     <None Include="Resources\Icons\Intellisense\lightning.png" />
     <None Include="Resources\Icons\Intellisense\directive.png" />
+    <None Include="Resources\cut_red.png" />
+    <None Include="Resources\wrench_orange.png" />
+    <None Include="Resources\debug_start.png" />
     <Content Include="Templates\Colours\API.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

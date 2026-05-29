@@ -477,7 +477,7 @@ namespace Latenite {
 			// 
 			// propertiesToolStripMenuItem
 			// 
-			this.propertiesToolStripMenuItem.Image = global::Latenite.Properties.Resources.wrench;
+			this.propertiesToolStripMenuItem.Image = global::Latenite.Properties.Resources.wrench_orange;
 			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
 			this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
 			this.propertiesToolStripMenuItem.Text = "Project &Properties...";
@@ -540,7 +540,7 @@ namespace Latenite {
 			// 
 			// cutToolStripMenuItem
 			// 
-			this.cutToolStripMenuItem.Image = global::Latenite.Properties.Resources.cut;
+			this.cutToolStripMenuItem.Image = global::Latenite.Properties.Resources.cut_red;
 			this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
 			this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
 			this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
@@ -648,7 +648,7 @@ namespace Latenite {
 			// 
 			// startDebuggingToolStripMenuItem
 			// 
-			this.startDebuggingToolStripMenuItem.Image = global::Latenite.Properties.Resources.bullet_go;
+			this.startDebuggingToolStripMenuItem.Image = global::Latenite.Properties.Resources.debug_start;
 			this.startDebuggingToolStripMenuItem.Name = "startDebuggingToolStripMenuItem";
 			this.startDebuggingToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
 			this.startDebuggingToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
@@ -785,7 +785,7 @@ namespace Latenite {
 			// 
 			// cutToolStripMenuItem1
 			// 
-			this.cutToolStripMenuItem1.Image = global::Latenite.Properties.Resources.cut;
+			this.cutToolStripMenuItem1.Image = global::Latenite.Properties.Resources.cut_red;
 			this.cutToolStripMenuItem1.Name = "cutToolStripMenuItem1";
 			this.cutToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
 			this.cutToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
@@ -1173,7 +1173,7 @@ namespace Latenite {
 			// toolStripButtonCut
 			// 
 			this.toolStripButtonCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButtonCut.Image = global::Latenite.Properties.Resources.cut;
+			this.toolStripButtonCut.Image = global::Latenite.Properties.Resources.cut_red;
 			this.toolStripButtonCut.Name = "toolStripButtonCut";
 			this.toolStripButtonCut.Size = new System.Drawing.Size(23, 22);
 			this.toolStripButtonCut.Text = "Cut";
@@ -1239,7 +1239,7 @@ namespace Latenite {
 			// toolStripStartDebug
 			// 
 			this.toolStripStartDebug.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.bullet_go;
+			this.toolStripStartDebug.Image = global::Latenite.Properties.Resources.debug_start;
 			this.toolStripStartDebug.Name = "toolStripStartDebug";
 			this.toolStripStartDebug.Size = new System.Drawing.Size(23, 22);
 			this.toolStripStartDebug.Text = "Debug";
