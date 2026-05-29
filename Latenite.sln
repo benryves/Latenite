@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLA Error", "WLA Error\WLA 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarlyMorning Resource Plugin", "EarlyMorning Resource Plugin\EarlyMorning Resource Plugin.csproj", "{89A5A645-F21A-42E1-8818-F3BCEAFF814B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PindurTI Debugger", "PindurTI Debugger\PindurTI Debugger.csproj", "{B7675493-2CBB-42BC-81E8-82A7438B2DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PindurTI Debugger (Legacy)", "PindurTI Debugger (Legacy)\PindurTI Debugger (Legacy).csproj", "{B7675493-2CBB-42BC-81E8-82A7438B2DF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brass", "Brass\Brass\Brass.csproj", "{FB49A9F7-02EA-44C5-B25A-9689B1B40630}"
 EndProject
