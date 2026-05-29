@@ -220,24 +220,16 @@ namespace Latenite {
                         }
                         XmlNode E = AllErrors.Item(i);
 
-                        int ErrorLine = 0;
-                        string ErrorFile = "";
-
-                        try {
-                            ErrorLine = Convert.ToInt32(E.Attributes.GetNamedItem("line").InnerText);
-                        } catch { }
-
-                        try {
-                            ErrorFile = E.Attributes.GetNamedItem("file").InnerText;
-                        } catch { }
+                        int ErrorLine = Convert.ToInt32(E.Attributes.GetNamedItem("line")?.InnerText);
+                        string ErrorFile = E.Attributes.GetNamedItem("file")?.InnerText;
 
                         ListViewItem L = new ListViewItem(E.InnerText);
                         L.ImageIndex = (j == 0) ? 3 : 2;
-                        L.SubItems.Add(ErrorFile.Replace(Path.GetDirectoryName(S), "").Trim("/\\".ToCharArray()));
+                        L.SubItems.Add(ErrorFile?.Replace(Path.GetDirectoryName(S), "").Trim("/\\".ToCharArray()));
                         L.SubItems.Add(ErrorLine == 0 ? "" : ErrorLine.ToString());
                         ArrayList LT = new ArrayList();
 
-                        LT.Add(Path.GetDirectoryName(S) + "\\" + ErrorFile.Replace(Path.GetDirectoryName(S), "").Trim("/\\".ToCharArray()));
+                        LT.Add(Path.GetDirectoryName(S) + "\\" + ErrorFile?.Replace(Path.GetDirectoryName(S), "").Trim("/\\".ToCharArray()));
                         LT.Add(ErrorLine);
 
                         L.Tag = LT;
