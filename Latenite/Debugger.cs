@@ -14,6 +14,7 @@ namespace Latenite {
 
         private void startDebuggingToolStripMenuItem_Click(object sender, EventArgs e) {
             if (Debugger == null || Debugger.HasExited) {
+				Debugger?.Dispose();
                 if (!BuildProject()) {
                     return;
                 } else {
@@ -37,11 +38,15 @@ namespace Latenite {
                         MessageBox.Show("Could not get debugger start information:\n" + ex.Message, "Debug", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    Debugger = new Process();
-                    CommandQueue = new Queue();
-                    try {
+                    if (!File.Exists(DebuggerPath)) {
+						MessageBox.Show("Debugger '" + DebuggerPath + "' could not be found.", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+					Debugger = new Process();
+					CommandQueue = new Queue();
+					try {
                         SetProcessEnvironmentVariables(ref Debugger, GetProjectSourceFile(), true, ((BuildMenuOption)this.BuildTarget.SelectedItem).Path);
-                        Debugger.StartInfo.FileName = DebuggerPath;
+						Debugger.StartInfo.FileName = DebuggerPath;
                         Debugger.StartInfo.Arguments = DebuggerArgs;
                         Debugger.StartInfo.UseShellExecute = false;
                         Debugger.StartInfo.RedirectStandardInput = true;
@@ -53,6 +58,7 @@ namespace Latenite {
                         Debugger.Start();
                         Debugger.BeginOutputReadLine();
                     } catch (Exception ex) {
+						Debugger = null;
                         MessageBox.Show("Could not start debugger:\n" + ex.Message, "Debug", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }

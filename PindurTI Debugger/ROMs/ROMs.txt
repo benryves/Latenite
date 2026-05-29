@@ -1,0 +1,7 @@
+To be able to debug programs, you must provide ROM images for the calculators you wish to emulate.
+They can be:
+
+TI-83.rom
+TI-83 Plus.rom
+
+You must prepare the ROMs beforehand (clean them up) by erasing any applications or programs on them.

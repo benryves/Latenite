@@ -1,0 +1,158 @@
+<pindurti>
+  <keylayout name="TI-82">
+    <key name="y=" caption="Y=" second="Stat" />
+    <key name="window" caption="Win" second="TblSet" />
+    <key name="zoom" caption="Zoom" />
+    <key name="trace" caption="Trace" second="Calc" />
+    <key name="graph" caption="Graph" second="Table" />
+    <key name="2nd" caption="2nd" />
+    <key name="mode" caption="Mode" second="Quit" />
+    <key name="del" caption="Del" second="Ins" />
+    <key name="alpha" caption="Alpha" second="A-Lock" />
+    <key name="x" caption="XTΘ" second="Link" />
+    <key name="stat" caption="Stat" second="List" />
+    <key name="math" caption="Math" second="Test" alpha="A" />
+    <key name="matrx" caption="Matrx" second="Angle" alpha="B" />
+    <key name="prgm" caption="Prgm" second="Draw" alpha="C" />
+    <key name="vars" caption="Vars" second="Y-Vars" />
+    <key name="clear" caption="Clear" />
+    <key name="x^-1" caption="x¹־" second="Abs" alpha="D" />
+    <key name="sin" caption="Sin" second="Sin¹־" alpha="E" />
+    <key name="cos" caption="Cos" second="Cos¹־" alpha="F" />
+    <key name="tan" caption="Tan" second="Tan¹־" alpha="G" />
+    <key name="^" caption="^" second="π" alpha="H" />
+    <key name="x^2" caption="x²" second="√¯" alpha="I" />
+    <key name="," caption="," second="EE" alpha="J" />
+    <key name="(" caption="(" second="{" alpha="K" />
+    <key name=")" caption=")" second="}" alpha="L" />
+    <key name="/" caption="÷" alpha="M" />
+    <key name="log" caption="Log" second="10^x" alpha="N" />
+    <key name="7" caption="7" second="u(n+1)" alpha="O" />
+    <key name="8" caption="8" second="v(n+1)" alpha="P" />
+    <key name="9" caption="9" second="n" alpha="Q" />
+    <key name="*" caption="×" second="[" alpha="R" />
+    <key name="ln" caption="Ln" second="e^x" alpha="S" />
+    <key name="4" caption="4" second="L4" alpha="T" />
+    <key name="5" caption="5" second="L5" alpha="U" />
+    <key name="6" caption="6" second="L6" alpha="V" />
+    <key name="-" caption="−" second="]" alpha="W" />
+    <key name="sto" caption="Sto »" second="Rcl" alpha="X" />
+    <key name="1" caption="1" second="L1" alpha="Y" />
+    <key name="2" caption="2" second="L2" alpha="Z" />
+    <key name="3" caption="3" second="L3" alpha="Θ" />
+    <key name="+" caption="+" second="Mem" alpha="&quot;" />
+    <key name="on" caption="On" second="Off" />
+    <key name="0" caption="0" alpha="_" />
+    <key name="." caption="·" second=":" />
+    <key name="(-)" caption="(−)" second="Ans" alpha="?" />
+    <key name="enter" caption="Enter" second="Entry" />
+    <key name="left" caption="←" />
+    <key name="up" caption="↑" />
+    <key name="right" caption="→" />
+    <key name="down" caption="↓" />
+  </keylayout>
+  <keylayout name="TI-83">
+    <key name="y=" caption="Y=" second="Stat" />
+    <key name="window" caption="Win" second="TblSet" />
+    <key name="zoom" caption="Zoom" second="Format" />
+    <key name="trace" caption="Trace" second="Calc" />
+    <key name="graph" caption="Graph" second="Table" />
+    <key name="2nd" caption="2nd" />
+    <key name="mode" caption="Mode" second="Quit" />
+    <key name="del" caption="Del" second="Ins" />
+    <key name="alpha" caption="Alpha" second="A-Lock" />
+    <key name="x" caption="XTΘn" second="Link" />
+    <key name="stat" caption="Stat" second="List" />
+    <key name="math" caption="Math" second="Test" alpha="A" />
+    <key name="matrx" caption="Matrx" second="Angle" alpha="B" />
+    <key name="prgm" caption="Prgm" second="Draw" alpha="C" />
+    <key name="vars" caption="Vars" second="Distr" />
+    <key name="clear" caption="Clear" />
+    <key name="x^-1" caption="x¹־" second="Finance" alpha="D" />
+    <key name="sin" caption="Sin" second="Sin¹־" alpha="E" />
+    <key name="cos" caption="Cos" second="Cos¹־" alpha="F" />
+    <key name="tan" caption="Tan" second="Tan¹־" alpha="G" />
+    <key name="^" caption="^" second="π" alpha="H" />
+    <key name="x^2" caption="x²" second="√¯" alpha="I" />
+    <key name="," caption="," second="EE" alpha="J" />
+    <key name="(" caption="(" second="{" alpha="K" />
+    <key name=")" caption=")" second="}" alpha="L" />
+    <key name="/" caption="÷" second="e" alpha="M" />
+    <key name="log" caption="Log" second="10^x" alpha="N" />
+    <key name="7" caption="7" second="u" alpha="O" />
+    <key name="8" caption="8" second="v" alpha="P" />
+    <key name="9" caption="9" second="w" alpha="Q" />
+    <key name="*" caption="×" second="[" alpha="R" />
+    <key name="ln" caption="Ln" second="e^x" alpha="S" />
+    <key name="4" caption="4" second="L4" alpha="T" />
+    <key name="5" caption="5" second="L5" alpha="U" />
+    <key name="6" caption="6" second="L6" alpha="V" />
+    <key name="-" caption="−" second="]" alpha="W" />
+    <key name="sto" caption="Sto »" second="Rcl" alpha="X" />
+    <key name="1" caption="1" second="L1" alpha="Y" />
+    <key name="2" caption="2" second="L2" alpha="Z" />
+    <key name="3" caption="3" second="L3" alpha="Θ" />
+    <key name="+" caption="+" second="Mem" alpha="&quot;" />
+    <key name="on" caption="On" second="Off" />
+    <key name="0" caption="0" second="Catalog" alpha="_" />
+    <key name="." caption="·" second="i" alpha=":" />
+    <key name="(-)" caption="(−)" second="Ans" alpha="?" />
+    <key name="enter" caption="Enter" second="Entry" />
+    <key name="left" caption="←" />
+    <key name="up" caption="↑" />
+    <key name="right" caption="→" />
+    <key name="down" caption="↓" />
+  </keylayout>
+  <keylayout name="TI-83 Plus" default="">
+    <key name="y=" caption="Y=" second="Stat" alpha="F1" />
+    <key name="window" caption="Win" second="TblSet" alpha="F2" />
+    <key name="zoom" caption="Zoom" second="Format" alpha="F3" />
+    <key name="trace" caption="Trace" second="Calc" alpha="F4" />
+    <key name="graph" caption="Graph" second="Table" alpha="F5" />
+    <key name="2nd" caption="2nd" />
+    <key name="mode" caption="Mode" second="Quit" />
+    <key name="del" caption="Del" second="Ins" />
+    <key name="alpha" caption="Alpha" second="A-Lock" />
+    <key name="x" caption="XTΘn" second="Link" />
+    <key name="stat" caption="Stat" second="List" />
+    <key name="math" caption="Math" second="Test" alpha="A" />
+    <key name="matrx" caption="Apps" second="Angle" alpha="B" />
+    <key name="prgm" caption="Prgm" second="Draw" alpha="C" />
+    <key name="vars" caption="Vars" second="Distr" />
+    <key name="clear" caption="Clear" />
+    <key name="x^-1" caption="x¹־" second="Matrx" alpha="D" />
+    <key name="sin" caption="Sin" second="Sin¹־" alpha="E" />
+    <key name="cos" caption="Cos" second="Cos¹־" alpha="F" />
+    <key name="tan" caption="Tan" second="Tan¹־" alpha="G" />
+    <key name="^" caption="^" second="π" alpha="H" />
+    <key name="x^2" caption="x²" second="√¯" alpha="I" />
+    <key name="," caption="," second="EE" alpha="J" />
+    <key name="(" caption="(" second="{" alpha="K" />
+    <key name=")" caption=")" second="}" alpha="L" />
+    <key name="/" caption="÷" second="e" alpha="M" />
+    <key name="log" caption="Log" second="10^x" alpha="N" />
+    <key name="7" caption="7" second="u" alpha="O" />
+    <key name="8" caption="8" second="v" alpha="P" />
+    <key name="9" caption="9" second="w" alpha="Q" />
+    <key name="*" caption="×" second="[" alpha="R" />
+    <key name="ln" caption="Ln" second="e^x" alpha="S" />
+    <key name="4" caption="4" second="L4" alpha="T" />
+    <key name="5" caption="5" second="L5" alpha="U" />
+    <key name="6" caption="6" second="L6" alpha="V" />
+    <key name="-" caption="−" second="]" alpha="W" />
+    <key name="sto" caption="Sto »" second="Rcl" alpha="X" />
+    <key name="1" caption="1" second="L1" alpha="Y" />
+    <key name="2" caption="2" second="L2" alpha="Z" />
+    <key name="3" caption="3" second="L3" alpha="Θ" />
+    <key name="+" caption="+" second="Mem" alpha="&quot;" />
+    <key name="on" caption="On" second="Off" />
+    <key name="0" caption="0" second="Catalog" alpha="_" />
+    <key name="." caption="·" second="i" alpha=":" />
+    <key name="(-)" caption="(−)" second="Ans" alpha="?" />
+    <key name="enter" caption="Enter" second="Entry" />
+    <key name="left" caption="←" />
+    <key name="up" caption="↑" />
+    <key name="right" caption="→" />
+    <key name="down" caption="↓" />
+  </keylayout>
+</pindurti>
