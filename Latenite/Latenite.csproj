@@ -313,6 +313,10 @@
     <None Include="Resources\move_to_folder_16_h.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Brass\Brass\bin\Brass.exe">
+      <Link>Compile\Brass.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Help\IDE\about.htm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -4,18 +4,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latenite", "Latenite\Latenite.csproj", "{37D444D4-3AD3-4858-BC5D-1588F9FD71EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630} = {FB49A9F7-02EA-44C5-B25A-9689B1B40630}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASM Error", "TASM Error\TASM Error.csproj", "{CA10604B-82F8-4E2A-9C5D-7AF6FFECAD31}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8XP Linker", "8XP Linker\8XP Linker.csproj", "{F4A241BB-FB24-4875-A772-7A5801D1DCB3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XML Error Log", "XML Error Log\XML Error Log.csproj", "{AD5B6AB7-5955-45A4-A79B-8A4FA2938740}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLA Error", "WLA Error\WLA Error.csproj", "{F394B481-B404-47AC-934F-1884F8ED2E31}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarlyMorning Resource Plugin", "EarlyMorning Resource Plugin\EarlyMorning Resource Plugin.csproj", "{89A5A645-F21A-42E1-8818-F3BCEAFF814B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PindurTI Debugger", "PindurTI Debugger\PindurTI Debugger.csproj", "{B7675493-2CBB-42BC-81E8-82A7438B2DF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37D444D4-3AD3-4858-BC5D-1588F9FD71EB} = {37D444D4-3AD3-4858-BC5D-1588F9FD71EB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brass", "Brass\Brass\Brass.csproj", "{FB49A9F7-02EA-44C5-B25A-9689B1B40630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +74,10 @@ Global
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
