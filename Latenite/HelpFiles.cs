@@ -25,7 +25,7 @@ namespace Latenite {
 				foreach (string H in HelpFiles) {
                     if (AssociatedHelpFiles.Contains(Path.GetFileName(H).ToLower())) {
                         HelpFile F = new HelpFile(H);
-                        if (F.Name != "") {
+                        if (!string.IsNullOrEmpty(F.Name)) {
                             HelpFilesCombo.Items.Add(F.Name);
                         }
                         HelpList.Add(F);
@@ -195,9 +195,11 @@ namespace Latenite {
                 if (!H.ContainsHelp) continue;
 				XmlNodeList X = H.HelpFileXML.GetElementsByTagName("item");
 				foreach (XmlNode N in X) {
-                    try {
-                        string TopicName = N.Attributes.GetNamedItem("name").InnerText;
-                        if (TopicName.ToLower() == StringToSearch.ToLower()) {
+					try {
+						string TopicName = N.Attributes.GetNamedItem("name")?.InnerText;
+						if (string.IsNullOrEmpty(TopicName)) {
+							// Nothing to do
+						} else if (TopicName.ToLower() == StringToSearch.ToLower()) {
                             Results.Add(N);
                         } else {
                             string[] Topics = TopicName.Split(new char[] { '/' });

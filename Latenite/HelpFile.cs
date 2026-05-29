@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using System.Xml;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Latenite {
     public class HelpItemFile : Object {
@@ -23,7 +24,7 @@ namespace Latenite {
 		public string Name = "";
         public bool ContainsHelp = false;
 		public HelpFile(string Filename) {
-
+			Name = Path.GetFileName(Filename);
 			HelpFileXML.Load(Filename);
             foreach (XmlAttribute A in HelpFileXML.DocumentElement.Attributes) {
                 if (A.Name.ToLower() == "name") {

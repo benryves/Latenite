@@ -93,40 +93,43 @@ namespace Latenite {
             AddSyntaxElement(";", Properties.Settings.Default.Syntax_Comment, BenRyves.ColourfulEditor.ItemType.ToEndOfLine, false, 0, "");
 
             foreach (HelpFile X in Program.MainIDE.HelpList) {
-                string HelpfileName = "";
-                try {
-                    HelpfileName = X.HelpFileXML.DocumentElement.Attributes.GetNamedItem("name").Value;
-                } catch { }
+                string HelpfileName = X.HelpFileXML.DocumentElement.Attributes.GetNamedItem("name")?.Value;
                 XmlNodeList L = X.HelpFileXML.GetElementsByTagName("item");
  
                 foreach (XmlNode N in L) {
                     string[] ToAdd = null;
                     string ColourCode = "routine";
-                    string ToolTipText = HelpfileName; 
+                    string ToolTipText = null;
                     foreach (XmlAttribute A in N.Attributes) {
                         if (A.Name.ToLower() == "highlight") {
                             ToAdd = A.Value.Split(new char[] { '/' });
                         } else if (A.Name.ToLower() == "colour") {
                             ColourCode = A.Value.ToLower();
                         } else if (A.Name.ToLower() == "syntax") {
-                            ToolTipText += "\nSyntax: " + ExpandHTML(StripHTML(A.Value));
+							if (string.IsNullOrEmpty(HelpfileName)) {
+								ToolTipText = "Syntax: " + ExpandHTML(StripHTML(A.Value));
+							} else {
+								ToolTipText+= HelpfileName + "\nSyntax: " + ExpandHTML(StripHTML(A.Value));
+							}
                         }/* else if (A.Name.ToLower() == "description") {
                             ToolTipText += "\n" + ExpandHTML(StripHTML(A.Value));
                         }*/
                     }
 
-                    string[] R_T = ToolTipText.Split('\n');
-                    ToolTipText = "";
-                    bool First = true;
-                    foreach (string S in R_T) {
-                        if (S.Trim() != "") {
-                            if (!First) {
-                                 ToolTipText += "\r\n";
-                            }
-                            ToolTipText += S.Trim();
-                            First = false;
-                        }
-                    }
+					if (!string.IsNullOrEmpty(ToolTipText)) {
+						string[] R_T = ToolTipText.Split('\n');
+						ToolTipText = "";
+						bool First = true;
+						foreach (string S in R_T) {
+							if (S.Trim() != "") {
+								if (!First) {
+									ToolTipText += "\r\n";
+								}
+								ToolTipText += S.Trim();
+								First = false;
+							}
+						}
+					}
 
                     if (ToAdd != null) {
                         foreach (string S in ToAdd) {
