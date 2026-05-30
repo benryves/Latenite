@@ -108,10 +108,7 @@
     <Content Include="settings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\stop.png" />
-    <None Include="Resources\debug.png" />
     <None Include="app.config" />
-    <None Include="Resources\open_document_16_h.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
