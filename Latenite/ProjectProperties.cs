@@ -91,10 +91,15 @@ namespace Latenite {
 
             string[] XmlHelpFileList = Directory.GetFiles(Path.Combine(Application.StartupPath, "Help"), "*.xml", SearchOption.AllDirectories);
             foreach (string S in XmlHelpFileList) {
-                ListViewItem X = new ListViewItem(Path.GetFileName(S));
-                X.Tag = S;
-                X.Checked = Program.MainIDE.AssociatedHelpFiles.Contains(Path.GetFileName(S).ToLower());
-                this.ChooseHelpFiles.Items.Add(X);
+				HelpFile H;
+				try {
+					H = new HelpFile(S);
+					ListViewItem X = new ListViewItem(H.Name);
+					if (H.Name != Path.GetFileName(S)) X.Text += " (" + Path.GetFileName(S) +")";
+					X.Tag = S;
+					X.Checked = Program.MainIDE.AssociatedHelpFiles.Contains(Path.GetFileName(S).ToLower());
+					this.ChooseHelpFiles.Items.Add(X);
+				} catch { }
             }
 
 		}

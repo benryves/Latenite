@@ -25,7 +25,7 @@ namespace Latenite {
 				foreach (string H in HelpFiles) {
                     if (AssociatedHelpFiles.Contains(Path.GetFileName(H).ToLower())) {
                         HelpFile F = new HelpFile(H);
-                        if (!string.IsNullOrEmpty(F.Name)) {
+                        if (F.ContainsHelp && !string.IsNullOrEmpty(F.Name)) {
                             HelpFilesCombo.Items.Add(F.Name);
                         }
                         HelpList.Add(F);
