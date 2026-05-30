@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON.ico" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\debug_start.png" />
     <Content Include="settings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

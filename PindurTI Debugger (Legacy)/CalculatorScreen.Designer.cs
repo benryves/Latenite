@@ -64,7 +64,7 @@ namespace PindurTI_Debugger {
             // 
             // sendFileToolStripMenuItem
             // 
-            this.sendFileToolStripMenuItem.Image = global::PindurTI_Debugger.Properties.Resources.open_document_16_h;
+            this.sendFileToolStripMenuItem.Image = global::PindurTI_Debugger.Properties.Resources.folder;
             this.sendFileToolStripMenuItem.Name = "sendFileToolStripMenuItem";
             this.sendFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.sendFileToolStripMenuItem.Size = new System.Drawing.Size(157, 22);

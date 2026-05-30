@@ -207,7 +207,7 @@ namespace PindurTI_Debugger {
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Enabled = false;
-            this.startToolStripMenuItem.Image = global::PindurTI_Debugger.Properties.Resources.debug;
+            this.startToolStripMenuItem.Image = global::PindurTI_Debugger.Properties.Resources.debug_start;
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
             this.startToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.startToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
