@@ -1,0 +1,12 @@
+<project name="$PROJECT_NAME$" version="2" expanded="True" binary="$PROJECT_NAME$" source="Includes\Headers.asm">
+  <build default="true">Build\TI-83 Plus (Application).cmd</build>
+  <help file="brass.xml" />
+  <help file="ti83p.xml" />
+  <help file="tios_entrypoints.xml" />
+  <help file="tios_values.xml" />
+  <help file="z80.xml" />
+  <openfile>Page0.asm</openfile>
+  <openfile>Page1.asm</openfile>
+  <openfile default="True">Includes\Headers.asm</openfile>
+  <expandedfolder>\Includes</expandedfolder>
+</project>

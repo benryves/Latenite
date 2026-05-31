@@ -209,6 +209,21 @@
     <Compile Include="Watch.cs">
       <SubType>Form</SubType>
     </Compile>
+    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\%24PROJECT_NAME%24.lnp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!Compile.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!TI-83 Plus %28Application%29.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!TI-83 Plus %28Application%29.debug">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!ti8x.lbl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\Projects\TI-8x Program\Files\%24PROJECT_NAME%24.lnp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -397,6 +412,30 @@
     <Content Include="Templates\Colours\Sigma.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Description.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Bin\!Bin.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!ASCII Mapping.asm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!Headers.asm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!TIOS Variables.asm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Page0.asm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Page1.asm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Projects\TI-8x Multi-Page App\Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Templates\Projects\TI-8x Program\Description.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -474,6 +513,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Templates\Projects\TI-8x Multi-Page App\Files\Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

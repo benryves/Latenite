@@ -1,0 +1,20 @@
+; TI-83 Plus application script
+reset-calc
+run 6000000
+key-press on 6000000
+key-press clear
+key-press 2nd
+key-press +
+key-press 7
+key-press left
+key-press enter
+key-press 2
+send-file %DEBUG_BINARY%.8xk
+key-press clear
+key-press apps
+key-press apps
+key-press apps
+key-press apps
+key-press apps
+key-press down
+key-press enter
