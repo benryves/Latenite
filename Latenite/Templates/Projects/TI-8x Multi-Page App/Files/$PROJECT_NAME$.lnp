@@ -6,7 +6,6 @@
   <help file="tios_values.xml" />
   <help file="z80.xml" />
   <openfile>Page0.asm</openfile>
-  <openfile>Page1.asm</openfile>
   <openfile default="True">Includes\Headers.asm</openfile>
   <expandedfolder>\Includes</expandedfolder>
 </project>

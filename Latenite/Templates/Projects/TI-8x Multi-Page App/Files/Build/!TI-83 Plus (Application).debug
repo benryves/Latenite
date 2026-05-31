@@ -9,7 +9,7 @@ key-press 7
 key-press left
 key-press enter
 key-press 2
-send-file %DEBUG_BINARY%.8xk
+send-file %DEBUG_BINARY%
 key-press clear
 key-press apps
 key-press apps

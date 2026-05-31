@@ -430,9 +430,6 @@
     <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Page0.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Page1.asm">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Templates\Projects\TI-8x Multi-Page App\Icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

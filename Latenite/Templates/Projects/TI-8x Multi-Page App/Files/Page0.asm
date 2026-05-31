@@ -1,7 +1,7 @@
 ; ===============================================================
-; $PROJECT_NAME$ Page 1
+; $PROJECT_NAME$ Page 0
 ; ===============================================================
 
 Main
 
- bjump(_JForceCmdNoChar)     		; Exit
+    bjump(_JForceCmdNoChar)     		; Exit
