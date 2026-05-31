@@ -349,7 +349,10 @@ namespace Latenite {
             foreach (SourceFile S in SourceFiles.TabPages) {
                 S.Close(true);
             }
-            if (SourceFiles.TabCount > 0) return;
+			if (SourceFiles.TabCount > 0) {
+				e.Cancel = true;
+				return;
+			}
 
             SaveProject();
 
@@ -359,6 +362,8 @@ namespace Latenite {
 					if (S.IsSaved) e.Cancel = true;
 				}
 			}
+			if (e.Cancel) return;
+
             try {
                 Properties.Settings.Default.IDE_WindowState = WindowState;
                     this.WindowState = FormWindowState.Normal;
