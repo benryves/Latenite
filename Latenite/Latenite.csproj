@@ -271,7 +271,7 @@
     <None Include="Resources\splash.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Brass\Brass\bin\Brass.exe">
+    <Content Include="..\Brass\Brass\bin\Release\Brass.exe">
       <Link>Compile\Brass.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -474,5 +474,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

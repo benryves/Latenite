@@ -27,9 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarlyMorning Resource Plugi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PindurTI Debugger (Legacy)", "PindurTI Debugger (Legacy)\PindurTI Debugger (Legacy).csproj", "{B7675493-2CBB-42BC-81E8-82A7438B2DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brass", "Brass\Brass\Brass.csproj", "{FB49A9F7-02EA-44C5-B25A-9689B1B40630}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PindurTI Debugger", "PindurTI Debugger\PindurTI Debugger.csproj", "{EAC63ED4-621D-42D1-9043-28EA480A5B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brass", "Brass\Brass\Brass.csproj", "{FB49A9F7-02EA-44C5-B25A-9689B1B40630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,14 +65,14 @@ Global
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7675493-2CBB-42BC-81E8-82A7438B2DF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EAC63ED4-621D-42D1-9043-28EA480A5B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAC63ED4-621D-42D1-9043-28EA480A5B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAC63ED4-621D-42D1-9043-28EA480A5B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAC63ED4-621D-42D1-9043-28EA480A5B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.ActiveCfg = Release|x86
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Debug|Any CPU.Build.0 = Release|x86
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.ActiveCfg = Release|x86
+		{FB49A9F7-02EA-44C5-B25A-9689B1B40630}.Release|Any CPU.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
