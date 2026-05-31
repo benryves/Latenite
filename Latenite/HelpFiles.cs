@@ -98,9 +98,34 @@ namespace Latenite {
 						var filePath = Path.Combine(Application.StartupPath, Path.Combine("Help", path.Value));
 						if (!File.Exists(filePath)) {
 							MessageBox.Show("Help file '" + filePath + "' not found.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						} else if (Path.GetExtension(filePath).ToLowerInvariant() == ".txt") {
+							string[] helpFileText;
+							try {
+								helpFileText = File.ReadAllLines(filePath);
+							} catch (Exception ex) {
+								MessageBox.Show("Could not read help file '" + filePath + "':" + Environment.NewLine + ex.Message, "Help", MessageBoxButtons.OK, MessageBoxIcon.Error);
+								return;
+							}
+							var maxLineLength = 20;
+							foreach (var line in helpFileText) {
+								maxLineLength = Math.Max(line.Length, maxLineLength);
+							}
+							var tfv = new TextFileViewer {
+								Text = helpFileToolStripMenuItem.Text,
+								TextFileText = string.Join(Environment.NewLine, helpFileText),
+								TextFileForeColor = Properties.Settings.Default.Editor_Text_Colour,
+								TextFileBackColor = Properties.Settings.Default.Editor_Back_Colour,
+								TextFileFont = Properties.Settings.Default.EditorFont,
+							};
+
+							tfv.TextFileWordWrap = maxLineLength > 85;
+							tfv.TextFileWidth = (tfv.TextFileWordWrap ? 85 : maxLineLength) + 10;
+
+							tfv.Show(this);
 						} else {
-							var externalHelpFileStartInfo = new ProcessStartInfo(filePath);
-							externalHelpFileStartInfo.UseShellExecute = true;
+							var externalHelpFileStartInfo = new ProcessStartInfo(filePath) {
+								UseShellExecute = true
+							};
 							try {
 								Process.Start(externalHelpFileStartInfo);
 							} catch (Exception ex) {

@@ -160,6 +160,9 @@
     <EmbeddedResource Include="Resources\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextFileViewer.resx">
+      <DependentUpon>TextFileViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -187,6 +190,12 @@
     </Compile>
     <Compile Include="SourceFile.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextFileViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextFileViewer.Designer.cs">
+      <DependentUpon>TextFileViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="TextSearch.cs">
       <SubType>Form</SubType>
