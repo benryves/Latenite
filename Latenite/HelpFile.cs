@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using System.IO;
@@ -12,12 +10,8 @@ namespace Latenite {
             HelpItem = HelpItemNode;
         }
         public override string ToString() {
-            foreach (XmlAttribute A in HelpItem.Attributes) {
-                if (A.Name.ToLower() == "name") return A.Value;
-            }
-            return "";
+			return HelpItem.Attributes["name"]?.Value;
         }
-
     }
 	class HelpFile : Object {
 		public XmlDocument HelpFileXML = new XmlDocument();
@@ -26,30 +20,20 @@ namespace Latenite {
 		public HelpFile(string Filename) {
 			Name = Path.GetFileName(Filename);
 			HelpFileXML.Load(Filename);
-            foreach (XmlAttribute A in HelpFileXML.DocumentElement.Attributes) {
-                if (A.Name.ToLower() == "name") {
-                    ContainsHelp = true;
-                    Name = A.Value;
-                    break;
-                }
-            }
-			
-
+			Name = HelpFileXML.DocumentElement.Attributes.GetNamedItem("name")?.Value;
+			ContainsHelp = HelpFileXML.GetElementsByTagName("item").Count > 0;
 		}
 		public void PopulateItemsCombo(ComboBox ComboToPopulate) {
-			XmlNodeList X = HelpFileXML.GetElementsByTagName("item");
-			for (int i = 0; i < X.Count; ++i) {
-                foreach (XmlAttribute A in X.Item(i).Attributes) {
-                    if (A.Name.ToLower() == "name") {
-                        HelpItemFile E = new HelpItemFile(X.Item(i));
-                        try {
-                            ComboToPopulate.Items.Add(E);
-                        } catch { }
-                        break;
-                    }
-                }
+			foreach (XmlNode X in HelpFileXML.GetElementsByTagName("item")) {
+				if (X.Attributes["name"] != null) {
+					HelpItemFile E = new HelpItemFile(X);
+					ComboToPopulate.Items.Add(E);
+				}
 			}
             if (ComboToPopulate.Items.Count > 0) ComboToPopulate.SelectedIndex = 0;
+		}
+		public override string ToString() {
+			return this.Name;
 		}
 	}
 }

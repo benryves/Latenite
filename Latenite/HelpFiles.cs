@@ -4,6 +4,8 @@ using System.Text;
 using System.Xml;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Latenite {
 
@@ -19,23 +21,99 @@ namespace Latenite {
 			Directory.SetCurrentDirectory(Application.StartupPath);
             HelpFilesCombo.Items.Clear();
             HelpFilesCombo.Items.Add("(All)");
+
+			// Remove runtime-generated items in the "Help" dropdown
+			var helpItemsToClear = new List<ToolStripItem>();
+			foreach (ToolStripItem  helpItem in helpToolStripMenuItem.DropDownItems) {
+				if (helpItem.Tag is KeyValuePair<HelpFile, XmlNode>) {
+					helpItemsToClear.Add(helpItem);
+				}
+			}
+			// Remove items to clear
+			while (helpItemsToClear.Count > 0) {
+				foreach (var helpItem in helpItemsToClear) {
+					helpToolStripMenuItem.DropDownItems.Remove(helpItem);
+				}
+				helpItemsToClear.Clear();
+				// Remove trailing separators
+				if (helpToolStripMenuItem.DropDownItems.Count > 0 && helpToolStripMenuItem.DropDownItems[helpToolStripMenuItem.DropDownItems.Count - 1] is ToolStripSeparator) {
+					helpItemsToClear.Add(helpToolStripMenuItem.DropDownItems[helpToolStripMenuItem.DropDownItems.Count - 1]);
+				}
+			}
+
 			// Index the help files:
 			try {
 				string[] HelpFiles = Directory.GetFileSystemEntries("Help", "*.xml");
+				var helpMenuLinks = new[]{
+					new List<ToolStripMenuItem>(),
+					new List<ToolStripMenuItem>()
+				};
+				// Populate the combo box and find help menu link items
 				foreach (string H in HelpFiles) {
                     if (AssociatedHelpFiles.Contains(Path.GetFileName(H).ToLower())) {
                         HelpFile F = new HelpFile(H);
                         if (F.ContainsHelp && !string.IsNullOrEmpty(F.Name)) {
-                            HelpFilesCombo.Items.Add(F.Name);
-                        }
+                            HelpFilesCombo.Items.Add(F);
+							helpMenuLinks[0].Add(new ToolStripMenuItem(F.Name) {
+								Tag = new KeyValuePair<HelpFile, XmlNode>(F, null),
+							});
+						}
+						foreach (XmlNode externalHelpFile in F.HelpFileXML.GetElementsByTagName("file")) {
+							var externalHelpFileName = externalHelpFile.Attributes["name"]?.Value;
+							if (!string.IsNullOrEmpty(externalHelpFileName)) {
+								helpMenuLinks[1].Add(new ToolStripMenuItem(externalHelpFileName) {
+									Tag = new KeyValuePair<HelpFile, XmlNode>(F, externalHelpFile),
+								});
+							}
+						}
                         HelpList.Add(F);
                     }
+				}
+				// Add the help menu link items
+				foreach (var helpMenuLinkItems in helpMenuLinks) {
+					if (helpMenuLinkItems.Count > 0) {
+						if (helpToolStripMenuItem.DropDownItems.Count > 0 && !(helpToolStripMenuItem.DropDownItems[helpToolStripMenuItem.DropDownItems.Count - 1] is ToolStripSeparator)) {
+							helpToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
+						}
+						foreach (ToolStripMenuItem helpMenuLinkItem in helpMenuLinkItems) {
+							helpToolStripMenuItem.DropDownItems.Add(helpMenuLinkItem);
+							helpMenuLinkItem.Click += HelpFileToolStripMenuItem_Click;
+						}
+						
+					}
+
 				}
 			} catch (Exception ex) {
 				MessageBox.Show("There was an error loading the help files:\n" + ex.Message, null, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
             HelpFilesCombo.SelectedIndex = 0;
             
+		}
+
+		void HelpFileToolStripMenuItem_Click(object sender, EventArgs e) {
+			if ((sender is ToolStripMenuItem helpFileToolStripMenuItem) && (helpFileToolStripMenuItem.Tag is KeyValuePair<HelpFile, XmlNode> helpFile)) {
+				if (helpFile.Value is XmlNode externalHelpFile) {
+					// Is there a file path?
+					if (externalHelpFile.Attributes["path"] is XmlAttribute path) {
+						var filePath = Path.Combine(Application.StartupPath, Path.Combine("Help", path.Value));
+						if (!File.Exists(filePath)) {
+							MessageBox.Show("Help file '" + filePath + "' not found.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						} else {
+							var externalHelpFileStartInfo = new ProcessStartInfo(filePath);
+							externalHelpFileStartInfo.UseShellExecute = true;
+							try {
+								Process.Start(externalHelpFileStartInfo);
+							} catch (Exception ex) {
+								MessageBox.Show("Could not open help file '" + filePath + "':" + Environment.NewLine + ex.Message, "Help", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+						}
+					}
+				} else {
+					// Show a help file in the help tab
+					HelpFilesCombo.SelectedItem = helpFile.Key;
+					ProjectAndHelpTabs.SelectedTab = HelpTab;
+				}
+			}
 		}
 
 		/// <summary>

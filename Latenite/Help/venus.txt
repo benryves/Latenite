@@ -1,0 +1,206 @@
+------------------------------------------------------- version 2.4 --
+ ##
+              /¯/\
+             / / /
+     |¯|\   / / /    a program by Tijl Coosemans (tijl@ulyssis.org)
+     | | | / /s/
+     | | |/ /u/      website:  http://www.kalimero.be/
+     | | / /n/
+     | |/ /e/     !! with special thanks to Jean Carot, Henk Poley,
+     |   /V/      !! Dan Weiss, Guillaume Hoffmann, Patai Gergely
+     |__/ /       !! and Pieter Van Nuffel for the impressive tips
+     \__\/        !! and beta testing
+
+
+   $LastChangedDate: 2005-02-04 19:52:23 +0100 (Fri, 04 Feb 2005) $
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+ ## description
+----------------------------------------------------------------------
+
+  Venus acts as a small plug-in for your TI-83 that allows you to run
+  compatible assembly programs as normal TI-Basic programs, directly
+  from the PRGM-menu.
+
+  Additionally this package contains several graphical shells from
+  which you can run Venus, Ion, SOS, AShell and/or TI-Basic programs.
+
+
+----------------------------------------------------------------------
+ ## installation
+----------------------------------------------------------------------
+
+  Just send the group file "venus.83g" to your calculator. This will
+  copy the following files:
+
+  A  : a shell from which you can run Venus and Ion programs
+       (optional)
+  0V : the Venus core, this allows you to run asm programs
+       (required)
+
+  You can optionally send one of the other graphical shells to your
+  calculator. They will replace prgmA. More details about each shell
+  can be found below.
+
+  If you want to copy Venus from your calculator to another one,
+  then copy at least prgm0V, which is a required file. prgmA is
+  optional, but comes in handy if you use other shell programs.
+
+  If you ever want to uninstall Venus, then just delete prgm0V and
+  most likely all Venus programs too.
+
+  IMPORTANT: Don't install any other assembly shells on your calc
+  (unless of course they specifically state to be compatible).
+  They may crash your calculator when you use them in combination
+  with Venus.
+
+
+----------------------------------------------------------------------
+ ## running a program
+----------------------------------------------------------------------
+
+  Exactly the same as with TI-Basic programs. Pick them from the
+  PRGM-menu, hit the enter key and enjoy!
+
+
+----------------------------------------------------------------------
+ ## overview of included graphical shells
+----------------------------------------------------------------------
+
+<-> expl/pv/a.83p -- size: 567
+	* Pretty Venus only shell.
+	* Displays icons.
+
+<-> expl/sv/a.83p -- size: 463
+	* Simple Venus only shell.
+
+<-> expl/svi/a.83p -- size: 905
+	* Simple Venus/Ion shell.
+	* Default shell.
+	* Loads and unloads Ion programs very fast.
+
+<-> expl/svisab/a.83p -- size: 1056
+	* Simple Venus/Ion/SOS/AShell/Basic shell.
+	* Detects and runs TI-Basic programs that start with a colon.
+	* For SOS programs you should make sure you have all the
+	  necessary libs if they need any. If you miss one nothing
+	  will happen when you try to run them. Check their readme.
+	* IMPORTANT: Some SOS programs ship with an INSTALL program.
+	  Do NOT run it. It will crash your calculator. This shell
+	  doesn't require you to "install" SOS programs, so it is
+	  best that you immediately delete prgmINSTALL.
+
+
+----------------------------------------------------------------------
+ ## using a shell
+----------------------------------------------------------------------
+
+  Startup the shell by running prgmA. If it seemingly refuses, then
+  that means you currently don't have any compatible programs on your
+  calculator.
+  Navigating through the menu is done by using the arrow keys.
+  [Up] and [Down] move the selection one item at a time.
+  [Left] and [Right] move it an entire page at once if there are more
+  programs.
+  [2nd] or [Enter] runs a program.
+  [On] will turn off your calculator.
+
+
+----------------------------------------------------------------------
+ ## history
+----------------------------------------------------------------------
+
+<-> version 2.4.2005.02.04 -- size: 206
+	* moved vRandom's seed to inside the routine
+	* vRandom's seed is now initialized at startup so programs no
+	  longer have to do this.
+	* new loading routine, much smaller and extremely fast
+	* replaced a couple things by rom calls
+	* added several new graphical shells to the archive
+
+<-> version 2.3.2003.05.24 -- size: 222
+	* removed two routines, leaving vFastCopy and vRandom
+	* major change in routine loading
+	* fixed a bug where the graph screen was sometimes dirty
+	  after running a Venus program
+	* fixed the check to prevent running send(9prgm0V
+
+<-> version 2.2.2002.11.17 -- size: 355
+	* updated the random number generator
+	* small change in the fastcopy routine
+	* added a check to prevent executing send(9prgm0V
+
+<-> version 2.1.2002.02.18 -- size: 346
+	* fixed a bug in the explorer
+
+<-> version 2.1.2002.02.03 -- size: 346
+	* fixed and improved some things in the explorer
+
+<-> version 2.1.2002.01.01 -- size: 346
+	* fixed a bug that caused a program to quit with a
+	  Syntax Error sometimes
+	* due to a bug in the TI-Graph Link Software, the venus.83g
+	  file had a wrong format
+
+<-> version 2.0.2001.12.26 -- size: 346
+	* Venus underwent a whole metamorphosis
+	* no more installation required
+	* no more external routines
+	* generally more userfriendly
+
+<-> version 1.5.2001.08.19 -- size: 348
+	* improved installation
+    routines (9):
+	zfcpy.83p - zgetk.83p(1.1) - zgetx.83p - zgrey.83p(1.1)
+	zpic.83p - zrand.83p(1.1) - zrec.83p(1.2) - zsend.83p(1.2)
+	zspr.83p(1.1)
+
+<-> version 1.4.2001.06.29 -- size: 355
+	* highly optimized installation procedure
+	* improvements to some routines
+    routines (9):
+	zfcpy.83p - zgetk.83p(1.1) - zgetx.83p - zgrey.83p(1.1)
+	zpic.83p - zrand.83p(1.1) - zrec.83p(1.2) - zsend.83p(1.1)
+	zspr.83p(1.1)
+
+<-> version 1.3.2001.05.04 -- size: 377
+	* more compatible with Venus Explorer
+	* some minor optimizations
+	* removed the 'jp' to the load routine again
+	  after long consideration it didn't seem to be much useful
+	* improvements to some routines
+    routines (9):
+	zfcpy.83p - zgetk.83p - zgetx.83p - zgrey.83p(1.1) - zpic.83p
+	zrand.83p - zrec.83p(1.2) - zsend.83p(1.1) - zspr.83p
+    explorer:
+	* the explorer is no longer included within this zip file
+
+<-> version 1.2.2001.04.09 -- size: 375
+	* added a 'jp' (pointer) so programs can easily load external
+	  data by using Venus's built-in routine
+	* changed external object pointer table; entries now point to
+	  size bytes instead of data
+	  (except for programs which have a 'jp')
+	* optimized a few things
+    routines (7):
+	zfcpy.83p - zgetk.83p - zgetx.83p - zgrey.83p - zpic.83p
+	zrec.83p(1.1) - zsend.83p
+    explorer: version 0.1
+
+<-> version 1.1.2001.03.10 -- size: 379
+	* optimized installation procedure
+	* displays version number on installation
+	* optimized program loading code
+	* prepared for explorer
+	* changed header of programs (in function of explorer)
+    routines (5):
+	zgetk.83p - zgetx.83p - zpic.83p - zrec.83p - zsend.83p
+
+<-> version 1.0 - 20010207 -- size: 399
+	* first release
+
+
+----------------------------------------------------------------------

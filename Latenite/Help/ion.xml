@@ -1,4 +1,5 @@
 <helpfile name="Ion">
+    <file name="About Ion" path="ion.txt" />
     <group name="General Functions">
         <item highlight="ionVersion" colour="routine" name="ionVersion" description="Return Ion version information.">
             <output name="Ion version" register="hl" />
