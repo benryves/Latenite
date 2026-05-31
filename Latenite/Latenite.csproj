@@ -209,70 +209,70 @@
     <Compile Include="Watch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\%24PROJECT_NAME%24.lnp">
+    <None Include="Templates\Projects\TI-83 Plus Flash Application\Files\%24PROJECT_NAME%24.lnp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!Compile.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Flash Application\Files\Build\!Compile.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!TI-83 Plus %28Application%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Flash Application\Files\Build\!TI-83 Plus %28Application%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Build\!TI-83 Plus %28Application%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Flash Application\Files\Build\!TI-83 Plus %28Application%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!ti8x.lbl">
+    <None Include="Templates\Projects\TI-83 Plus Flash Application\Files\Includes\!ti8x.lbl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\%24PROJECT_NAME%24.lnp">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\%24PROJECT_NAME%24.lnp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!Compile.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!Compile.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Ion%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Ion%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Ion%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Ion%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Native%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Native%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Native%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Native%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Venus%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Venus%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 %28Venus%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 %28Venus%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28Ion%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28Ion%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28Ion%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28Ion%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28MirageOS%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28MirageOS%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28MirageOS%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28MirageOS%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28Native%29.cmd">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28Native%29.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Build\!TI-83 Plus %28Native%29.debug">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Build\!TI-83 Plus %28Native%29.debug">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Includes\!ti73.lbl">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!ti73.lbl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Includes\!ti83.lbl">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!ti83.lbl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\Projects\TI-8x Program\Files\Includes\!ti8x.lbl">
+    <None Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!ti8x.lbl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tools\Open Containing Folder.cmd">
@@ -412,64 +412,64 @@
     <Content Include="Templates\Colours\Sigma.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Description.txt">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Description.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Bin\!Bin.txt">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Files\Bin\!Bin.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!ASCII Mapping.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Files\Includes\!ASCII Mapping.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!Headers.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Files\Includes\!Headers.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Includes\!TIOS Variables.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Files\Includes\!TIOS Variables.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Files\Page0.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Files\Page0.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Multi-Page App\Icon.png">
+    <Content Include="Templates\Projects\TI-83 Plus Flash Application\Icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Description.txt">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Description.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Bin\!Bin.txt">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Bin\!Bin.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!ASCII Mapping.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!ASCII Mapping.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!Headers.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!Headers.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!Ion83.inc">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!Ion83.inc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!Ion8x.inc">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!Ion8x.inc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!Mirage.inc">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!Mirage.inc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!TIOS Variables.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!TIOS Variables.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Includes\!Venus.inc">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Includes\!Venus.inc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Program.asm">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Program.asm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Resources\!15x15 Icon.gif">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Resources\!15x15 Icon.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Files\Resources\!16x16 Icon.gif">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Files\Resources\!16x16 Icon.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Projects\TI-8x Program\Icon.png">
+    <Content Include="Templates\Projects\TI-83 Plus Program\Icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="app.config" />
@@ -511,7 +511,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Templates\Projects\TI-8x Multi-Page App\Files\Resources\" />
+    <Folder Include="Templates\Projects\TI-83 Plus Flash Application\Files\Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
