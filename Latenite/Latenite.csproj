@@ -290,6 +290,10 @@
       <Link>Compile\Brass.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Brass\Manual\brass.xml">
+      <Link>Help\brass.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Help\IDE\about.htm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -476,9 +480,6 @@
     <Content Include="DebugSystem.txt" />
     <Content Include="project.ico" />
     <None Include="Resources\about.jpg" />
-    <Content Include="Help\brass.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Help\gpp.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
